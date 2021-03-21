@@ -4,3 +4,12 @@ main {
     height: calc(100vh - 90px);
     background: $color-grey-300;
 }
+
+.game {
+    padding: 15px 0 0 15px;
+    display: grid;
+    grid-template-columns: calc(45% - 15px) calc(55% - 15px);
+    grid-column-gap: 15px;
+    grid-template-rows: calc(50% - 15px) calc(50% - 15px);
+    grid-row-gap: 15px;
+}

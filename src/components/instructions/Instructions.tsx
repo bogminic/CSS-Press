@@ -16,7 +16,7 @@ function Instructions() {
       </div>
       <div className="instructions__content">
         There is a paragraph of this article that seems to be from another story. You can fix it using&nbsp;
-        <span className="instructions__keyword">font-family</span> property.
+        <code className="instructions__keyword">font-family</code> property.
         <br/> <br/>
         Please note that font-family specifies the font and its fallbacks, separated by commas.
       </div>

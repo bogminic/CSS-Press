@@ -3,4 +3,60 @@
 .instructions {
   background: $color-grey-300;
   border: 1px solid $color-black;
+  box-shadow: -5px -5px $color-grey-450;
+
+  &__header {
+    height: 48px;
+    display: flex;
+    border-bottom: 1px solid $color-black;
+  }
+
+  &__title {
+    width: 70%;
+    padding-left: 10px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__lines {
+    width: 30%;
+    height: 50%;
+    margin-top: auto;
+    &--100 {
+      width: 100%;
+      height: 10px;
+      border-top: 1px solid $color-black;
+    }
+    &--50 {
+      width: 50%;
+      height: 10px;
+      border-top: 1px solid $color-black;
+      margin-left: auto;
+    }
+  }
+
+  &__chapter {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__separator {
+    padding: 0 10px;
+  }
+
+  &__level {
+    text-transform: lowercase;
+    font-weight: bold;
+  }
+
+  &__content {
+    padding: 22px 20px 20px 10px;
+    font-size: 20px;
+  }
+
+  &__keyword {
+    background: $color-grey-400;
+  }
+
 }

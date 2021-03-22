@@ -25,11 +25,19 @@
     margin: 0;
     text-indent: 15px;
     text-align: justify;
+    font-family: 'Crimson Text', serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
   }
 
   h2 {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: capitalize;
   }
 }
 

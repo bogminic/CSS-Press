@@ -1,7 +1,7 @@
 import './Code.scss';
 
 function Code() {
-  const noOfcodeLines : number = 12;
+  const noOfcodeLines : number = 13;
   const codeLines: JSX.Element[] = [];
 
   //range [startRow,endRow]

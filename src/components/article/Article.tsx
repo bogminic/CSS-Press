@@ -27,7 +27,8 @@ function Article() {
           <p>
             Integer non mollis lorem, ut dignissim augue et la es integer
             at semper erat mo en placerat purus ac diam elementum, nec
-            feugiat neque faucibus esta nod.
+            feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec
+            feugiat neque faucibus.
           </p>
           <p>
             Fusce tincidunt risus eget magna pretium placerat. Maecenas et
@@ -47,12 +48,7 @@ function Article() {
           </p>
           <p>
             Dolor sit amet consectetur adipisicing elit. Nihil id corrupti
-            neque praesentium blanditiis suscipit nostrum assumenda maxime
-            aperiam quos voluptas voluptates minus, labore nesciunt? Lorem,
-            ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa
-            voluptates minus sollicitudin a diam eget. Sed pretium metus ac
-            odio pellentesque non mollis lorem volutpat eget eros in amet
-            est.
+            neque praesentium blanditiis suscipit elit.
           </p>
         </div>      </article>
       <div className="dummy">

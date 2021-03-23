@@ -48,6 +48,7 @@
     padding: 0 10px;
     font-family: 'Playfair Display', serif;
     font-size: 20px;
+    font-weight: 400;
   }
 
   &__level {
@@ -61,11 +62,14 @@
     padding: 13px 10px;
     font-family: 'Crimson Text', serif;
     font-size: 18px;
+    font-weight: 400;
     line-height: 28px;
   }
 
   &__keyword {
     font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    font-weight: 400;
     background: $color-grey-400;
   }
 }

@@ -1,6 +1,11 @@
 import './Article.scss';
 
-function Article() {
+interface ArticleProps {
+  
+}
+
+function Article(props: ArticleProps) {
+
   return (
     <div className="article">
       <div className="dummy">

@@ -1,6 +1,11 @@
 import './Instructions.scss';
 
-function Instructions() {
+interface InstructionsProps {
+  
+}
+
+function Instructions(props: InstructionsProps) {
+
   return (
     <div className="instructions">
       <div className="instructions__header">

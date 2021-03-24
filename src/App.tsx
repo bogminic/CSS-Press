@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
@@ -8,11 +9,17 @@ import './App.scss';
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <GamePage/>
-      <Footer/>
-    </div>
+    <Router>
+      <div>
+        <Header/> 
+        <Switch>
+          <Route path="/chapter/:chapterId/level/:levelId" children={<GamePage/>}/>
+          <Route exact path="/"><Redirect to="/chapter/1/level/1" /></Route>
+        </Switch>
+        <Footer/>
+      </div>
+    </Router>
+    
   );
 }
 

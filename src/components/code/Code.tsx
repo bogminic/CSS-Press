@@ -1,6 +1,10 @@
 import './Code.scss';
 
-function Code() {
+interface CodeProps {
+  
+}
+
+function Code(props: CodeProps) {
   const noOfcodeLines : number = 13;
   const codeLines: JSX.Element[] = [];
 
@@ -9,7 +13,7 @@ function Code() {
 
   for (let i=1;i<= noOfcodeLines;i++) {
     codeLines.push(
-      <div className={(i>=highlightedRows[0] && i<= highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
+      <div key={i} className={(i>=highlightedRows[0] && i<= highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
     )
   }
   const beforeCode = '.paragraph-answer {';

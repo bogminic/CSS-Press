@@ -1,32 +1,38 @@
 import './Code.scss';
+import { maxNoOfCodeLinesSide } from '../../const/chapters';
 
 interface CodeProps {
-  
+  beforeCode: string,
+  afterCode: string,
+  linesOfCode: number,
+  startHighlightCode: number
 }
 
 function Code(props: CodeProps) {
-  const noOfcodeLines : number = 13;
-  const codeLines: JSX.Element[] = [];
+  const { beforeCode, afterCode, linesOfCode, startHighlightCode } = props;
+
+  const codeLinesSide: JSX.Element[] = [];
 
   //range [startRow,endRow]
-  const highlightedRows: number[] = [2,2];
+  const highlightedRows: number[] = [startHighlightCode, startHighlightCode+linesOfCode];
 
-  for (let i=1;i<= noOfcodeLines;i++) {
-    codeLines.push(
-      <div key={i} className={(i>=highlightedRows[0] && i<= highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
+  for (let i=1;i<= maxNoOfCodeLinesSide;i++) {
+    codeLinesSide.push(
+      <div key={i} className={(i>=highlightedRows[0] && i< highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
     )
   }
-  const beforeCode = '.paragraph-answer {';
-  const afterCode = '}';
+
+  const calculatedCodeHeight = linesOfCode * 24;
+
     return (
       <div className="code">
         <div className="code__numbers">
-          {codeLines}
+          {codeLinesSide}
         </div>
         <div className="code__focus">
-          <pre className="code__before">{beforeCode}</pre>
-          <textarea className="code__textarea" style={{height: '24px'}} ></textarea>
-          <pre className="code__after">{afterCode}</pre>
+          <div className="code__before" dangerouslySetInnerHTML={{__html: beforeCode}}></div>
+          <textarea className="code__textarea" style={{height: calculatedCodeHeight +'px'}} ></textarea>
+          <div className="code__after" dangerouslySetInnerHTML={{__html: afterCode}}></div>
         </div>
         <button className="code__button">Next Level</button>
       </div>

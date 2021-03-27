@@ -2,14 +2,16 @@ import './Code.scss';
 import { maxNoOfCodeLinesSide } from '../../const/chapters';
 
 interface CodeProps {
-  beforeCode: string,
-  afterCode: string,
+  beforeCode: {},
+  afterCode: {},
+  selector: string,
   linesOfCode: number,
-  startHighlightCode: number
+  startHighlightCode: number,
+  setHoverSelector: Function
 }
 
 function Code(props: CodeProps) {
-  const { beforeCode, afterCode, linesOfCode, startHighlightCode } = props;
+  const { selector, linesOfCode, startHighlightCode, setHoverSelector } = props;
 
   const codeLinesSide: JSX.Element[] = [];
 
@@ -24,15 +26,21 @@ function Code(props: CodeProps) {
 
   const calculatedCodeHeight = linesOfCode * 24;
 
+  const onHoverSelector = (selector: string) => {
+    setHoverSelector(selector);
+  }
     return (
       <div className="code">
         <div className="code__numbers">
           {codeLinesSide}
         </div>
-        <div className="code__focus">
-          <div className="code__before" dangerouslySetInnerHTML={{__html: beforeCode}}></div>
+        <div
+        className="code__focus"
+        onMouseEnter={() => onHoverSelector(selector)}
+        onMouseLeave={() => onHoverSelector('')}>
+          <div className="code__before">.{selector}</div>
           <textarea className="code__textarea" style={{height: calculatedCodeHeight +'px'}} ></textarea>
-          <div className="code__after" dangerouslySetInnerHTML={{__html: afterCode}}></div>
+          <div className="code__after">{'}'}</div>
         </div>
         <button className="code__button">Next Level</button>
       </div>

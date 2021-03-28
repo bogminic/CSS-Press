@@ -28,7 +28,7 @@
 
   &__focus {
     &:hover {
-      > .code__after, >.code__before {
+      > .code__css {
         color: $color-green-600;
       }
       > .code__textarea {
@@ -37,13 +37,17 @@
     }
   }
 
-  &__before, &__after {
+  &__css {
     margin: 0;
     color: $color-black;
     font-family: 'Source Code Pro', monospace;
     font-size: 16px;
     font-weight: 700;
     line-height: 25px;
+
+    &--inactive {
+      color: $color-grey-500;
+    }
   }
 
   &__textarea {

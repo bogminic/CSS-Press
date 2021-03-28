@@ -11,16 +11,16 @@ interface CodeProps {
 }
 
 function Code(props: CodeProps) {
-  const { selector, linesOfCode, startHighlightCode, setHoverSelector } = props;
+  const { selector, linesOfCode, startHighlightCode, setHoverSelector, afterCode } = props;
 
   const codeLinesSide: JSX.Element[] = [];
 
   //range [startRow,endRow]
-  const highlightedRows: number[] = [startHighlightCode, startHighlightCode+linesOfCode];
+  const highlightedRows: number[] = [startHighlightCode, startHighlightCode + linesOfCode];
 
-  for (let i=1;i<= maxNoOfCodeLinesSide;i++) {
+  for (let i = 1; i <= maxNoOfCodeLinesSide; i++) {
     codeLinesSide.push(
-      <div key={i} className={(i>=highlightedRows[0] && i< highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
+      <div key={i} className={(i >= highlightedRows[0] && i < highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
     )
   }
 
@@ -29,22 +29,34 @@ function Code(props: CodeProps) {
   const onHoverSelector = (selector: string) => {
     setHoverSelector(selector);
   }
-    return (
-      <div className="code">
-        <div className="code__numbers">
-          {codeLinesSide}
-        </div>
-        <div
+
+  const inactiveCSS = (css: any) => (
+    <div>
+
+    </div>
+  )
+  return (
+    <div className="code">
+      <div className="code__numbers">
+        {codeLinesSide}
+      </div>
+      <div
         className="code__focus"
         onMouseEnter={() => onHoverSelector(selector)}
         onMouseLeave={() => onHoverSelector('')}>
-          <div className="code__before">.{selector}</div>
-          <textarea className="code__textarea" style={{height: calculatedCodeHeight +'px'}} ></textarea>
-          <div className="code__after">{'}'}</div>
-        </div>
-        <button className="code__button">Next Level</button>
+        <div className="code__css">.{selector}</div>
+        <textarea className="code__textarea" style={{ height: calculatedCodeHeight + 'px' }} ></textarea>
+        <div className="code__css">{'}'}</div>
       </div>
-    );
-  }
+      <div
+        className="code__focus"
+        onMouseEnter={() => onHoverSelector(selector)}
+        onMouseLeave={() => onHoverSelector('')}>
+          {inactiveCSS(afterCode)}
+      </div>
+      <button className="code__button">Next Level</button>
+    </div>
+  );
+}
 
 export default Code;

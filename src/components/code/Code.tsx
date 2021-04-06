@@ -1,5 +1,6 @@
 import './Code.scss';
 import { maxNoOfCodeLinesSide } from '../../const/chapters';
+import React from 'react';
 
 interface CodeProps {
   beforeCode: {},
@@ -11,11 +12,10 @@ interface CodeProps {
 }
 
 function Code(props: CodeProps) {
-  const { selector, linesOfCode, startHighlightCode, setHoverSelector, afterCode } = props;
+  const { selector, linesOfCode, startHighlightCode, setHoverSelector, afterCode, beforeCode } = props;
 
   const codeLinesSide: JSX.Element[] = [];
 
-  //range [startRow,endRow]
   const highlightedRows: number[] = [startHighlightCode, startHighlightCode + linesOfCode];
 
   for (let i = 1; i <= maxNoOfCodeLinesSide; i++) {
@@ -30,30 +30,50 @@ function Code(props: CodeProps) {
     setHoverSelector(selector);
   }
 
-  const inactiveCSS = (css: any) => (
-    <div>
+  const camelCaseToDash = (string:string) => {
+    return string.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
+  }
 
-    </div>
+  const complementaryCSS = (css: { [key: string]: { [key: string]: string } }) => (
+    <React.Fragment>
+      {Object.keys(css).map((selector, i) => (
+        <div className="code__focus">
+          <div
+            key={i + selector}
+            className="code__css code__css--complementary"
+            onMouseEnter={() => onHoverSelector(selector)}
+            onMouseLeave={() => onHoverSelector('')}
+          >
+            .{selector} {'{'} <br />
+            {Object.keys(css[selector]).map((property, i) => (
+              <div key={i + selector + property} className="code__property">
+                {camelCaseToDash(property)}: {css[selector][property]};
+              </div>
+            ))}
+            {'}'}
+          </div>
+        </div>
+      ))}
+    </React.Fragment>
   )
   return (
     <div className="code">
       <div className="code__numbers">
         {codeLinesSide}
       </div>
-      <div
-        className="code__focus"
-        onMouseEnter={() => onHoverSelector(selector)}
-        onMouseLeave={() => onHoverSelector('')}>
-        <div className="code__css">.{selector}</div>
-        <textarea className="code__textarea" style={{ height: calculatedCodeHeight + 'px' }} ></textarea>
-        <div className="code__css">{'}'}</div>
+      <div>
+        {complementaryCSS(beforeCode)}
+        <div
+          className="code__focus"
+          onMouseEnter={() => onHoverSelector(selector)}
+          onMouseLeave={() => onHoverSelector('')}>
+          <div className="code__css">.{selector}</div>
+          <textarea className="code__textarea" style={{ height: calculatedCodeHeight + 'px' }} ></textarea>
+          <div className="code__css">{'}'}</div>
+        </div>
+        {complementaryCSS(afterCode)}
       </div>
-      <div
-        className="code__focus"
-        onMouseEnter={() => onHoverSelector(selector)}
-        onMouseLeave={() => onHoverSelector('')}>
-          {inactiveCSS(afterCode)}
-      </div>
+
       <button className="code__button">Next Level</button>
     </div>
   );

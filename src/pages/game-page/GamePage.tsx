@@ -11,12 +11,12 @@ import './GamePage.scss';
 
 interface level {
     levelName: string,
-    instructions: string,
+    instructions: Function,
     beforeCode: string,
     afterCode: string,
     linesOfCode: number,
     startHighlightCode: number,
-    articleContent: string
+    articleContent: Function
 }
 
 interface chapter {

@@ -67,9 +67,28 @@
   }
 
   &__keyword {
+    position: relative;
     font-family: 'Source Code Pro', monospace;
     font-size: 16px;
     font-weight: 400;
     background: $color-grey-400;
+  }
+
+  &__popup {
+    position: absolute;
+    width: max-content;
+    left: 0;
+    padding: 15px;
+    border: 1px solid $color-black;
+    background-color: $color-grey-400;
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    font-weight: 400;
+    &--hide {
+      visibility: hidden;
+    }
+    &--show {
+      visibility: visible;
+    }
   }
 }

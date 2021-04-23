@@ -30,6 +30,7 @@
     &:hover {
       > .code__css {
         color: $color-green-600;
+        font-weight: 700;
       }
       > .code__textarea {
         background-color: white;
@@ -42,11 +43,11 @@
     color: $color-black;
     font-family: 'Source Code Pro', monospace;
     font-size: 16px;
-    font-weight: 700;
+    // font-weight: 700;
     line-height: 25px;
 
     &--complementary {
-      color: $color-grey-500;
+      // color: $color-grey-500;
     }
   }
 

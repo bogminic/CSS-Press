@@ -8,11 +8,12 @@ interface CodeProps {
   selector: string,
   linesOfCode: number,
   startHighlightCode: number,
-  setHoverSelector: Function
+  setHoverSelector: Function,
+  setAnswer: Function
 }
 
 function Code(props: CodeProps) {
-  const { selector, linesOfCode, startHighlightCode, setHoverSelector, afterCode, beforeCode } = props;
+  const { selector, linesOfCode, startHighlightCode, setHoverSelector, setAnswer, afterCode, beforeCode } = props;
 
   const codeLinesSide: JSX.Element[] = [];
 
@@ -30,8 +31,12 @@ function Code(props: CodeProps) {
     setHoverSelector(selector);
   }
 
-  const camelCaseToDash = (string:string) => {
-    return string.replace( /([a-z])([A-Z])/g, '$1-$2' ).toLowerCase();
+  const onAnswerChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setAnswer(event.target.value);
+  }
+
+  const camelCaseToDash = (string: string) => {
+    return string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
   }
 
   const complementaryCSS = (css: { [key: string]: { [key: string]: string } }) => (
@@ -45,8 +50,8 @@ function Code(props: CodeProps) {
             onMouseLeave={() => onHoverSelector('')}
           >
             .{selector} {'{'} <br />
-            {Object.keys(css[selector]).map((property, i) => (
-              <div key={i + selector + property} className="code__property">
+            {Object.keys(css[selector]).map((property, index) => (
+              <div key={i + index + selector + property} className="code__property">
                 {camelCaseToDash(property)}: {css[selector][property]};
               </div>
             ))}
@@ -68,7 +73,11 @@ function Code(props: CodeProps) {
           onMouseEnter={() => onHoverSelector(selector)}
           onMouseLeave={() => onHoverSelector('')}>
           <div className="code__css">.{selector}</div>
-          <textarea className="code__textarea" style={{ height: calculatedCodeHeight + 'px' }} ></textarea>
+          <textarea
+            className="code__textarea"
+            style={{ height: calculatedCodeHeight + 'px' }}
+            onChange={onAnswerChange}
+          ></textarea>
           <div className="code__css">{'}'}</div>
         </div>
         {complementaryCSS(afterCode)}
@@ -80,3 +89,5 @@ function Code(props: CodeProps) {
 }
 
 export default Code;
+
+

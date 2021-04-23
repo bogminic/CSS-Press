@@ -27,16 +27,16 @@
     > div {
       column-count: 2;
       column-gap: 10px;
+    }
 
-      > p {
-        margin: 0;
-        text-indent: 15px;
-        text-align: justify;
-        font-family: 'Crimson Text', serif;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 25px;
-      }
+    p {
+      margin: 0;
+      text-indent: 15px;
+      text-align: justify;
+      font-family: 'Crimson Text', serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
     }
     
   }

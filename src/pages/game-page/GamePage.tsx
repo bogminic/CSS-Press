@@ -5,7 +5,7 @@ import styleToCss from 'style-object-to-css-string';
 import Instructions from '../../components/instructions/Instructions';
 import Code from '../../components/code/Code';
 import Article from '../../components/article/Article';
-import { chapters } from '../../const/chapters';
+import { chapters } from '../../const/levels';
 
 import './GamePage.scss';
 

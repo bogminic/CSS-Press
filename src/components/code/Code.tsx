@@ -1,5 +1,5 @@
 import './Code.scss';
-import { maxNoOfCodeLinesSide } from '../../const/chapters';
+import { maxNoOfCodeLinesSide } from '../../const/levels';
 import React from 'react';
 
 interface CodeProps {

@@ -12,4 +12,9 @@ main {
     grid-column-gap: 15px;
     grid-template-rows: calc(50% - 15px) calc(50% - 15px);
     grid-row-gap: 15px;
+
+    @media only screen and (min-width: 1600px) {
+        grid-template-columns: 728px 728px;
+        justify-content: center;
+    }
 }

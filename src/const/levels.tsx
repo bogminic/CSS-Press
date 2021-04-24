@@ -46,7 +46,7 @@ export const chapters: chapter[] = [
                 },
                 first: {
                     position: 'relative',
-                    fontFamity: 'Arial'
+                    fontFamily: 'Arial'
                 }
             },
             linesOfCode: 1,

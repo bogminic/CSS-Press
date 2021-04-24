@@ -33,8 +33,8 @@ function GamePage() {
     const [hoverSelector, setHoverSelector] = useState('');
     const [answer, setAnswer] = useState('');
 
-    const beforeCode = Object.keys(currentLevel.beforeCode).map(key => `.${key} { ${styleToCss(currentLevel.beforeCode[key])} }`).join(' ');
-    const afterCode = Object.keys(currentLevel.afterCode).map(key => `.${key} { ${styleToCss(currentLevel.afterCode[key])} }`).join(' ');
+    const beforeCode = Object.keys(currentLevel.beforeCode).map(key => `.article__body .${key} { ${styleToCss(currentLevel.beforeCode[key])} }`).join(' ');
+    const afterCode = Object.keys(currentLevel.afterCode).map(key => `.article__body .${key} { ${styleToCss(currentLevel.afterCode[key])} }`).join(' ');
     const complementaryCSS = `${beforeCode} ${afterCode}`;
     const error = currentLevel.error;
 

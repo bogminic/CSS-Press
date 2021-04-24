@@ -14,7 +14,7 @@ export const chapters: chapter[] = [
             error: 'font-family: Arial;',
             afterCode: {},
             linesOfCode: 1,
-            startHighlightCode: 2,
+            startHighlightLineNumber: 2,
             articleContent: (selector: string, answer: string, complementaryCSS: string, error: string) => (
                 <React.Fragment>
                     <Style>
@@ -50,7 +50,7 @@ export const chapters: chapter[] = [
                 }
             },
             linesOfCode: 1,
-            startHighlightCode: 2,
+            startHighlightLineNumber: 5,
             articleContent: (selector: string, answer: string, complementaryCSS: string, error: string) => (
                 <React.Fragment>
                     <Style>

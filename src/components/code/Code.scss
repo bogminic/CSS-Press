@@ -4,13 +4,9 @@
   position: relative;
   background: $color-blue-300;
   border: 1px solid $color-black;
-  padding: 22px 16px 22px 47px;
+  display: flex;
 
   &__numbers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
     text-align: right;
     padding: 22px 5px;
     background-color: $color-green-600;
@@ -24,6 +20,11 @@
     &--highlight {
       color: $color-white;
     }
+  }
+
+  &__body {
+    padding: 22px 16px 22px 16px;
+    flex-grow: 1;
   }
 
   &__focus {
@@ -43,12 +44,8 @@
     color: $color-black;
     font-family: 'Source Code Pro', monospace;
     font-size: 16px;
-    // font-weight: 700;
     line-height: 25px;
 
-    &--complementary {
-      // color: $color-grey-500;
-    }
   }
 
   &__textarea {

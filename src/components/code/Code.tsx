@@ -7,21 +7,21 @@ interface CodeProps {
   afterCode: {},
   selector: string,
   linesOfCode: number,
-  startHighlightCode: number,
+  startHighlightLineNumber: number,
   setHoverSelector: Function,
   setAnswer: Function
 }
 
 function Code(props: CodeProps) {
-  const { selector, linesOfCode, startHighlightCode, setHoverSelector, setAnswer, afterCode, beforeCode } = props;
+  const { selector, linesOfCode, startHighlightLineNumber, setHoverSelector, setAnswer, afterCode, beforeCode } = props;
 
   const codeLinesSide: JSX.Element[] = [];
 
-  const highlightedRows: number[] = [startHighlightCode, startHighlightCode + linesOfCode];
+  const endHighlightLineNumber = startHighlightLineNumber + linesOfCode;
 
   for (let i = 1; i <= maxNoOfCodeLinesSide; i++) {
     codeLinesSide.push(
-      <div key={i} className={(i >= highlightedRows[0] && i < highlightedRows[1] ? 'code__numbers--highlight' : '')}>{i}</div>
+      <div className={(i >= startHighlightLineNumber && i < endHighlightLineNumber ? 'code__numbers--highlight' : '')}>{i}</div>
     )
   }
 
@@ -45,7 +45,7 @@ function Code(props: CodeProps) {
         <div className="code__focus">
           <div
             key={i + selector}
-            className="code__css code__css--complementary"
+            className="code__css"
             onMouseEnter={() => onHoverSelector(selector)}
             onMouseLeave={() => onHoverSelector('')}
           >
@@ -66,7 +66,7 @@ function Code(props: CodeProps) {
       <div className="code__numbers">
         {codeLinesSide}
       </div>
-      <div>
+      <div className="code__body">
         {complementaryCSS(beforeCode)}
         <div
           className="code__focus"

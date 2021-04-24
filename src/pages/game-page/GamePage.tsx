@@ -17,7 +17,7 @@ export interface level {
     error: string,
     afterCode: {},
     linesOfCode: number,
-    startHighlightCode: number,
+    startHighlightLineNumber: number,
     articleContent: Function
 }
 
@@ -52,7 +52,7 @@ function GamePage() {
                 afterCode={currentLevel.afterCode}
                 selector={currentLevel.selector}
                 linesOfCode={currentLevel.linesOfCode}
-                startHighlightCode={currentLevel.startHighlightCode} />
+                startHighlightLineNumber={currentLevel.startHighlightLineNumber} />
             <Article
                 hoverSelector={hoverSelector}
                 articleContent={currentLevel.articleContent}

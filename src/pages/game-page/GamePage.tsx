@@ -1,27 +1,27 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
-import Instructions from "../../components/instructions/Instructions";
-import Code from "../../components/code/Code";
-import Article from "../../components/article/Article";
+import Instructions from '../../components/instructions/Instructions';
+import Code from '../../components/code/Code';
+import Article from '../../components/article/Article';
 
-import { chapters } from "../../const/chapters";
+import { chapters } from '../../const/chapters';
 
-import "./GamePage.scss";
+import './GamePage.scss';
 
 interface level {
-  levelName: string;
-  instructions: string;
-  beforeCode: string;
-  afterCode: string;
-  linesOfCode: number;
-  startHighlightCode: number;
-  articleContent: string;
+  levelName: string,
+  instructions: string,
+  beforeCode: string,
+  afterCode: string,
+  linesOfCode: number,
+  startHighlightCode: number,
+  articleContent: string
 }
 
 interface chapter {
-  chapterName: string;
-  levels: level[];
+  chapterName: string,
+  levels: level[]
 }
 
 function GamePage() {

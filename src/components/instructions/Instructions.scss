@@ -66,10 +66,11 @@
     line-height: 28px;
   }
 
-  &__keyword {
+  code {
     font-family: 'Source Code Pro', monospace;
     font-size: 16px;
     font-weight: 400;
     background: $color-grey-400;
+    cursor: pointer;
   }
 }

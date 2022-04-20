@@ -3,7 +3,7 @@ export const chapters = [
         chapterName: 'Text',
         levels: [{
             levelName: 'font-family',
-            instructions: 'There is a paragraph of this article that seems to be from another story. You can fix it using&nbsp;<code class="instructions__keyword">font-family</code> property.<br/> <br/>Please note that font-family specifies the font and its fallbacks, separated by commas.',
+            instructions: 'There is a paragraph of this article that seems to be from another story. You can fix it using&nbsp;<code>font-family</code> property.<br/> <br/>Please note that font-family specifies the font and its fallbacks, separated by commas.',
             beforeCode: '.misprint {',
             afterCode: '}',
             linesOfCode: 1,
@@ -19,7 +19,7 @@ export const chapters = [
                             '</div>'
         }, {
             levelName: 'font-size',
-            instructions: 'Let\'s help the tiny paragraph from there to grow up! <code class="instructions__keyword">Font-size</code> should be the magic potion you need.',
+            instructions: 'Let\'s help the tiny paragraph from there to grow up! <code>Font-size</code> should be the magic potion you need.',
             beforeCode: '.misprint {',
             afterCode: '}',
             linesOfCode: 1,

@@ -59,20 +59,22 @@
   &__button {
     position: absolute;
     right: 16px;
-    bottom: 16px;
-    width: 144px;
-    height: 40px;
-    background-color: $color-orange-400;
-    color: $color-black;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 900;
-    border: 1px solid $color-black;
-    box-shadow: -3px -3px $color-black;
-    cursor: pointer;
+  }
+}
 
-    &:hover {
-      filter: brightness(80%);
-    }
+.button {
+  width: 144px;
+  height: 40px;
+  background-color: $color-orange-400;
+  color: $color-black;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 900;
+  border: 1px solid $color-black;
+  box-shadow: -3px -3px $color-black;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
   }
 }

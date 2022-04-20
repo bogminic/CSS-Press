@@ -1,0 +1,25 @@
+@import "./../../../styles/variables";
+@import './../game-page/GamePage.scss';
+
+.not-found {
+  @extend main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &--title {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  &--content {
+    font-family: "Crimson Text", serif;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}

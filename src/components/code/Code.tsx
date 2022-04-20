@@ -34,7 +34,7 @@ function Code(props: CodeProps) {
           <textarea className="code__textarea" style={{height: calculatedCodeHeight +'px'}} ></textarea>
           <div className="code__after" dangerouslySetInnerHTML={{__html: afterCode}}></div>
         </div>
-        <button className="code__button">Next Level</button>
+        <button className="code__button button">Next Level</button>
       </div>
     );
   }

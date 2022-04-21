@@ -39,35 +39,35 @@
 
   &__chapter {
     text-transform: uppercase;
-    font-family: "Playfair Display", serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 900;
   }
 
   &__separator {
     padding: 0 10px;
-    font-family: "Playfair Display", serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 400;
   }
 
   &__level {
     text-transform: lowercase;
-    font-family: "Playfair Display", serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 900;
   }
 
   &__content {
     padding: 13px 10px;
-    font-family: "Crimson Text", serif;
+    font-family: $font-Crimson;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
   }
 
   code {
-    font-family: "Source Code Pro", monospace;
+    font-family: $font-Source;
     font-size: 16px;
     font-weight: 400;
     background: $color-grey-400;
@@ -92,7 +92,7 @@
     border: 1px solid $color-black;
     z-index: 10;
     display: none;
-    font: normal normal normal 16px/25px "Crimson Text", serif;
+    font: normal normal normal 16px/25px $font-Crimson;
     white-space: pre-line;
 
     &::before {
@@ -123,7 +123,7 @@
   }
 
   code {
-    font-family: "Source Code Pro", monospace;
+    font-family: $font-Source;
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;

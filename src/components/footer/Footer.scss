@@ -1,43 +1,43 @@
-@import './../../../styles/variables';
+@import "./../../../styles/variables";
 
 .footer {
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-    border-top: 2px solid $color-grey-500;
-    padding: 6px 15px;
-    background: $color-grey-300;
-    
-    &__copyright {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        line-height: 50%;
-        font-family: 'Crimson Text', serif;
-        font-size: 14px;
-        font-weight: 700;
-        color: $color-black;
-    }
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  border-top: 2px solid $color-grey-500;
+  padding: 6px 15px;
+  background: $color-grey-300;
 
-    &__social {
-        &--twitter {
-            height: 13px;
-            width: 13px;
-            margin-right: 20px;
-            fill: $color-orange-400;
-            cursor: pointer;
-            &:hover {
-                fill: $color-black;
-            }
-        }
-        &--facebook {
-            height: 13px;
-            width: 13px;
-            fill: $color-orange-400;
-            cursor: pointer;
-            &:hover {
-                fill: $color-black;
-            }
-        }
+  &__copyright {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 50%;
+    font-family: $font-Crimson;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-black;
+  }
+
+  &__social {
+    &--twitter {
+      height: 13px;
+      width: 13px;
+      margin-right: 20px;
+      fill: $color-orange-400;
+      cursor: pointer;
+      &:hover {
+        fill: $color-black;
+      }
     }
+    &--facebook {
+      height: 13px;
+      width: 13px;
+      fill: $color-orange-400;
+      cursor: pointer;
+      &:hover {
+        fill: $color-black;
+      }
+    }
+  }
 }

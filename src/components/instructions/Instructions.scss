@@ -1,4 +1,4 @@
-@import './../../../styles/variables';
+@import "./../../../styles/variables";
 
 .instructions {
   background: $color-grey-300;
@@ -39,37 +39,110 @@
 
   &__chapter {
     text-transform: uppercase;
-    font-family: 'Playfair Display', serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 900;
   }
 
   &__separator {
     padding: 0 10px;
-    font-family: 'Playfair Display', serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 400;
   }
 
   &__level {
     text-transform: lowercase;
-    font-family: 'Playfair Display', serif;
+    font-family: $font-Playfair;
     font-size: 20px;
     font-weight: 900;
   }
 
   &__content {
     padding: 13px 10px;
-    font-family: 'Crimson Text', serif;
+    font-family: $font-Crimson;
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
   }
 
-  &__keyword {
-    font-family: 'Source Code Pro', monospace;
+  code {
+    font-family: $font-Source;
     font-size: 16px;
     font-weight: 400;
     background: $color-grey-400;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+  }
+}
+
+.tooltip {
+  position: relative;
+  border-bottom: 1px dashed $color-black;
+  &__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 12px;
+    width: 350px;
+    padding: 10px;
+    background: $color-grey-400;
+    color: $color-black;
+    border: 1px solid $color-black;
+    z-index: 10;
+    display: none;
+    font: normal normal normal 16px/25px $font-Crimson;
+    white-space: pre-line;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: -6px;
+      left: 20px;
+      transform: rotate(45deg);
+      background: $color-grey-400;
+      border: 1px solid $color-black;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 12px;
+      top: 0;
+      left: 15px;
+      background: $color-grey-400;
+    }
+  }
+
+  &:hover .tooltip__content {
+    display: block;
+  }
+
+  code {
+    font-family: $font-Source;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+    background: $color-grey-400;
+    cursor: pointer;
+    display: inline-block;
+    background: $color-orange-300;
+    border: 0;
+
+    &:first-of-type {
+      margin-top: 5px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+  }
+
+  p {
+    margin: 0;
   }
 }

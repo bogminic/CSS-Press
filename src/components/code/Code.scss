@@ -1,4 +1,4 @@
-@import './../../../styles/variables';
+@import "./../../../styles/variables";
 
 .code {
   position: relative;
@@ -15,7 +15,7 @@
     padding: 22px 5px;
     background-color: $color-green-600;
     color: $color-black;
-    font-family: 'Source Code Pro', monospace;
+    font-family: $font-Source;
     font-weight: 700;
     font-size: 16px;
     line-height: 25px;
@@ -28,7 +28,8 @@
 
   &__focus {
     &:hover {
-      > .code__after, >.code__before {
+      > .code__after,
+      > .code__before {
         color: $color-green-600;
       }
       > .code__textarea {
@@ -37,10 +38,11 @@
     }
   }
 
-  &__before, &__after {
+  &__before,
+  &__after {
     margin: 0;
     color: $color-black;
-    font-family: 'Source Code Pro', monospace;
+    font-family: $font-Source;
     font-size: 16px;
     font-weight: 700;
     line-height: 25px;
@@ -49,7 +51,7 @@
   &__textarea {
     width: 100%;
     padding: 2px 13px;
-    font-family: 'Source Code Pro', monospace;
+    font-family: $font-Source;
     font-size: 16px;
     font-weight: 700;
     background-color: $color-white;
@@ -67,7 +69,7 @@
   height: 40px;
   background-color: $color-orange-400;
   color: $color-black;
-  font-family: 'Playfair Display', serif;
+  font-family: $font-Playfair;
   font-size: 16px;
   font-weight: 900;
   border: 1px solid $color-black;

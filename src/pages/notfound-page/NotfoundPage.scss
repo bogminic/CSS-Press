@@ -1,5 +1,5 @@
 @import "./../../../styles/variables";
-@import './../game-page/GamePage.scss';
+@import "./../game-page/GamePage.scss";
 
 .not-found {
   @extend main;
@@ -9,14 +9,14 @@
   flex-direction: column;
 
   &--title {
-    font-family: "Playfair Display", serif;
+    font-family: $font-Playfair;
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 40px;
   }
 
   &--content {
-    font-family: "Crimson Text", serif;
+    font-family: $font-Crimson;
     font-size: 25px;
     margin-top: 0;
     margin-bottom: 40px;

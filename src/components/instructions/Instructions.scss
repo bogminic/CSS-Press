@@ -79,7 +79,7 @@
 
 .tooltip {
   position: relative;
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed $color-black;
   &__content {
     position: absolute;
     top: 100%;

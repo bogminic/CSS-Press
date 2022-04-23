@@ -1,40 +1,52 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { Navigate, useParams } from "react-router-dom";
 
-import Instructions from '../../components/instructions/Instructions';
-import Code from '../../components/code/Code';
-import Article from '../../components/article/Article';
+import Instructions from "../../components/instructions/Instructions";
+import Code from "../../components/code/Code";
+import Article from "../../components/article/Article";
 
-import { chapters } from '../../const/chapters';
+import { chapters } from "../../const/chapters";
 
-import './GamePage.scss';
+import "./GamePage.scss";
+import { isNumeric } from "../../utils/helpers";
+import { Level, Chapter } from "../../models/Game";
 
-interface level {
-  levelName: string,
-  instructions: string,
-  beforeCode: string,
-  afterCode: string,
-  linesOfCode: number,
-  startHighlightCode: number,
-  articleContent: string
+function getGameInfo(
+  chapterId: string | undefined,
+  levelId: string | undefined
+): { currentChapter: Chapter | null; currentLevel: Level | null } {
+  if (
+    !chapterId ||
+    chapterId === "0" ||
+    levelId === "0" ||
+    !levelId ||
+    !isNumeric(chapterId) ||
+    !isNumeric(chapterId)
+  ) {
+    return { currentChapter: null, currentLevel: null };
+  }
+
+  const currentChapter: Chapter = chapters[parseInt(chapterId) - 1];
+  if (!currentChapter) {
+    return { currentChapter: null, currentLevel: null };
+  }
+
+  const currentLevel: Level = currentChapter.levels[parseInt(levelId) - 1];
+  if (!currentLevel) {
+    return { currentChapter: null, currentLevel: null };
+  }
+
+  return { currentChapter, currentLevel };
 }
 
-interface chapter {
-  chapterName: string,
-  levels: level[]
-}
 
 function GamePage() {
-  const { chapterId, levelId } = useParams<{
-    chapterId: string;
-    levelId: string;
-  }>();
+  const { chapterId, levelId } = useParams();
+  const { currentChapter, currentLevel } = getGameInfo(chapterId, levelId);
 
-  if (!chapterId || !levelId) {
-    return <div>Not found</div>;
+  if (currentChapter === null || currentLevel === null) {
+    return <Navigate replace to="/not-found" />;
   }
-  const currentChapter: chapter = chapters[parseInt(chapterId) - 1];
-  const currentLevel: level = currentChapter.levels[parseInt(levelId) - 1];
 
   return (
     <main className="game">

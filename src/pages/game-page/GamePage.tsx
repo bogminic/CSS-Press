@@ -21,7 +21,7 @@ function getGameInfo(
     levelId === "0" ||
     !levelId ||
     !isNumeric(chapterId) ||
-    !isNumeric(chapterId)
+    !isNumeric(levelId)
   ) {
     return { currentChapter: null, currentLevel: null };
   }

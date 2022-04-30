@@ -84,6 +84,7 @@ function GamePage() {
 
   const [answer, setAnswer] = useState("");
   const [selector, setSelector] = useState("");
+  const [isArticleSliding, setIsArticleSliding] = useState(false);
 
   if (currentChapter === null || currentLevel === null) {
     return <Navigate replace to="/not-found" />;
@@ -101,6 +102,7 @@ function GamePage() {
     error,
     solution,
   } = currentLevel;
+
 
   return (
     <main className="game">
@@ -120,12 +122,15 @@ function GamePage() {
         solution={solution}
         nextChapterId={nextChapterId}
         nextLevelId={nextLevelId}
+        setIsArticleSliding={setIsArticleSliding}
+        isArticleSliding={isArticleSliding}
       />
       <Article
         articleContent={articleContent}
         answer={answer}
         error={error}
         selector={selector}
+        isArticleSliding={isArticleSliding}
       />
     </main>
   );

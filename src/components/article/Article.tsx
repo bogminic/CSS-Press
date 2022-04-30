@@ -10,6 +10,7 @@ interface ArticleProps {
   answer: string;
   error: string;
   selector: string;
+  isArticleSliding: boolean;
 }
 
 const options: HTMLReactParserOptions = {
@@ -38,7 +39,7 @@ function createArticleContent(articleContent: string) {
 }
 
 function Article(props: ArticleProps) {
-  const { articleContent, answer, error, selector } = props;
+  const { articleContent, answer, error, selector, isArticleSliding } = props;
   const content = createArticleContent(articleContent);
   const highlighted =
     selector === "misprint" ? "background-color: #ffca9b" : "";
@@ -47,7 +48,13 @@ function Article(props: ArticleProps) {
       <Style>
         {` .article__body .misprint { ${error}} .article__body .misprint { ${answer} ${highlighted}}`}
       </Style>
-      <div className="article">
+      <div
+        className={
+          isArticleSliding
+            ? "article animate__animated animate__slideOutRight animate__fast"
+            : "article"
+        }
+      >
         <div className="dummy">
           <div className="dummy__content"></div>
           <div className="dummy__img"></div>

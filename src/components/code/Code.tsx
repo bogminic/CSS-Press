@@ -15,6 +15,8 @@ interface CodeProps {
   solution: string;
   nextChapterId: number | null;
   nextLevelId: number | null;
+  isArticleSliding: boolean;
+  setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
 }
 
 function Code(props: CodeProps) {
@@ -29,6 +31,8 @@ function Code(props: CodeProps) {
     solution,
     nextChapterId,
     nextLevelId,
+    isArticleSliding,
+    setIsArticleSliding,
   } = props;
 
   let navigate = useNavigate();
@@ -36,12 +40,19 @@ function Code(props: CodeProps) {
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
   const [isCodeShaking, setIsCodeShaking] = useState(false);
 
-  const timeoutRef = useRef<number | null>(null);
+  const shakeTimeoutRef = useRef<number | null>(null);
   useEffect(() => {
     if (isCodeShaking === false) {
-      window.clearTimeout(timeoutRef.current || 0);
+      window.clearTimeout(shakeTimeoutRef.current || 0);
     }
   }, [isCodeShaking]);
+
+  const slideTimeoutRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (isArticleSliding === false) {
+      window.clearTimeout(slideTimeoutRef.current || 0);
+    }
+  }, [isArticleSliding]);
 
   const codeLinesSide: JSX.Element[] = getCodeLinesSide(
     startHighlightCode,
@@ -75,36 +86,45 @@ function Code(props: CodeProps) {
     setSelector("");
   };
 
-  const handleCheckAnswer = () => {
+  const checkAnswer = () => {
     if (solution === answer && nextChapterId && nextLevelId) {
+      goToNextLevelAndSlideOutArticle()
+    } else {
+      shakeCodeBox();
+    }
+  };
+
+  const shakeCodeBox = () => {
+    setIsCodeShaking(true);
+    shakeTimeoutRef.current = window.setTimeout(() => setIsCodeShaking(false), 800);
+  };
+
+  const goToNextLevelAndSlideOutArticle = () => {
+    setIsArticleSliding(true);
+    slideTimeoutRef.current = window.setTimeout(() => {
+      setAnswer("");
+      setIsCorrectAnswer(false);
+      setIsArticleSliding(false);
       navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`, {
         replace: true,
       });
-    }
+    }, 800);
   };
 
   const handleKeyPressCheckAnswer = (
     event: React.KeyboardEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     if (event.key === "Enter") {
-      if (solution === answer && nextChapterId && nextLevelId) {
-        navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`, {
-          replace: true,
-        });
-      } else {
-        setIsCodeShaking(true);
-        timeoutRef.current = window.setTimeout(
-          () => setIsCodeShaking(false),
-          1000
-        );
-      }
+      checkAnswer();
     }
   };
 
   return (
     <div
       className={
-        isCodeShaking ? "code animate__animated animate__shakeX" : "code"
+        isCodeShaking
+          ? "code animate__animated animate__shakeX animate__faster"
+          : "code"
       }
     >
       <div className="code__numbers">{codeLinesSide}</div>
@@ -142,16 +162,16 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></div>
       </div>
-      <button
+      {nextChapterId && <button
         className={
           isCorrectAnswer
-            ? "code__button button animate__animated animate__pulse animate__infinite animate__slow"
+            ? "code__button button animate__animated animate__pulse animate__infinite"
             : "code__button button"
         }
-        onClick={handleCheckAnswer}
+        onClick={checkAnswer}
       >
         Next Level
-      </button>
+      </button>}
     </div>
   );
 }

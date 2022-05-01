@@ -42,11 +42,11 @@ function Article(props: ArticleProps) {
   const { articleContent, answer, error, selector, isArticleSliding } = props;
   const content = createArticleContent(articleContent);
   const highlighted =
-    selector === "misprint" ? "background-color: #ffca9b" : "";
+    selector === "misprint" ? "background-color: #ffca9b;" : "";
   return (
     <>
       <Style>
-        {` .article__body .misprint { ${error}} .article__body .misprint { ${answer} ${highlighted}}`}
+        {` .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer} }`}
       </Style>
       <div
         className={

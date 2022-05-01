@@ -2,7 +2,10 @@ import "./Code.scss";
 import { maxNoOfCodeLinesSide } from "../../const/chapters";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCodeLinesSide } from "../../utils/helpers";
+import {
+  checkSolution as isSolutionCorrect,
+  getCodeLinesSide,
+} from "../../utils/helpers";
 
 interface CodeProps {
   beforeCode: string;
@@ -87,8 +90,8 @@ function Code(props: CodeProps) {
   };
 
   const checkAnswer = () => {
-    if (solution === answer && nextChapterId && nextLevelId) {
-      goToNextLevelAndSlideOutArticle()
+    if (isSolutionCorrect(solution, answer) && nextChapterId && nextLevelId) {
+      goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();
     }
@@ -96,7 +99,10 @@ function Code(props: CodeProps) {
 
   const shakeCodeBox = () => {
     setIsCodeShaking(true);
-    shakeTimeoutRef.current = window.setTimeout(() => setIsCodeShaking(false), 800);
+    shakeTimeoutRef.current = window.setTimeout(
+      () => setIsCodeShaking(false),
+      800
+    );
   };
 
   const goToNextLevelAndSlideOutArticle = () => {
@@ -116,6 +122,10 @@ function Code(props: CodeProps) {
   ) => {
     if (event.key === "Enter") {
       checkAnswer();
+      const noLinesInTextarea = answer.split(/\r|\r\n|\n/).length;
+      if (noLinesInTextarea >= linesOfCode) {
+        event.preventDefault();
+      }
     }
   };
 
@@ -162,16 +172,18 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></div>
       </div>
-      {nextChapterId && <button
-        className={
-          isCorrectAnswer
-            ? "code__button button animate__animated animate__pulse animate__infinite"
-            : "code__button button"
-        }
-        onClick={checkAnswer}
-      >
-        Next Level
-      </button>}
+      {nextChapterId && (
+        <button
+          className={
+            isCorrectAnswer
+              ? "code__button button animate__animated animate__pulse animate__infinite"
+              : "code__button button"
+          }
+          onClick={checkAnswer}
+        >
+          Next Level
+        </button>
+      )}
     </div>
   );
 }

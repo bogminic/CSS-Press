@@ -40,8 +40,9 @@ function Code(props: CodeProps) {
 
   let navigate = useNavigate();
 
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
+  const [isHeartBeating, setIsHeartBeating] = useState(false);
   const [isCodeShaking, setIsCodeShaking] = useState(false);
+  const [isWrongAnswer, setIsWrongAnswer] = useState(false);
 
   const shakeTimeoutRef = useRef<number | null>(null);
   useEffect(() => {
@@ -71,13 +72,18 @@ function Code(props: CodeProps) {
       | React.ChangeEvent<HTMLInputElement>
   ) => {
     setAnswer(e.target.value);
+
+    if (isWrongAnswer) {
+      setIsWrongAnswer(false);
+    }
+
     if (solution === e.target.value) {
-      setIsCorrectAnswer(true);
+      setIsHeartBeating(true);
       return;
     }
 
-    if (isCorrectAnswer === true) {
-      setIsCorrectAnswer(false);
+    if (isHeartBeating === true) {
+      setIsHeartBeating(false);
     }
   };
 
@@ -94,6 +100,7 @@ function Code(props: CodeProps) {
       goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();
+      setIsWrongAnswer(true);
     }
   };
 
@@ -109,11 +116,9 @@ function Code(props: CodeProps) {
     setIsArticleSliding(true);
     slideTimeoutRef.current = window.setTimeout(() => {
       setAnswer("");
-      setIsCorrectAnswer(false);
+      setIsHeartBeating(false);
       setIsArticleSliding(false);
-      navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`, {
-        replace: true,
-      });
+      navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`);
     }, 800);
   };
 
@@ -149,7 +154,9 @@ function Code(props: CodeProps) {
         ></div>
         {linesOfCode === 1 && (
           <input
-            className="code__input"
+            className={
+              isWrongAnswer ? "code__input code__input--error" : "code__input"
+            }
             type="text"
             style={{ height: calculatedCodeHeight + "px" }}
             value={answer}
@@ -159,7 +166,11 @@ function Code(props: CodeProps) {
         )}
         {linesOfCode > 1 && (
           <textarea
-            className="code__textarea"
+            className={
+              isWrongAnswer
+                ? "code__textarea code__textarea--error"
+                : "code__textarea"
+            }
             style={{ height: calculatedCodeHeight + "px" }}
             value={answer}
             rows={linesOfCode}
@@ -175,7 +186,7 @@ function Code(props: CodeProps) {
       {nextChapterId && (
         <button
           className={
-            isCorrectAnswer
+            isHeartBeating
               ? "code__button button animate__animated animate__pulse animate__infinite"
               : "code__button button"
           }

@@ -27,6 +27,7 @@
   }
 
   &__focus {
+    padding-right: 15px;
     &:hover {
       > .code__after,
       > .code__before {
@@ -61,9 +62,18 @@
     resize: none;
     white-space: nowrap;
     overflow: hidden;
+
     &:focus-visible {
       outline-color: $color-green-600;
     }
+
+    &--error {
+      &:focus-visible {
+        outline-color: $color-red-400;
+      }
+    }
+
+
   }
 
   &__input {
@@ -78,6 +88,12 @@
     border: 1px solid $color-black;
     &:focus-visible {
       outline-color: $color-green-600;
+    }
+
+    &--error {
+      &:focus-visible {
+        outline-color: $color-red-400;
+      }
     }
   }
 

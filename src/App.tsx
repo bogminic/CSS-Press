@@ -28,12 +28,20 @@ function App() {
             path="/chapter/:chapterId/level/:levelId"
             element={
               <>
-                <Menu /> 
+                <Menu />
                 <GamePage />
               </>
             }
           />
-          <Route path="/not-found" element={<NotfoundPage />} />
+          <Route
+            path="/not-found"
+            element={
+              <>
+                <Menu />
+                <NotfoundPage />
+              </>
+            }
+          />
           <Route path="*" element={<Navigate replace to="/not-found" />} />
         </Routes>
       </div>

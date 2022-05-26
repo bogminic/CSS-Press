@@ -1,0 +1,20 @@
+.dashboard {
+  height: calc(100vh - 90px);
+  grid-column: 1 / -1;
+  overflow: hidden;
+
+  &__wrapper {
+    width: 1470px;
+    margin: 0 auto;
+    padding-top: 20px;
+    @media only screen and (max-width: 1536px) {
+      width: 980px;
+    }
+  }
+
+  &__content {
+    overflow-y: auto;
+    height: calc(100vh - 90px);
+  }
+}
+

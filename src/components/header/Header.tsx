@@ -1,9 +1,12 @@
-import './Header.scss';
+import { Link } from "react-router-dom";
+import "./Header.scss";
 
 function Header() {
   return (
     <header className="header">
-      <div className="header__name">CSS Press</div>
+      <Link to="/">
+        <div className="header__name">CSS Press</div>
+      </Link>
       <div className="header__lines">
         <div className="header__lines--25"></div>
         <div className="header__lines--50"></div>

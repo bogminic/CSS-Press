@@ -1,4 +1,4 @@
-export interface Level {
+export interface ILevel {
   levelName: string;
   instructions: string;
   beforeCode: string;
@@ -10,7 +10,7 @@ export interface Level {
   solution: string;
 }
 
-export interface Chapter {
+export interface IChapter {
   chapterName: string;
-  levels: Level[];
+  levels: ILevel[];
 }

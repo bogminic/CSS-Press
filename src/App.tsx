@@ -13,6 +13,7 @@ import NotfoundPage from "./pages/notfound-page/NotfoundPage";
 
 import "./App.scss";
 import Menu from "./components/menu/Menu";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Navigate to="/chapter/1/level/1" />}
+            element={<Dashboard />}
           ></Route>
           <Route
             path="/chapter/:chapterId/level/:levelId"

@@ -9,14 +9,14 @@ import { chapters } from "../../const/chapters";
 
 import "./GamePage.scss";
 import { isNumeric } from "../../utils/helpers";
-import { Level, Chapter } from "../../models/Game";
+import { ILevel, IChapter } from "../../models/Game";
 
 function getGameInfo(
   chapterId: string | undefined,
   levelId: string | undefined
 ): {
-  currentChapter: Chapter | null;
-  currentLevel: Level | null;
+  currentChapter: IChapter | null;
+  currentLevel: ILevel | null;
   nextChapterId: number | null;
   nextLevelId: number | null;
 } {
@@ -36,7 +36,7 @@ function getGameInfo(
     };
   }
   const currentChapterIndex = parseInt(chapterId) - 1;
-  const currentChapter: Chapter = chapters[currentChapterIndex];
+  const currentChapter: IChapter = chapters[currentChapterIndex];
   if (!currentChapter) {
     return {
       currentChapter: null,
@@ -46,7 +46,7 @@ function getGameInfo(
     };
   }
   const currentLevelIndex = parseInt(levelId) - 1;
-  const currentLevel: Level = currentChapter.levels[currentLevelIndex];
+  const currentLevel: ILevel = currentChapter.levels[currentLevelIndex];
   if (!currentLevel) {
     return {
       currentChapter: null,

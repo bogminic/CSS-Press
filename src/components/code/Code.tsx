@@ -2,10 +2,8 @@ import "./Code.scss";
 import { maxNoOfCodeLinesSide } from "../../const/chapters";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  checkSolution as isSolutionCorrect,
-  getCodeLinesSide,
-} from "../../utils/helpers";
+import { isSolutionCorrect, getCodeLinesSide } from "../../utils/helpers";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface CodeProps {
   beforeCode: string;
@@ -16,6 +14,8 @@ interface CodeProps {
   setSelector: Dispatch<SetStateAction<string>>;
   answer: string;
   solution: string;
+  chapterId: string | null;
+  levelId: string | null;
   nextChapterId: number | null;
   nextLevelId: number | null;
   isArticleSliding: boolean;
@@ -32,6 +32,8 @@ function Code(props: CodeProps) {
     setAnswer,
     setSelector,
     solution,
+    chapterId,
+    levelId,
     nextChapterId,
     nextLevelId,
     isArticleSliding,
@@ -43,6 +45,11 @@ function Code(props: CodeProps) {
   const [isHeartBeating, setIsHeartBeating] = useState(false);
   const [isCodeShaking, setIsCodeShaking] = useState(false);
   const [isWrongAnswer, setIsWrongAnswer] = useState(false);
+
+  const setIsLevelSolved = useLocalStorage<string>(
+    `isLevelSolved-${chapterId}-${levelId}`,
+    "false"
+  )[1];
 
   const shakeTimeoutRef = useRef<number | null>(null);
   useEffect(() => {
@@ -77,13 +84,15 @@ function Code(props: CodeProps) {
       setIsWrongAnswer(false);
     }
 
-    if (solution === e.target.value) {
+    if (isSolutionCorrect(solution, e.target.value)) {
       setIsHeartBeating(true);
+      setIsLevelSolved("true");
       return;
     }
 
     if (isHeartBeating === true) {
       setIsHeartBeating(false);
+      setIsLevelSolved("false");
     }
   };
 
@@ -115,7 +124,6 @@ function Code(props: CodeProps) {
   const goToNextLevelAndSlideOutArticle = () => {
     setIsArticleSliding(true);
     slideTimeoutRef.current = window.setTimeout(() => {
-      setAnswer("");
       setIsHeartBeating(false);
       setIsArticleSliding(false);
       navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`);

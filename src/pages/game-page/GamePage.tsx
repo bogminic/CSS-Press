@@ -5,74 +5,10 @@ import Instructions from "../../components/instructions/Instructions";
 import Code from "../../components/code/Code";
 import Article from "../../components/article/Article";
 
-import { chapters } from "../../const/chapters";
-
 import "./GamePage.scss";
-import { isNumeric } from "../../utils/helpers";
-import { ILevel, IChapter } from "../../models/Game";
+import { getGameInfo } from "../../utils/helpers";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-function getGameInfo(
-  chapterId: string | undefined,
-  levelId: string | undefined
-): {
-  currentChapter: IChapter | null;
-  currentLevel: ILevel | null;
-  nextChapterId: number | null;
-  nextLevelId: number | null;
-} {
-  if (
-    !chapterId ||
-    chapterId === "0" ||
-    levelId === "0" ||
-    !levelId ||
-    !isNumeric(chapterId) ||
-    !isNumeric(levelId)
-  ) {
-    return {
-      currentChapter: null,
-      currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
-    };
-  }
-  const currentChapterIndex = parseInt(chapterId) - 1;
-  const currentChapter: IChapter = chapters[currentChapterIndex];
-  if (!currentChapter) {
-    return {
-      currentChapter: null,
-      currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
-    };
-  }
-  const currentLevelIndex = parseInt(levelId) - 1;
-  const currentLevel: ILevel = currentChapter.levels[currentLevelIndex];
-  if (!currentLevel) {
-    return {
-      currentChapter: null,
-      currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
-    };
-  }
-
-  let nextLevelId = currentChapter.levels[currentLevelIndex + 1]
-    ? currentLevelIndex + 2
-    : null;
-
-  if (!nextLevelId) {
-    const nextChapterId = chapters[currentChapterIndex + 1]
-      ? currentChapterIndex + 2
-      : null;
-    nextLevelId = nextChapterId ? 1 : null;
-
-    return { currentChapter, currentLevel, nextChapterId, nextLevelId };
-  }
-
-  const nextChapterId = currentChapterIndex + 1;
-
-  return { currentChapter, currentLevel, nextChapterId, nextLevelId };
-}
 
 function GamePage() {
   const { chapterId, levelId } = useParams();
@@ -82,7 +18,8 @@ function GamePage() {
     [chapterId, levelId]
   );
 
-  const [answer, setAnswer] = useState("");
+  const [answer, setAnswer] = useLocalStorage<string>(`answer-${chapterId}-${levelId}`, "");
+
   const [selector, setSelector] = useState("");
   const [isArticleSliding, setIsArticleSliding] = useState(false);
 
@@ -120,6 +57,8 @@ function GamePage() {
         setAnswer={setAnswer}
         setSelector={setSelector}
         solution={solution}
+        chapterId={chapterId || null}
+        levelId={levelId || null}
         nextChapterId={nextChapterId}
         nextLevelId={nextLevelId}
         setIsArticleSliding={setIsArticleSliding}

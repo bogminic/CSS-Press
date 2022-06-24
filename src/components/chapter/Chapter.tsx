@@ -4,6 +4,7 @@ import "./Chapter.scss";
 import { IChapter } from "../../models/Game";
 import Level from "../level/Level";
 import { Link } from "react-router-dom";
+import { getStorageValue } from "../../hooks/useLocalStorage";
 
 type Props = {
   chapter: IChapter;
@@ -11,9 +12,9 @@ type Props = {
 };
 
 export default function Chapter({ chapter, chapterNumber}: Props) {
-  const levelJSX = chapter.levels.map((level, index) => (
-  <Link key={index} to={`chapter/${chapterNumber}/level/${index + 1}`}>
-     <Level name={level.levelName} content={level.articleContent} solved={true} />
+  const levelJSX = chapter.levels.map((level, levelIndex) => (
+  <Link key={levelIndex} to={`chapter/${chapterNumber}/level/${levelIndex + 1}`}>
+     <Level name={level.levelName} content={level.articleContent} solved={getStorageValue(`isLevelSolved-${chapterNumber}-${levelIndex + 1}`, "") !== "true"} />
   </Link>
   ));
   return (

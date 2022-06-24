@@ -5,6 +5,7 @@ import iconSquare from "./4-square.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
+import { getStorageValue, } from "../../hooks/useLocalStorage";
 
 export default function Menu() {
   const { chapterId, levelId } = useParams();
@@ -37,12 +38,16 @@ export default function Menu() {
             onClick={() => handleGoToLevel(chapterIndex, levelIndex)}
           >
             <span
-              className={
-                chapterId === (chapterIndex + 1).toString() &&
-                levelId === (levelIndex + 1).toString()
-                  ? "menu__number menu__number--orange"
-                  : "menu__number"
+              className={`menu__number ${
+                getStorageValue(`isLevelSolved-${chapterIndex + 1}-${levelIndex + 1}`, "") !== "true" &&
+                "menu__number--light"
               }
+              ${
+                chapterId === (chapterIndex + 1).toString() &&
+                levelId === (levelIndex + 1).toString() &&
+                "menu__number--orange"
+              } 
+              `}
             >
               {levelIndex + 1}
             </span>
@@ -57,7 +62,9 @@ export default function Menu() {
       <button className="menu__open" onClick={openMenu}>
         <img src={iconSquare} alt="Open menu" />
       </button>
-      <div className={isMenuOpen ? "menu__list menu__list--open" : "menu__list"}>
+      <div
+        className={isMenuOpen ? "menu__list menu__list--open" : "menu__list"}
+      >
         <button className="menu__close" onClick={closeMenu}>
           <img src={iconX} alt="Close menu" />
         </button>

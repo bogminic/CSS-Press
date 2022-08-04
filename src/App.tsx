@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
+  HashRouter,
 } from "react-router-dom";
 
 import Footer from "./components/footer/Footer";
@@ -17,7 +17,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Header />
       <div className="main-wrapper">
         <Routes>
@@ -47,7 +47,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 

@@ -5,11 +5,12 @@
   grid-column: 2;
   background: $color-white;
   border: 1px solid $color-black;
+  overflow: hidden;
   -webkit-perspective: 1;
+
 
   &__body {
     margin: 10px;
-    height: 465px;
     width: 705px;
     border-top: 3px dotted $color-black;
     border-bottom: 3px dotted $color-black;

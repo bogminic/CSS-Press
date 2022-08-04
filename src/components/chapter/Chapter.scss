@@ -1,0 +1,49 @@
+@import "./../../../styles/variables";
+
+.chapter {
+  border: 1px solid $color-black;
+  margin-top: 50px;
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-family: $font-Playfair;
+    border-bottom: 1px solid $color-black;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      height: 1px;
+      width: 200px;
+      background: $color-black;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+      height: 1px;
+      width: 100px;
+      background: $color-black;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 16px;
+
+    @media only screen and (max-width: 1536px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+

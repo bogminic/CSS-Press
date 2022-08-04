@@ -27,6 +27,7 @@
   }
 
   &__focus {
+    padding-right: 15px;
     &:hover {
       > .code__after,
       > .code__before {
@@ -50,12 +51,51 @@
 
   &__textarea {
     width: 100%;
-    padding: 2px 13px;
+    margin-left: 15px;
+    padding: 2px;
     font-family: $font-Source;
     font-size: 16px;
     font-weight: 700;
     background-color: $color-white;
     vertical-align: middle;
+    border: 1px solid $color-black;
+    resize: none;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 24px;
+
+    &:focus-visible {
+      outline-color: $color-green-600;
+    }
+
+    &--error {
+      &:focus-visible {
+        outline-color: $color-red-400;
+      }
+    }
+
+
+  }
+
+  &__input {
+    width: 100%;
+    margin-left: 15px;
+    padding: 2px;
+    font-family: $font-Source;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: $color-white;
+    vertical-align: middle;
+    border: 1px solid $color-black;
+    &:focus-visible {
+      outline-color: $color-green-600;
+    }
+
+    &--error {
+      &:focus-visible {
+        outline-color: $color-red-400;
+      }
+    }
   }
 
   &__button {

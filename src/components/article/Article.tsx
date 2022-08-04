@@ -1,5 +1,4 @@
-import parse, { DOMNode, HTMLReactParserOptions } from "html-react-parser";
-import { Element, Text } from "domhandler";
+import parse from "html-react-parser";
 
 import "./Article.scss";
 // @ts-ignore
@@ -13,29 +12,8 @@ interface ArticleProps {
   isArticleSliding: boolean;
 }
 
-const options: HTMLReactParserOptions = {
-  replace: (domNode: DOMNode) => {
-    if (
-      domNode instanceof Element &&
-      domNode.attribs &&
-      domNode.name === "misprint"
-    ) {
-      const propertyNode = domNode.children[0];
-      // Check if in <code> we have only one Text node
-      if (propertyNode instanceof Text && domNode.children.length === 1) {
-        const item = propertyNode.data;
-        return (
-          <>
-            <span className="misprint">{parse(item)}</span>
-          </>
-        );
-      }
-    }
-  },
-};
-
 function createArticleContent(articleContent: string) {
-  return parse(articleContent, options);
+  return parse(articleContent);
 }
 
 function Article(props: ArticleProps) {

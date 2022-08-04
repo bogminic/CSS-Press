@@ -1,6 +1,5 @@
 import React from "react";
-import parse, { DOMNode, HTMLReactParserOptions } from "html-react-parser";
-import { Element, Text } from "domhandler";
+import parse from "html-react-parser";
 
 import "./Level.scss";
 
@@ -10,28 +9,9 @@ type Props = {
   solved: boolean
 };
 
-const options: HTMLReactParserOptions = {
-  replace: (domNode: DOMNode) => {
-    if (
-      domNode instanceof Element &&
-      domNode.attribs &&
-      domNode.name === "misprint"
-    ) {
-      const propertyNode = domNode.children[0];
-      if (propertyNode instanceof Text && domNode.children.length === 1) {
-        const item = propertyNode.data;
-        return (
-          <>
-            {parse(item)}
-          </>
-        );
-      }
-    }
-  },
-};
 
 function createArticleContent(articleContent: string) {
-  return parse(articleContent, options);
+  return parse(articleContent);
 }
 
 export default function Level({ name, content, solved }: Props) {

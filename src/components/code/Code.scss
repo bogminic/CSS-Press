@@ -62,6 +62,7 @@
     resize: none;
     white-space: nowrap;
     overflow: hidden;
+    line-height: 24px;
 
     &:focus-visible {
       outline-color: $color-green-600;

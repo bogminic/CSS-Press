@@ -14,7 +14,7 @@ type Props = {
 export default function Chapter({ chapter, chapterNumber}: Props) {
   const levelJSX = chapter.levels.map((level, levelIndex) => (
   <Link key={levelIndex} to={`chapter/${chapterNumber}/level/${levelIndex + 1}`}>
-     <Level name={level.levelName} content={level.articleContent} solved={getStorageValue(`isLevelSolved-${chapterNumber}-${levelIndex + 1}`, "") !== "true"} />
+     <Level name={level.levelName} content={level.articleContent} solved={getStorageValue(`isLevelSolved-${chapterNumber}-${levelIndex + 1}`, "") === "true"} />
   </Link>
   ));
   return (

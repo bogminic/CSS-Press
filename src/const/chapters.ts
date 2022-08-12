@@ -138,7 +138,7 @@ export const chapters: IChapter[] = [
         instructions: 'The second subtitle of the article is red and thiner than the first one and this really makes no sense. <code>Font-weight</code> and <code>color</code> properties will help you to fix the wrong one!',
         beforeCode: '.misprint {',
         afterCode: '}',
-        linesOfCode: 1,
+        linesOfCode: 2,
         startHighlightCode: 2,
         error: 'font-weight: 100; color: red;',
         solution: 'font-weight: bold; color: black;',
@@ -183,7 +183,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'line-height: 0.7em',
-        solution: 'line-height: 23px',
+        solution: 'line-height: 20px',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>

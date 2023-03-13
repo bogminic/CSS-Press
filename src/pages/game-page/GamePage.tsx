@@ -38,6 +38,8 @@ function GamePage() {
     articleContent,
     error,
     solution,
+    tipInfo,
+    tipSelector
   } = currentLevel;
 
 
@@ -70,6 +72,8 @@ function GamePage() {
         error={error}
         selector={selector}
         isArticleSliding={isArticleSliding}
+        tipInfo={tipInfo}
+        tipSelector={tipSelector}
       />
     </main>
   );

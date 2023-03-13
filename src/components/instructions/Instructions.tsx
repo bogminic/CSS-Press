@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import parse, { DOMNode, HTMLReactParserOptions } from "html-react-parser";
-import { Element, Text } from "domhandler";
+import parse, { DOMNode, HTMLReactParserOptions, Element } from "html-react-parser";
+
 
 import "./Instructions.scss";
 import { tooltips } from "../../const/tooltips";
@@ -15,24 +15,23 @@ const options: HTMLReactParserOptions = {
   replace: (domNode: DOMNode) => {
     if (
       domNode instanceof Element &&
-      domNode.attribs &&
       domNode.name === "code"
     ) {
       const propertyNode = domNode.children[0];
       // Check if in <code> we have only one Text node
-      if (propertyNode instanceof Text && domNode.children.length === 1) {
+      if (propertyNode.type === 'text' && domNode.children.length === 1) {
         const property = propertyNode.data;
         const propertyDefinition = tooltips[property.toLocaleLowerCase()];
         return (
           <>
-            <code className="tooltip">
+            <span className="tooltip">
               {property}
               {propertyDefinition && (
-                <span data-testid="tooltip" className="tooltip__content">
+                <span className="tooltip__content">
                   {parse(propertyDefinition)}
                 </span>
               )}
-            </code>
+            </span>
           </>
         );
       }
@@ -49,8 +48,8 @@ class Instructions extends Component<InstructionsProps> {
     const { chapterName, levelName, instructionsContent } = this.props;
     const content = createInstructionsContent(instructionsContent);
     return (
-      <div className="instructions">
-        <div className="instructions__header">
+      <article className="instructions">
+        <header className="instructions__header">
           <div className="instructions__title">
             <div className="instructions__chapter">{chapterName}</div>
             <div className="instructions__separator">|</div>
@@ -60,9 +59,9 @@ class Instructions extends Component<InstructionsProps> {
             <div className="instructions__lines--50"></div>
             <div className="instructions__lines--100"></div>
           </div>
-        </div>
-        <div className="instructions__content">{content}</div>
-      </div>
+        </header>
+        <p className="instructions__content">{content}</p>
+      </article>
     );
   }
 }

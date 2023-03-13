@@ -13,6 +13,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-size: 12px;',
         solution: 'font-size:16px;',
+        tipSelector: 'p',
+        tipInfo: 'Characters dimension is 16px',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -34,6 +36,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-style: normal;',
         solution: 'font-style:italic;',
+        tipSelector: 'q',
+        tipInfo: 'Font face is italic',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -55,6 +59,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-family: "Turret Road";',
         solution: 'font-family:Crimson Text;',
+        tipSelector: 'p',
+        tipInfo: 'Font name is "Crimson Text"',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -68,14 +74,16 @@ export const chapters: IChapter[] = [
       `
       },
       {
-        levelName: 'font-family, font-size, font-style',
+        levelName: 'font-size, font-style, font-family,',
         instructions: 'Our second quote doesn\'t look as stilish as the first one. Use all the font properties you learned so far (<code>font-family</code>, <code>font-size</code>, <code>font-style</code>) to beautify it!',
         beforeCode: '.misprint {',
         afterCode: '}',
         linesOfCode: 3,
         startHighlightCode: 2,
-        error: 'font-style: bold; font-size: 10px; font-family: Arial;',
-        solution: 'font-family: Fira Sans; font-size: 16px; font-style: italic;',
+        error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
+        solution: 'font-size: 16px; font-style: italic; font-family: Playfair Display;',
+        tipSelector: 'q',
+        tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -98,6 +106,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-weight: 100;',
         solution: 'font-weight: bold;',
+        tipSelector: 'h3',
+        tipInfo: 'Font boldness is bold',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -121,6 +131,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'color: red;',
         solution: 'color: black;',
+        tipSelector: 'p',
+        tipInfo: 'Color is black',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -142,6 +154,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-weight: 100; color: red;',
         solution: 'font-weight: bold; color: black;',
+        tipSelector: 'h3',
+        tipInfo: 'Font boldness is bold and color is black',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -164,6 +178,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
         solution: 'font-size: 16px; font-family: Crimson Text; font-style: normal; font-weight: normal; color: black;',
+        tipSelector: 'p',
+        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -184,6 +200,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'line-height: 0.7em',
         solution: 'line-height: 20px',
+        tipSelector: 'q',
+        tipInfo: 'Distance between lines of text is 20px',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -205,6 +223,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'text-align: right;',
         solution: 'text-align: left;',
+        tipSelector: 'p',
+        tipInfo: 'Text is aligned to left',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -223,8 +243,10 @@ export const chapters: IChapter[] = [
         afterCode: '}',
         linesOfCode: 2,
         startHighlightCode: 2,
-        error: 'line-height: 0.5em; text-align: center;',
+        error: 'line-height: 5.5em; text-align: center;',
         solution: 'line-height: 1.15em; text-align: left',
+        tipSelector: 'h3',
+        tipInfo: 'Distance between lines of text is 1.15em and text is aligned to left',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -246,6 +268,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'text-decoration: underline;',
         solution: 'text-decoration: none;',
+        tipSelector: 'h3',
+        tipInfo: 'Subtitle is not underlined',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -268,14 +292,16 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'text-transform: uppercase;',
         solution: 'text-transform: capitalize;',
+        tipSelector: 'h3',
+        tipInfo: 'Subtitle is capitalized',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
           <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in.</p>
           <img src="https://dummyimage.com/347x100/f1b681/000.jpg" alt="Image" />
-          <h3>First article subtitle</h3>
+          <h3>Loremipsum</h3>
           <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">First article subtitle</h3>
+          <h3 class="misprint">Morelorem</h3>
           <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
           <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
         </div>
@@ -290,13 +316,15 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'text-decoration: line-through; text-transform: uppercase;',
         solution: 'text-decoration: none; text-transform: none;',
+        tipSelector: 'h3',
+        tipInfo: 'Subtitle is not uppercased and overlined',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
           <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <h3>First article subtitle</h3>
+          <h3>Loremipsum</h3>
           <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">First article subtitle</h3>
+          <h3 class="misprint">Morelorem</h3>
           <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
           <img src="https://dummyimage.com/347x100/f1b681/000.jpg" alt="Image" />
         </div>
@@ -309,8 +337,10 @@ export const chapters: IChapter[] = [
         afterCode: '}',
         linesOfCode: 4,
         startHighlightCode: 2,
-        error: 'line-height: 3em; text-align: right; text-decoration: line-through; text-transform: uppercase;',
+        error: 'line-height: 3em; text-align: right; text-decoration: underline; text-transform: uppercase;',
         solution: 'line-height: 20px; text-align: left; text-decoration: none; text-transform: none;',
+        tipSelector: 'q',
+        tipInfo: 'Quote is aligned to left, the distance between its lines is 20px and it is not uppercased or underlined',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -330,8 +360,10 @@ export const chapters: IChapter[] = [
         afterCode: '}',
         linesOfCode: 4,
         startHighlightCode: 2,
-        error: 'font-size: 25px; font-family: "Turret Road", cursive; text-align: center; text-transform: uppercase;',
+        error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
         solution: 'font-size: 16px; font-family: Crimson Text;  text-align: justify; text-transform: none;',
+        tipSelector: 'p',
+        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>
@@ -352,6 +384,8 @@ export const chapters: IChapter[] = [
         startHighlightCode: 2,
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
         solution: 'font-family: Playfair Display ; font-size: 16px; font-style: italic; font-weight: 300; color: black; line-height: 20px; text-align: left; text-decoration: none; text-transform: none;',
+        tipSelector: 'q',
+        tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
         articleContent: `
         <h2>Insert your article title here</h2>
         <div>

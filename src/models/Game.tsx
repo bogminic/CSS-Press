@@ -8,6 +8,8 @@ export interface ILevel {
   startHighlightCode: number;
   articleContent: string;
   solution: string;
+  tipInfo: string,
+  tipSelector: string,
 }
 
 export interface IChapter {

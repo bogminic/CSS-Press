@@ -65,21 +65,22 @@
     font-weight: 400;
     line-height: 28px;
   }
-
-  code {
-    font-family: $font-Source;
-    font-size: 16px;
-    font-weight: 400;
-    background: $color-grey-400;
-    cursor: pointer;
-    display: inline-block;
-    border: 0;
-  }
 }
 
 .tooltip {
+  display: inline-block;
   position: relative;
-  border-bottom: 1px dashed $color-black;
+  font-family: $font-Source;
+  font-size: 16px;
+  background: $color-grey-400;
+  cursor: pointer;
+  &:first-of-type {
+    margin-top: 5px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 5px;
+  }
   &__content {
     position: absolute;
     top: 100%;
@@ -119,27 +120,18 @@
   }
 
   &:hover .tooltip__content {
-    display: block;
+    display: inline-block;
   }
 
   code {
+    display: inline-block;
+    position: relative;
     font-family: $font-Source;
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;
-    background: $color-grey-400;
     cursor: pointer;
-    display: inline-block;
     background: $color-orange-300;
-    border: 0;
-
-    &:first-of-type {
-      margin-top: 5px;
-    }
-
-    &:last-of-type {
-      margin-bottom: 5px;
-    }
   }
 
   p {

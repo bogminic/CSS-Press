@@ -59,6 +59,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    height: 301px;
 
     &--unfinished {
       &:before {
@@ -94,7 +95,6 @@
   }
 
   &__content {
-    height: 279px;
     width: 424px;
     border-top: 2px dotted $color-black;
     border-bottom: 2px dotted $color-black;
@@ -108,6 +108,7 @@
       font-size: 12px;
       font-weight: 900;
       text-transform: capitalize;
+      text-align: left;
     }
 
     > div {
@@ -135,6 +136,10 @@
 
       > h3 {
         margin: 6px 0 3px 0;
+      }
+      > img {
+        display: block;
+        width: 206px;
       }
     }
   }

@@ -1,8 +1,9 @@
-import parse from "html-react-parser";
+
 
 import "./Article.scss";
 // @ts-ignore
 import Style from "style-it";
+import { ArticleContent } from "../article-content/ArticleContent";
 
 interface ArticleProps {
   articleContent: string;
@@ -10,15 +11,21 @@ interface ArticleProps {
   error: string;
   selector: string;
   isArticleSliding: boolean;
+  tipInfo: string;
+  tipSelector: string;
 }
 
-function createArticleContent(articleContent: string) {
-  return parse(articleContent);
-}
 
 function Article(props: ArticleProps) {
-  const { articleContent, answer, error, selector, isArticleSliding } = props;
-  const content = createArticleContent(articleContent);
+  const {
+    articleContent,
+    answer,
+    error,
+    selector,
+    isArticleSliding,
+    tipInfo,
+    tipSelector,
+  } = props;
   const highlighted =
     selector === "misprint" ? "background-color: #ffca9b;" : "";
   return (
@@ -37,7 +44,7 @@ function Article(props: ArticleProps) {
           <div className="dummy__content"></div>
           <div className="dummy__img"></div>
         </div>
-        <article className="article__body">{content}</article>
+        <ArticleContent articleContent={articleContent} tipInfo={tipInfo} tipSelector={tipSelector} />
         <div className="dummy">
           <div className="dummy__content"></div>
           <div className="dummy__img"></div>

@@ -5,17 +5,23 @@
   grid-column: 2;
   background: $color-white;
   border: 1px solid $color-black;
+  overflow: hidden;
   -webkit-perspective: 1;
+
 
   &__body {
     margin: 10px;
-    height: 465px;
     width: 705px;
     border-top: 3px dotted $color-black;
     border-bottom: 3px dotted $color-black;
     padding-bottom: 10px;
+    position: relative;
 
-    > h2 {
+    &:has(.article__reference:hover) .article__tooltip {
+      display: block;
+    }
+
+    >h2 {
       margin-top: 10px;
       margin-bottom: 10px;
       font-family: $font-Playfair;
@@ -24,11 +30,11 @@
       text-transform: capitalize;
     }
 
-    > div {
+    >div {
       column-count: 2;
       column-gap: 10px;
 
-      > p {
+      >p {
         margin-top: 0;
         margin-bottom: 5px;
         text-indent: 15px;
@@ -38,7 +44,8 @@
         font-size: 16px;
         line-height: 25px;
       }
-      > q {
+
+      >q {
         margin-top: 10px;
         margin-bottom: 10px;
         display: block;
@@ -46,9 +53,53 @@
         line-height: 20px;
         font-family: $font-Playfair;
       }
-      > h3 {
+
+      >h3 {
         margin: 10px 0 5px 0;
       }
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 347px;
+    padding: 6px;
+    background: $color-blue-300;
+    color: $color-black;
+    border: 1px solid $color-black;
+    z-index: 10;
+    display: none;
+    font: normal normal normal 16px/25px $font-Crimson;
+    white-space: pre-line;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: -6px;
+      left: 24px;
+      transform: rotate(45deg);
+      background: $color-blue-300;
+      border: 1px solid $color-black;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 12px;
+      top: 0;
+      left: 20px;
+      background: $color-blue-300;
+    }
+  }
+
+  &__reference {
+    &:hover {
+      background: white;
     }
   }
 }
@@ -62,16 +113,14 @@
   height: calc(var(--widthA) / 2);
 
   &__content {
-    background-image: linear-gradient(
-      0deg,
-      $color-white 10%,
-      $color-grey-200 10%,
-      $color-grey-200 50%,
-      $color-white 50%,
-      $color-white 60%,
-      $color-grey-200 60%,
-      $color-grey-200 100%
-    );
+    background-image: linear-gradient(0deg,
+        $color-white 10%,
+        $color-grey-200 10%,
+        $color-grey-200 50%,
+        $color-white 50%,
+        $color-white 60%,
+        $color-grey-200 60%,
+        $color-grey-200 100%);
     background-size: 50px 50px;
   }
 

@@ -13,8 +13,7 @@
     background: $color-grey-400;
 
     .menu__open img {
-      filter: invert(76%) sepia(47%) saturate(5136%) hue-rotate(340deg)
-        brightness(104%) contrast(94%);
+      filter: $filter-orange;
     }
   }
 
@@ -41,8 +40,7 @@
     top: 10px;
 
     &:hover {
-      filter: invert(76%) sepia(47%) saturate(5136%) hue-rotate(340deg)
-      brightness(104%) contrast(94%);
+      filter: $filter-orange;
     }
   }
 

@@ -1,0 +1,278 @@
+@import "~/styles/variables";
+
+.tutorial {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    padding: 76px 15px 45px 55px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1470px);
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: none;
+
+    &__game {
+        position: relative;
+    }
+
+    &__overlay {
+        position: absolute;
+        box-shadow: 0 0 0 100dvw $color-overlay;
+        pointer-events: none;
+
+        &--article, &--values {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: $newspaper-width;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--misprint, &--error {
+            position: absolute;
+            top: calc(50% - 35px);
+            right: 0;
+            bottom: calc(50% - 95px);
+            width: 365px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--instructions {
+            position: absolute;
+            top: 0;
+            right: 743px;
+            bottom: calc(50% + 8px);
+            left: 0;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--property {
+            position: absolute;
+            top: 80px;
+            right: 743px;
+            left: 0;
+            height: 65px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--correct {
+            position: absolute;
+            top: calc(50% - 185px);
+            right: 362px;
+            bottom: calc(50% - 230px);
+            width: 365px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--code {
+            position: absolute;
+            top: calc(50% + 8px);
+            right: 743px;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--write {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 727px;
+                left: 0;
+                bottom: calc(50% - 54px);
+                background: $color-overlay;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(50% + 79px);
+                right: 727px;
+                bottom: 0;
+                left: 0;
+                background: $color-overlay;
+            }
+
+        }
+
+        &--finish {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 743px;
+                left: 0;
+                bottom: calc(50% - 8px);
+                background: $color-overlay;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(50% + 160px);
+                right: 742px;
+                bottom: 0;
+                left: 0;
+                background: $color-overlay;
+            }
+
+        }
+
+    }
+
+    &__info {
+        position: absolute;
+        width: 300px;
+        background: $color-grey-300;
+        z-index: 100;
+        padding: 10px 10px 5px 10px;
+        font: 18px/27px $font-Crimson;
+        border: 1px solid $color-black;
+        box-shadow: -6px -6px $color-orange-400;
+        text-align: right;
+
+        &--article, &--values, &--correct {
+            top: calc(50% - 51px);
+            right: calc($newspaper-width + 50px);
+        }
+
+        &--misprint {
+            top: calc(50% - 154px);
+            right: 50px;
+        }
+
+        &--instructions {
+            top: calc(25% - 48px);
+            right: 387px;
+        }
+
+        &--property {
+            top: 73px;
+            right: 390px;
+        }
+
+        &--error {
+            top: calc(50% - 182px);
+            right: 50px;
+        }
+
+        &--code {
+            top: calc(50% - 167px);
+            right: calc(50% + 220px);
+        }
+
+        &--write {
+            top: calc(50% - 94px);
+            right: calc(50% + 220px);
+        }
+
+        &--finish {
+            top: calc(50% + 216px);
+            right:  752px;
+        }
+
+    }
+
+    &__arrow {
+        width: 35px;
+        position: absolute;
+        filter: $filter-yellow;
+
+        &--article, &--values, &--correct {
+            top: calc(50% - 14px);
+            right: -43px;
+        }
+
+        &--misprint {
+            top: calc(50% + 42px);
+            right: 50%;
+            transform: rotate(90deg);
+        }
+
+        &--instructions {
+            top: calc(50% - 22px);
+            left: -50px;
+            transform: scaleX(-1); 
+        }
+
+        &--property {
+            top: calc(50% - 22px);
+            left: -50px;
+            transform: scaleX(-1); 
+        }
+        
+        &--error {
+            top: calc(50% + 56px);
+            right: 50%;
+            transform: rotate(90deg);
+        }
+
+        &--code {
+            top: calc(50% + 70px);
+            right: 50%;
+            transform: rotate(90deg);
+        }
+
+        &--write {
+            top: calc(50% + 60px);
+            right: 50%;
+            transform: rotate(90deg);
+        }
+
+        &--finish {
+            top: -50px;
+            right: 60px;
+            transform:  scaleX(-1) rotate(270deg);
+        }
+    }
+
+    &__text {
+        margin: 0;
+        text-align: left;
+    }
+
+    &__next {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font: normal normal 900 16px/21px $font-Playfair;
+        pointer-events: all;
+        padding: 0;
+
+        &:hover {
+            filter: $filter-orange;
+        }
+    }
+
+    &__double-arrow {
+        width: 20px;
+        margin-right: 3px;
+    }
+}

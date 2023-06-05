@@ -11,9 +11,9 @@ type Props = {}
 
 const GameTutorial = (props: Props) => {
     const [state, send] = useMachine(tutorialMachine);
-    const [isFinished, setIsFinished] = useLocalStorage<string>("finished-tutorial", "");
+    const [isTutorialFinished, setIsTutorialFinished] = useLocalStorage<string>("is-tutorial-finished", "");
 
-    if (isFinished === 'yes') return null;
+    if (isTutorialFinished === 'yes') return null;
 
     return (
         <aside className="tutorial">
@@ -42,7 +42,7 @@ const GameTutorial = (props: Props) => {
                     <DialogTutorial state={state} send={send} actualState="finish" />
                 ) : null}
             </section>
-            <button className='tutorial__skip' type='button' onClick={() => setIsFinished("yes")}>
+            <button className='tutorial__skip' type='button' onClick={() => setIsTutorialFinished("yes")}>
                 <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
                 Skip Walkthrough
             </button>

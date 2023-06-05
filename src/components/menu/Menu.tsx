@@ -39,7 +39,7 @@ export default function Menu() {
           >
             <span
               className={`menu__number ${
-                getStorageValue(`isLevelSolved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
+                getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
                 "menu__number--light"
               }
               ${

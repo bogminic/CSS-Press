@@ -5,12 +5,16 @@ import { useMachine } from '@xstate/react';
 import { tutorialMachine } from '../../../machines/tutorialMachine';
 import DialogTutorial from '../dialog-tutorial/DialogTutorial';
 import singleArrow from "./single-arrow.svg";
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 
 type Props = {}
 
-
 const GameTutorial = (props: Props) => {
     const [state, send] = useMachine(tutorialMachine);
+    const [isFinished, setIsFinished] = useLocalStorage<string>("finished-tutorial", "");
+
+    if (isFinished === 'yes') return null;
+
     return (
         <aside className="tutorial">
             <section className="tutorial__game">
@@ -38,7 +42,7 @@ const GameTutorial = (props: Props) => {
                     <DialogTutorial state={state} send={send} actualState="finish" />
                 ) : null}
             </section>
-            <button className='tutorial__skip' type='button'>
+            <button className='tutorial__skip' type='button' onClick={() => setIsFinished("yes")}>
                 <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
                 Skip Walkthrough
             </button>

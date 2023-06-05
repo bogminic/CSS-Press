@@ -16,7 +16,7 @@ const DialogTutorial = ({ send, state, actualState }: Props) => {
                 <p className="tutorial__text">
                     {state.meta[`(machine).${state.value}`].message}
                 </p>
-                <button className='tutorial__next' type='button' onClick={() => send('NEXT')} style={{ pointerEvents: 'all' }}>
+                <button className='tutorial__next' type='button' onClick={() => send('NEXT')}>
                     <img className='tutorial__double-arrow' src={doubleArrow} alt="Next" />
                     Next
                 </button>

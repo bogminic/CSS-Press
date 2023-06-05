@@ -12,8 +12,6 @@ export const tutorialConfig = {
             },
             meta: {
                 message: 'Uh-oh! There\'s something wrong with this newspaper.',
-                messageX: '',
-                messageY: ''
             }
         },
         misprint: {

@@ -11,8 +11,8 @@ type Props = {}
 const GameTutorial = (props: Props) => {
     const [state, send] = useMachine(tutorialMachine);
     return (
-        <div className="tutorial">
-            <div className="tutorial__game">
+        <aside className="tutorial">
+            <section className="tutorial__game">
                 {state.matches('article') ? (
                     <DialogTutorial state={state} send={send} actualState="article" />
                 ) : state.matches('misprint') ? (
@@ -36,9 +36,8 @@ const GameTutorial = (props: Props) => {
                 ) : state.matches('finish') ? (
                     <DialogTutorial state={state} send={send} actualState="finish" />
                 ) : null}
-
-            </div>
-        </div>
+            </section>
+        </aside>
     )
 }
 

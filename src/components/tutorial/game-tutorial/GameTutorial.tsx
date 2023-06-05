@@ -4,6 +4,7 @@ import './GameTutorial.scss';
 import { useMachine } from '@xstate/react';
 import { tutorialMachine } from '../../../machines/tutorialMachine';
 import DialogTutorial from '../dialog-tutorial/DialogTutorial';
+import singleArrow from "./single-arrow.svg";
 
 type Props = {}
 
@@ -37,6 +38,10 @@ const GameTutorial = (props: Props) => {
                     <DialogTutorial state={state} send={send} actualState="finish" />
                 ) : null}
             </section>
+            <button className='tutorial__skip' type='button'>
+                <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
+                Skip Walkthrough
+            </button>
         </aside>
     )
 }

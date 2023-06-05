@@ -23,7 +23,8 @@
         box-shadow: 0 0 0 100dvw $color-overlay;
         pointer-events: none;
 
-        &--article, &--values {
+        &--article,
+        &--values {
             position: absolute;
             top: 0;
             right: 0;
@@ -33,7 +34,8 @@
             pointer-events: none;
         }
 
-        &--misprint, &--error {
+        &--misprint,
+        &--error {
             position: absolute;
             top: calc(50% - 35px);
             right: 0;
@@ -158,7 +160,9 @@
         box-shadow: -6px -6px $color-orange-400;
         text-align: right;
 
-        &--article, &--values, &--correct {
+        &--article,
+        &--values,
+        &--correct {
             top: calc(50% - 51px);
             right: calc($newspaper-width + 50px);
         }
@@ -195,7 +199,7 @@
 
         &--finish {
             top: calc(50% + 216px);
-            right:  752px;
+            right: 752px;
         }
 
     }
@@ -205,7 +209,9 @@
         position: absolute;
         filter: $filter-yellow;
 
-        &--article, &--values, &--correct {
+        &--article,
+        &--values,
+        &--correct {
             top: calc(50% - 14px);
             right: -43px;
         }
@@ -219,15 +225,15 @@
         &--instructions {
             top: calc(50% - 22px);
             left: -50px;
-            transform: scaleX(-1); 
+            transform: scaleX(-1);
         }
 
         &--property {
             top: calc(50% - 22px);
             left: -50px;
-            transform: scaleX(-1); 
+            transform: scaleX(-1);
         }
-        
+
         &--error {
             top: calc(50% + 56px);
             right: 50%;
@@ -249,7 +255,7 @@
         &--finish {
             top: -50px;
             right: 60px;
-            transform:  scaleX(-1) rotate(270deg);
+            transform: scaleX(-1) rotate(270deg);
         }
     }
 
@@ -274,5 +280,21 @@
     &__double-arrow {
         width: 20px;
         margin-right: 3px;
+    }
+
+    &__skip {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font: normal normal 900 14px/21px $font-Playfair;
+        background: $color-grey-300;
+        border: 1px solid $color-black;
+        box-shadow: -3px -3px $color-orange-400;
+        cursor: pointer;
+        pointer-events: all;
+
+        &:hover {
+            filter: brightness(80%);
+        }
     }
 }

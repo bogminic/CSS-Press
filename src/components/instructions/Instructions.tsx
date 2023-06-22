@@ -60,7 +60,7 @@ class Instructions extends Component<InstructionsProps> {
             <div className="instructions__lines--100"></div>
           </div>
         </header>
-        <p className="instructions__content">{content}</p>
+        <section className="instructions__content">{content}</section>
       </article>
     );
   }

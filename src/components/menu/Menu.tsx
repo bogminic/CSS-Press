@@ -33,7 +33,7 @@ export default function Menu() {
       <ul>
         {chapter.levels.map((level, levelIndex) => (
           <li
-            key={chapterIndex + level.solution}
+            key={chapterIndex + levelIndex}
             className="menu__level"
             onClick={() => handleGoToLevel(chapterIndex, levelIndex)}
           >

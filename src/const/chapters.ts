@@ -12,7 +12,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-size: 12px;',
-        solution: 'font-size:16px;',
+        solutions: [['font-size', '16px', '1em', '1rem']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px',
         articleContent: `
@@ -35,7 +35,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-style: normal;',
-        solution: 'font-style:italic;',
+        solutions: [['font-style', 'italic']],
         tipSelector: 'q',
         tipInfo: 'Font face is italic',
         articleContent: `
@@ -58,7 +58,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-family: "Turret Road";',
-        solution: 'font-family:Crimson Text;',
+        solutions: [['font-family', '"CrimsonText"']],
         tipSelector: 'p',
         tipInfo: 'Font name is "Crimson Text"',
         articleContent: `
@@ -81,7 +81,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 3,
         startHighlightCode: 2,
         error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
-        solution: 'font-size: 16px; font-style: italic; font-family: Playfair Display;',
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', '"PlayfairDisplay"']],
         tipSelector: 'q',
         tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
         articleContent: `
@@ -105,7 +105,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-weight: 100;',
-        solution: 'font-weight: bold;',
+        solutions: [['font-weight', 'bold']],
         tipSelector: 'h3',
         tipInfo: 'Font boldness is bold',
         articleContent: `
@@ -130,7 +130,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'color: red;',
-        solution: 'color: black;',
+        solutions: [['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
         tipInfo: 'Color is black',
         articleContent: `
@@ -153,7 +153,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 2,
         startHighlightCode: 2,
         error: 'font-weight: 100; color: red;',
-        solution: 'font-weight: bold; color: black;',
+        solutions: [['font-weight', 'bold'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'h3',
         tipInfo: 'Font boldness is bold and color is black',
         articleContent: `
@@ -177,7 +177,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
-        solution: 'font-size: 16px; font-family: Crimson Text; font-style: normal; font-weight: normal; color: black;',
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', '"CrimsonText"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
         articleContent: `
@@ -199,7 +199,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'line-height: 0.7em',
-        solution: 'line-height: 20px',
+        solutions: [['line-height', '20px', '1.25em', '1.25rem']],
         tipSelector: 'q',
         tipInfo: 'Distance between lines of text is 20px',
         articleContent: `
@@ -222,7 +222,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'text-align: right;',
-        solution: 'text-align: left;',
+        solutions: [['text-align', 'left']],
         tipSelector: 'p',
         tipInfo: 'Text is aligned to left',
         articleContent: `
@@ -244,7 +244,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 2,
         startHighlightCode: 2,
         error: 'line-height: 5.5em; text-align: center;',
-        solution: 'line-height: 1.15em; text-align: left',
+        solutions: [['line-height', '1.15em', '1.15rem', '18.4px'], ['text-align', 'left']],
         tipSelector: 'h3',
         tipInfo: 'Distance between lines of text is 1.15em and text is aligned to left',
         articleContent: `
@@ -267,7 +267,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'text-decoration: underline;',
-        solution: 'text-decoration: none;',
+        solutions: [['text-decoration', 'none']],
         tipSelector: 'h3',
         tipInfo: 'Subtitle is not underlined',
         articleContent: `
@@ -291,7 +291,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'text-transform: uppercase;',
-        solution: 'text-transform: capitalize;',
+        solutions: [['text-transform', 'capitalize']],
         tipSelector: 'h3',
         tipInfo: 'Subtitle is capitalized',
         articleContent: `
@@ -315,7 +315,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 2,
         startHighlightCode: 2,
         error: 'text-decoration: line-through; text-transform: uppercase;',
-        solution: 'text-decoration: none; text-transform: none;',
+        solutions: [['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'h3',
         tipInfo: 'Subtitle is not uppercased and overlined',
         articleContent: `
@@ -338,7 +338,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'line-height: 3em; text-align: right; text-decoration: underline; text-transform: uppercase;',
-        solution: 'line-height: 20px; text-align: left; text-decoration: none; text-transform: none;',
+        solutions: [['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
         tipInfo: 'Quote is aligned to left, the distance between its lines is 20px and it is not uppercased or underlined',
         articleContent: `
@@ -361,7 +361,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
-        solution: 'font-size: 16px; font-family: Crimson Text;  text-align: justify; text-transform: none;',
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family','"CrimsonText"'], ['text-align', 'justify'], ['text-transform', 'none']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
         articleContent: `
@@ -383,7 +383,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 9,
         startHighlightCode: 2,
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
-        solution: 'font-family: Playfair Display ; font-size: 16px; font-style: italic; font-weight: 300; color: black; line-height: 20px; text-align: left; text-decoration: none; text-transform: none;',
+        solutions: [['font-family', '"PlayfairDisplay"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
         tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
         articleContent: `

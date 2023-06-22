@@ -37,7 +37,7 @@ function GamePage() {
     startHighlightCode,
     articleContent,
     error,
-    solution,
+    solutions,
     tipInfo,
     tipSelector
   } = currentLevel;
@@ -58,7 +58,7 @@ function GamePage() {
         answer={answer}
         setAnswer={setAnswer}
         setSelector={setSelector}
-        solution={solution}
+        solutions={solutions}
         chapterId={chapterId || null}
         levelId={levelId || null}
         nextChapterId={nextChapterId}

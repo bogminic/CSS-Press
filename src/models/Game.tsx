@@ -7,7 +7,7 @@ export interface ILevel {
   linesOfCode: number;
   startHighlightCode: number;
   articleContent: string;
-  solution: string;
+  solutions: string[][];
   tipInfo: string,
   tipSelector: string,
 }

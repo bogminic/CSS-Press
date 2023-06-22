@@ -2,7 +2,7 @@ import "./Code.scss";
 import { maxNoOfCodeLinesSide } from "../../const/chapters";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isSolutionCorrect, getCodeLinesSide } from "../../utils/helpers";
+import { buildSolutionsArray, getCodeLinesSide, isSolutionCorrect } from "../../utils/helpers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface CodeProps {
@@ -13,7 +13,7 @@ interface CodeProps {
   setAnswer: Dispatch<SetStateAction<string>>;
   setSelector: Dispatch<SetStateAction<string>>;
   answer: string;
-  solution: string;
+  solutions: string[][];
   chapterId: string | null;
   levelId: string | null;
   nextChapterId: number | null;
@@ -31,7 +31,7 @@ function Code(props: CodeProps) {
     answer,
     setAnswer,
     setSelector,
-    solution,
+    solutions,
     chapterId,
     levelId,
     nextChapterId,
@@ -73,6 +73,8 @@ function Code(props: CodeProps) {
 
   const calculatedCodeHeight = linesOfCode * 24;
 
+  const solutionsArray = buildSolutionsArray(solutions);
+
   const handleChangeAnswer = (
     e:
       | React.ChangeEvent<HTMLTextAreaElement>
@@ -84,7 +86,7 @@ function Code(props: CodeProps) {
       setIsWrongAnswer(false);
     }
 
-    if (isSolutionCorrect(solution, e.target.value)) {
+    if (isSolutionCorrect(solutionsArray, e.target.value)) {
       setIsHeartBeating(true);
       setIsLevelSolved("true");
       return;
@@ -105,7 +107,7 @@ function Code(props: CodeProps) {
   };
 
   const checkAnswer = () => {
-    if (isSolutionCorrect(solution, answer) && nextChapterId && nextLevelId) {
+    if (isSolutionCorrect(solutionsArray, answer) && nextChapterId && nextLevelId) {
       goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();

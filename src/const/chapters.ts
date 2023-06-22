@@ -153,7 +153,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 2,
         startHighlightCode: 2,
         error: 'font-weight: 100; color: red;',
-        solutions: [['font-weight', 'bold'], ['color', 'black', '#000000']],
+        solutions: [['font-weight', 'bold'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'h3',
         tipInfo: 'Font boldness is bold and color is black',
         articleContent: `

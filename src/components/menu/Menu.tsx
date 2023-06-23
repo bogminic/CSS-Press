@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Menu.scss";
 import iconSquare from "./4-square.svg";
+import openBook from "./open-book.svg";
+import reset from "./reset.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
@@ -26,6 +28,11 @@ export default function Menu() {
     navigate(`/chapter/1/level/1`);
     setTutorialState(tutorialStates.running)
     closeMenu();
+  }
+
+  const resetGame = () => {
+    navigate(`/`);
+    localStorage.clear();
   }
 
   const handleGoToLevel = (chapterIndex: number, levelIndex: number) => {
@@ -78,8 +85,9 @@ export default function Menu() {
         </button>
         <ul className="menu__items">
           {chapterItems}
-          <li className="menu__chaper">
-            <button type="button" onClick={playWalkthrough}>Play Walkthrough</button>
+          <li className="menu__actions">
+            <button className="menu__action" type="button" onClick={playWalkthrough}> <img className="menu__icon" src={openBook} alt="Open Book" /> Play Walkthrough</button>
+            <button className="menu__action" type="button" onClick={resetGame}> <img className="menu__icon" src={reset} alt="Open Book" /> Reset Game</button>
           </li>
         </ul>
       </div>

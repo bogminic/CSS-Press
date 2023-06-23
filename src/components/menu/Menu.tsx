@@ -5,12 +5,14 @@ import iconSquare from "./4-square.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
-import { getStorageValue, } from "../../hooks/useLocalStorage";
+import { getStorageValue, useLocalStorage, } from "../../hooks/useLocalStorage";
+import { localStorageNames, tutorialStates } from "../../utils/constants";
 
 export default function Menu() {
   const { chapterId, levelId } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const [_, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -19,6 +21,12 @@ export default function Menu() {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  const playWalkthrough = () => {
+    navigate(`/chapter/1/level/1`);
+    setTutorialState(tutorialStates.running)
+    closeMenu();
+  }
 
   const handleGoToLevel = (chapterIndex: number, levelIndex: number) => {
     navigate(`/chapter/${chapterIndex + 1}/level/${levelIndex + 1}`, {
@@ -68,7 +76,12 @@ export default function Menu() {
         <button className="menu__close" onClick={closeMenu}>
           <img src={iconX} alt="Close menu" />
         </button>
-        <ul className="menu__items">{chapterItems}</ul>
+        <ul className="menu__items">
+          {chapterItems}
+          <li className="menu__chaper">
+            <button type="button" onClick={playWalkthrough}>Play Walkthrough</button>
+          </li>
+        </ul>
       </div>
     </nav>
   );

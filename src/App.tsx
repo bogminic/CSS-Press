@@ -14,7 +14,6 @@ import NotfoundPage from "./pages/notfound-page/NotfoundPage";
 import "./App.scss";
 import Menu from "./components/menu/Menu";
 import Dashboard from "./pages/dashboard/Dashboard";
-import GameTutorial from "./components/tutorial/game-tutorial/GameTutorial";
 
 function App() {
   return (
@@ -48,7 +47,6 @@ function App() {
         </Routes>
       </div>
       <Footer />
-      <GameTutorial/>
     </HashRouter>
   );
 }

@@ -4,6 +4,7 @@ import "./Article.scss";
 // @ts-ignore
 import Style from "style-it";
 import { ArticleContent } from "../article-content/ArticleContent";
+import { memo } from "react";
 
 interface ArticleProps {
   articleContent: string;
@@ -16,7 +17,7 @@ interface ArticleProps {
 }
 
 
-function Article(props: ArticleProps) {
+const Article = memo(function Article(props: ArticleProps) {
   const {
     articleContent,
     answer,
@@ -49,10 +50,9 @@ function Article(props: ArticleProps) {
           <div className="dummy__content"></div>
           <div className="dummy__img"></div>
         </div>
-        <div></div>
       </div>
     </>
   );
-}
+})
 
 export default Article;

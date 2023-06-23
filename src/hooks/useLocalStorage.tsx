@@ -29,7 +29,7 @@ export function useLocalStorage<T>(key: string, initialValue: string) {
 
   useEffect(() => {
     setStoredValue(getStorageValue(key, initialValue));
-  }, [key, storedValue, initialValue, resetValue]);
+  }, [key, storedValue, initialValue]);
 
   return [storedValue, setValue] as const;
 }

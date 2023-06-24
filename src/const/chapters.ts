@@ -74,7 +74,7 @@ export const chapters: IChapter[] = [
       `
       },
       {
-        levelName: 'font-size, font-style, font-family,',
+        levelName: 'font-size, font-style, font-family',
         instructions: 'Our second quote doesn\'t look as stilish as the first one. Use all the font properties you learned so far (<code>font-family</code>, <code>font-size</code>, <code>font-style</code>) to beautify it!',
         beforeCode: '.misprint {',
         afterCode: '}',

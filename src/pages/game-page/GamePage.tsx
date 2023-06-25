@@ -115,12 +115,14 @@ function GamePage() {
       />
       {createPortal(
         <Modal open={isModalOpen}>
-          <h2>Hi, Wanderer</h2>
+          <h2 className="modal__title">Hi, Wanderer</h2>
           <p>
             Welcome to CSS Press, where you will learn the basics of CSS while having fun along the way. Whould you like to play through the <strong>basics</strong> of the game?
           </p>
-          <button onClick={startTutorial}>Play through</button>
-          <button onClick={closeTutorialModal}>Skip</button>
+          <footer className="modal__footer">
+            <button className="button mr-20" onClick={startTutorial}>Play through</button>
+            <button className="button button--secondary" onClick={closeTutorialModal}>Skip</button>
+          </footer>
       </Modal>, document.body as HTMLBodyElement)}
       { tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState}/>, document.body as HTMLBodyElement)}
     </main>

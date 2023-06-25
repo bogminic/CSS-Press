@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef } from "react";
-import styles from "./Modal.module.scss";
+import "./Modal.scss";
 
 type Props = {
   open: boolean;
@@ -14,8 +14,8 @@ const Modal = memo(function Modal({ open, locked, onClose, children, ...props }:
 
   // Work out which classes should be applied to the dialog element
   const dialogClasses = useMemo(() => {
-    const _arr = [styles["modal"]];
-    if (!open) _arr.push(styles["modal--closing"]);
+    const _arr = ["modal"];
+    if (!open) _arr.push("modal--closing");
 
     return _arr.join(" ");
   }, [open]);
@@ -59,7 +59,7 @@ const Modal = memo(function Modal({ open, locked, onClose, children, ...props }:
       onClick={onClick}
       onAnimationEnd={onAnimEnd}
     >
-      <article className={styles["modal__container"]}>{children}</article>
+      <article className="modal__container">{children}</article>
     </dialog>
   );
 });

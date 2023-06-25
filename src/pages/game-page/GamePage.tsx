@@ -38,7 +38,7 @@ function GamePage() {
 
 
   useEffect(() => {
-    console.log(location,tutorialState,  isModalOpen);
+    console.log(location, tutorialState, isModalOpen);
     if (!tutorialState && !isModalOpen) {
       if (location.pathname === '/chapter/1/level/1') {
         setIsModalOpen(true);
@@ -46,8 +46,8 @@ function GamePage() {
         navigate('/chapter/1/level/1');
       }
     }
-    
-   }, [location, tutorialState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location, tutorialState]);
 
 
   const startTutorial = () => {
@@ -60,7 +60,7 @@ function GamePage() {
     navigate(storedPathname.current);
     setTutorialState(tutorialStates.finished);
   }
-  
+
   if (currentChapter === null || currentLevel === null) {
     return <Navigate replace to="/not-found" />;
   }
@@ -123,8 +123,8 @@ function GamePage() {
             <button className="button mr-20" onClick={startTutorial}>Play through</button>
             <button className="button button--secondary" onClick={closeTutorialModal}>Skip</button>
           </footer>
-      </Modal>, document.body as HTMLBodyElement)}
-      { tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState}/>, document.body as HTMLBodyElement)}
+        </Modal>, document.body as HTMLBodyElement)}
+      {tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState} />, document.body as HTMLBodyElement)}
     </main>
   );
 }

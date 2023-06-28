@@ -1,5 +1,5 @@
 // Colors
-$color-orange-400: #f78d2f;
+$color-orange-400: #f78d2e;
 $color-orange-300: #ffca9b;
 $color-orange-blur: rgba(247, 141, 47, 0.4);
 $color-blue-300: #c2d8d5;
@@ -16,6 +16,13 @@ $color-grey-200: #f0e8e1;
 $color-black: #120904;
 $color-white: #f4f2ea;
 
+$color-overlay: rgba(0, 0, 0, 0.5);
+
 $font-Crimson: "Crimson Text", serif;
 $font-Source: "Source Code Pro", monospace;
 $font-Playfair: "Playfair Display", serif;
+
+$newspaper-width: 727px;
+
+$filter-orange: invert(76%) sepia(47%) saturate(5136%) hue-rotate(340deg) brightness(104%) contrast(94%);
+$filter-yellow: invert(95%) sepia(32%) saturate(5878%) hue-rotate(329deg) brightness(100%) contrast(94%);

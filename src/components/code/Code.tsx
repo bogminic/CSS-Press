@@ -47,7 +47,7 @@ function Code(props: CodeProps) {
   const [isWrongAnswer, setIsWrongAnswer] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
-    `isLevelSolved-${chapterId}-${levelId}`,
+    `is-level-solved-${chapterId}-${levelId}`,
     "false"
   )[1];
 

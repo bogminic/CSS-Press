@@ -12,7 +12,6 @@ function Header() {
         <div className="header__lines--50"></div>
         <div className="header__lines--100"></div>
       </div>
-      <div className="header__user"></div>
     </header>
   );
 }

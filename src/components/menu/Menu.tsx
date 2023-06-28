@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Menu.scss";
 import iconSquare from "./4-square.svg";
+import openBook from "./open-book.svg";
+import reset from "./reset.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
-import { getStorageValue, } from "../../hooks/useLocalStorage";
+import { getStorageValue, useLocalStorage, } from "../../hooks/useLocalStorage";
+import { localStorageNames, tutorialStates } from "../../utils/constants";
 
 export default function Menu() {
   const { chapterId, levelId } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const [_, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -19,6 +23,17 @@ export default function Menu() {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  const playWalkthrough = () => {
+    navigate(`/chapter/1/level/1`);
+    setTutorialState(tutorialStates.running)
+    closeMenu();
+  }
+
+  const resetGame = () => {
+    navigate(`/`);
+    localStorage.clear();
+  }
 
   const handleGoToLevel = (chapterIndex: number, levelIndex: number) => {
     navigate(`/chapter/${chapterIndex + 1}/level/${levelIndex + 1}`, {
@@ -39,7 +54,7 @@ export default function Menu() {
           >
             <span
               className={`menu__number ${
-                getStorageValue(`isLevelSolved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
+                getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
                 "menu__number--light"
               }
               ${
@@ -68,7 +83,13 @@ export default function Menu() {
         <button className="menu__close" onClick={closeMenu}>
           <img src={iconX} alt="Close menu" />
         </button>
-        <ul className="menu__items">{chapterItems}</ul>
+        <ul className="menu__items">
+          {chapterItems}
+          <li className="menu__actions">
+            <button className="menu__action" type="button" onClick={playWalkthrough}> <img className="menu__icon" src={openBook} alt="Open Book" /> Play Walkthrough</button>
+            <button className="menu__action" type="button" onClick={resetGame}> <img className="menu__icon" src={reset} alt="Open Book" /> Reset Game</button>
+          </li>
+        </ul>
       </div>
     </nav>
   );

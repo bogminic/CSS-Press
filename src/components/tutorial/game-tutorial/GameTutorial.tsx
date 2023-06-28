@@ -38,7 +38,7 @@ const GameTutorial = ({ setTutorialState}: Props) => {
                 ) : state.matches('write') ? (
                     <DialogTutorial state={state} send={send} actualState="write" />
                 ) : state.matches('finish') ? (
-                    <DialogTutorial state={state} send={send} actualState="finish" />
+                    <DialogTutorial state={state} actualState="finish" />
                 ) : null}
             </section>
             <button className='tutorial__skip' type='button' onClick={() => setTutorialState(tutorialStates.finished)}>

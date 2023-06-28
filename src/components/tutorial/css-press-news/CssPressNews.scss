@@ -1,0 +1,33 @@
+@import '~/styles/variables';
+
+.css-press-news {
+    position: absolute;
+    left: calc(50vw - 446px);
+    top: 100px;
+    animation: news 3s ease-in;
+    animation-fill-mode: forwards;
+
+    &--dark {
+        box-shadow: 0 0 0 100dvw $color-overlay;
+        backdrop-filter: blur(1px);
+    }
+    
+}
+
+@keyframes news {
+    0% {
+        rotate: 0deg;
+        scale: 0;
+    }
+
+    80% {
+        rotate: 3turn;
+        scale: 1;
+        translate: 0 0;
+    }
+
+    100% {
+        translate: calc(50vw - 500px);
+        rotate: 3turn;
+    }
+}

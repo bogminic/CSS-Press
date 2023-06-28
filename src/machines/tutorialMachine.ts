@@ -31,7 +31,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Here are the instructions to help you fix the newspaper'
+                message: 'Here are the instructions to help you fix the newspaper.'
             },
         },
         property: {
@@ -101,7 +101,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Click on the next level button to continue.'
+                message: 'Congrats you have finished the tutorial. Click on the next level button to go to next level.'
             }
         }
     }

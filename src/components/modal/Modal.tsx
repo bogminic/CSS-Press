@@ -14,7 +14,7 @@ const Modal = memo(function Modal({ open, locked, onClose, children, ...props }:
 
   // Work out which classes should be applied to the dialog element
   const dialogClasses = useMemo(() => {
-    const _arr = ["modal"];
+    const _arr = ["modal", "modal--tutorial"];
     if (!open) _arr.push("modal--closing");
 
     return _arr.join(" ");

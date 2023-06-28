@@ -7,7 +7,21 @@
   border: 1px solid $color-black;
   padding: 0;
   max-height: 80%;
-  max-width: 80%;  
+  max-width: 80%;
+
+  &--tutorial.modal {
+
+    margin-left: calc((100vw - 1492px) / 3);
+
+    &::backdrop {
+      background-color: transparent;
+      backdrop-filter: none;
+    }
+
+    @media only screen and (max-width: 1500px) {
+      margin-left: 0;
+    }
+  }
 
   &__title {
     text-align: center;

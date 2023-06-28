@@ -12,6 +12,7 @@ import Modal from "../../components/modal/Modal";
 import { createPortal } from "react-dom";
 import { localStorageNames, tutorialStates } from "../../utils/constants";
 import GameTutorial from "../../components/tutorial/game-tutorial/GameTutorial";
+import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews";
 
 
 function GamePage() {
@@ -35,13 +36,13 @@ function GamePage() {
   const initialTutorialState = JSON.parse(localStorage.getItem(localStorageNames.tutorialState) || '""');
   const [tutorialState, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, initialTutorialState);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isCSSNewspaperDisplayed, setIsCSSNewspaperDisplayed] = useState(false);
 
   useEffect(() => {
     console.log(location, tutorialState, isModalOpen);
     if (!tutorialState && !isModalOpen) {
       if (location.pathname === '/chapter/1/level/1') {
-        setIsModalOpen(true);
+        showTutorialModal();
       } else {
         navigate('/chapter/1/level/1');
       }
@@ -50,13 +51,29 @@ function GamePage() {
   }, [location, tutorialState]);
 
 
+  useEffect(() => {
+    if (location.pathname === '/chapter/1/level/2') {
+      setTutorialState(tutorialStates.finished);
+    }
+  }, [isArticleSliding]);
+
+  const showTutorialModal = () => {
+    setIsCSSNewspaperDisplayed(true);
+    window.setTimeout(() => {
+      setIsModalOpen(true);
+    }, 3100);
+   
+  }
+
   const startTutorial = () => {
     setIsModalOpen(false);
     setTutorialState(tutorialStates.running);
+    setIsCSSNewspaperDisplayed(false);
   }
 
   const closeTutorialModal = () => {
     setIsModalOpen(false);
+    setIsCSSNewspaperDisplayed(false);
     navigate(storedPathname.current);
     setTutorialState(tutorialStates.finished);
   }
@@ -79,7 +96,6 @@ function GamePage() {
     tipInfo,
     tipSelector
   } = currentLevel;
-
 
   return (
     <main className="game">
@@ -113,6 +129,7 @@ function GamePage() {
         tipInfo={tipInfo}
         tipSelector={tipSelector}
       />
+      {isCSSNewspaperDisplayed && <CssPressNews isModalOpen={isModalOpen} />}
       {createPortal(
         <Modal open={isModalOpen}>
           <h2 className="modal__title">Hi, Wanderer</h2>

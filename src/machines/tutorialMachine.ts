@@ -37,7 +37,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Here are the instructions to help you fix the newspaper.'
+                message: 'These instructions will assist you in resolving the issues with the newspaper.'
             },
         },
         property: {
@@ -50,7 +50,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Hover over font-size property for more details.'
+                message: 'For additional information, simply hover over the "font-size" property.'
             }
         },
         values: {
@@ -63,7 +63,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'You just need to find the correct values to fix the newspaper.'
+                message: 'All you need to do is determine the correct values to rectify the newspaper style.'
             }
         },
         correct: {
@@ -76,7 +76,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Hover on other paragraphs to discover the correct font size.'
+                message: 'To discover the correct font size, hover over other paragraphs.'
             }
         },
         error: {
@@ -102,7 +102,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'In this terminal below you can write CSS properties to make changes in the newspaper.'
+                message: 'You can use this terminal below to write CSS properties and modify the newspaper\'s design.'
             }
         },
         write: {
@@ -125,7 +125,7 @@ export const tutorialConfig = {
                 }
             },
             meta: {
-                message: 'Congrats you have finished the tutorial. Click on the next level button to go to next level.'
+                message: 'Congratulations on completing the tutorial! To proceed to the next level, simply click on the "Next Level" button.'
             }
         }
     }

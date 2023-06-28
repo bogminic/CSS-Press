@@ -1,20 +1,26 @@
 {
   "files": {
-    "main.css": "/CSS-Press/static/css/main.70eba02a.css",
-    "main.js": "/CSS-Press/static/js/main.37e71244.js",
+    "main.css": "/CSS-Press/static/css/main.635bb3ac.css",
+    "main.js": "/CSS-Press/static/js/main.46ad7b08.js",
     "static/js/787.c4325483.chunk.js": "/CSS-Press/static/js/787.c4325483.chunk.js",
     "static/media/papers.png": "/CSS-Press/static/media/papers.1102a63da6971487f815.png",
+    "static/media/css-press-news.jpg": "/CSS-Press/static/media/css-press-news.6f66ce0641a543372483.jpg",
     "static/media/4-square.svg": "/CSS-Press/static/media/4-square.48eb0a9ffd6427a59df79e0d529a19c9.svg",
     "static/media/twitter.svg": "/CSS-Press/static/media/twitter.da0017b63595fd16c6baacb669bffd8b.svg",
     "index.html": "/CSS-Press/index.html",
+    "static/media/open-book.svg": "/CSS-Press/static/media/open-book.fb018e60ffc60b8df0b89d7c71ec901f.svg",
     "static/media/facebook.svg": "/CSS-Press/static/media/facebook.a2be30590686e54e1a18c81f58221805.svg",
+    "static/media/double-arrow.svg": "/CSS-Press/static/media/double-arrow.673c89d4f7f6c05e1301b9f767668be0.svg",
+    "static/media/reset.svg": "/CSS-Press/static/media/reset.a8debbebd8150a9d73bfa2d72529d121.svg",
     "static/media/x.svg": "/CSS-Press/static/media/x.39f42467c8a9b7a081eaf2a55b9986aa.svg",
-    "main.70eba02a.css.map": "/CSS-Press/static/css/main.70eba02a.css.map",
-    "main.37e71244.js.map": "/CSS-Press/static/js/main.37e71244.js.map",
+    "static/media/single-arrow.svg": "/CSS-Press/static/media/single-arrow.feffd1e686344be6a9650c91b43eed12.svg",
+    "static/media/arrow.svg": "/CSS-Press/static/media/arrow.90e3b86287fc9b8fb16490f1c643ce43.svg",
+    "main.635bb3ac.css.map": "/CSS-Press/static/css/main.635bb3ac.css.map",
+    "main.46ad7b08.js.map": "/CSS-Press/static/js/main.46ad7b08.js.map",
     "787.c4325483.chunk.js.map": "/CSS-Press/static/js/787.c4325483.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70eba02a.css",
-    "static/js/main.37e71244.js"
+    "static/css/main.635bb3ac.css",
+    "static/js/main.46ad7b08.js"
   ]
 }

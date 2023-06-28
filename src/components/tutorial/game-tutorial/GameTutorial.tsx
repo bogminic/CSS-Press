@@ -18,7 +18,7 @@ const GameTutorial = ({ setTutorialState}: Props) => {
         <aside className="tutorial">
             <section className="tutorial__game">
                 {state.matches('article') ? (
-                    <DialogTutorial state={state} send={send} actualState="article" />
+                    <DialogTutorial state={state} send={send} actualState="article" hidePrevious />
                 ) : state.matches('misprint') ? (
                     <DialogTutorial state={state} send={send} actualState="misprint" />
                 ) : state.matches('instructions') ? (
@@ -38,7 +38,7 @@ const GameTutorial = ({ setTutorialState}: Props) => {
                 ) : state.matches('write') ? (
                     <DialogTutorial state={state} send={send} actualState="write" />
                 ) : state.matches('finish') ? (
-                    <DialogTutorial state={state} actualState="finish" />
+                    <DialogTutorial send={send} state={state} actualState="finish" hideNext />
                 ) : null}
             </section>
             <button className='tutorial__skip' type='button' onClick={() => setTutorialState(tutorialStates.finished)}>

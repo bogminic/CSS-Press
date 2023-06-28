@@ -18,6 +18,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'instructions'
+                },
+                PREV: {
+                    target: 'article'
                 }
             },
             meta: {
@@ -28,6 +31,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'property'
+                },
+                PREV: {
+                    target: 'misprint'
                 }
             },
             meta: {
@@ -38,6 +44,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'values'
+                },
+                PREV: {
+                    target: 'instructions'
                 }
             },
             meta: {
@@ -48,6 +57,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'correct'
+                },
+                PREV: {
+                    target: 'property'
                 }
             },
             meta: {
@@ -58,6 +70,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'error'
+                },
+                PREV: {
+                    target: 'values'
                 }
             },
             meta: {
@@ -68,6 +83,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'code'
+                },
+                PREV: {
+                    target: 'correct'
                 }
             },
             meta: {
@@ -78,6 +96,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'write'
+                },
+                PREV: {
+                    target: 'error'
                 }
             },
             meta: {
@@ -88,6 +109,9 @@ export const tutorialConfig = {
             on: {
                 NEXT: {
                     target: 'finish'
+                },
+                PREV: {
+                    target: 'code'
                 }
             },
             meta: {
@@ -96,8 +120,8 @@ export const tutorialConfig = {
         },
         finish: {
             on: {
-                NEXT: {
-                    target: 'article'
+                PREV: {
+                    target: 'write'
                 }
             },
             meta: {

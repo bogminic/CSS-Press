@@ -51,6 +51,7 @@ function GamePage() {
   }, [location, tutorialState]);
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (location.pathname === '/chapter/1/level/2') {
       setTutorialState(tutorialStates.finished);

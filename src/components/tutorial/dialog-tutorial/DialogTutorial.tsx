@@ -2,12 +2,15 @@ import React from 'react'
 import arrow from "./arrow.svg";
 import doubleArrow from "./double-arrow.svg";
 type Props = {
-    send?: (event: string) => void;
+    send: (event: string) => void;
     state: any;
     actualState: string;
+    hideNext?: boolean;
+    hidePrevious?: boolean;
 }
 
-const DialogTutorial = ({ send, state, actualState }: Props) => {
+const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious }: Props) => {
+    const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
             <div className={`tutorial__overlay tutorial__overlay--${actualState}`}></div>
@@ -16,10 +19,16 @@ const DialogTutorial = ({ send, state, actualState }: Props) => {
                 <p className="tutorial__text">
                     {state.meta[`(machine).${state.value}`].message}
                 </p>
-                {send && <button className='tutorial__next' type='button' onClick={() => send('NEXT')}>
-                    <img className='tutorial__double-arrow' src={doubleArrow} alt="Next" />
-                    Next
-                </button>}
+                <a className={btnsClass}>
+                    {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send('PREV')}>
+                        <img className='tutorial__double-arrow tutorial__double-arrow--reverse' src={doubleArrow} alt="Previous" />
+                        Prev
+                    </button>}
+                    {!hideNext && <button className='tutorial__button' type='button' onClick={() => send('NEXT')}>
+                        <img className='tutorial__double-arrow' src={doubleArrow} alt="Next" />
+                        Next
+                    </button>}
+                </a>
             </article>
         </>
     )

@@ -158,7 +158,6 @@
         font: 18px/27px $font-Crimson;
         border: 1px solid $color-black;
         box-shadow: -6px -6px $color-orange-400;
-        text-align: right;
 
         &--article,
         &--values,
@@ -261,7 +260,7 @@
 
     &__text {
         margin: 0;
-        text-align: left;
+        text-align: justify;
     }
 
     &__btns {

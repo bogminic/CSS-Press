@@ -39,7 +39,6 @@ function GamePage() {
   const [isCSSNewspaperDisplayed, setIsCSSNewspaperDisplayed] = useState(false);
 
   useEffect(() => {
-    console.log(location, tutorialState, isModalOpen);
     if (!tutorialState && !isModalOpen) {
       if (location.pathname === '/chapter/1/level/1') {
         showTutorialModal();

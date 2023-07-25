@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Menu.scss";
 import iconSquare from "./4-square.svg";
@@ -9,12 +9,34 @@ import iconX from "./x.svg";
 import { chapters } from "../../const/chapters";
 import { getStorageValue, useLocalStorage, } from "../../hooks/useLocalStorage";
 import { localStorageNames, tutorialStates } from "../../utils/constants";
+import { TutorialMachineStates } from './../../machines/tutorialMachine';
 
-export default function Menu() {
+type Props = {
+  state: any;
+  send: (event: string) => void;
+}
+
+export default function Menu({ send, state }: Props) {
   const { chapterId, levelId } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const [_, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
+  const [tutorialState, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
+
+  useEffect(() => {
+    if (tutorialState !== tutorialStates.finished && isMenuOpen && state.matches(TutorialMachineStates.menu)) {
+      send("NEXT");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tutorialState, isMenuOpen]);
+
+
+  useEffect(() => {
+    if (state.matches(TutorialMachineStates.finished)) {
+      setTutorialState(tutorialStates.finished);
+      setMenuOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -27,11 +49,13 @@ export default function Menu() {
   const playWalkthrough = () => {
     navigate(`/chapter/1/level/1`);
     setTutorialState(tutorialStates.running)
+    send("RESET");
     closeMenu();
   }
 
   const resetGame = () => {
     navigate(`/`);
+    send("RESET");
     localStorage.clear();
   }
 
@@ -53,15 +77,13 @@ export default function Menu() {
             onClick={() => handleGoToLevel(chapterIndex, levelIndex)}
           >
             <span
-              className={`menu__number ${
-                getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
+              className={`menu__number ${getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
                 "menu__number--light"
-              }
-              ${
-                chapterId === (chapterIndex + 1).toString() &&
+                }
+              ${chapterId === (chapterIndex + 1).toString() &&
                 levelId === (levelIndex + 1).toString() &&
                 "menu__number--orange"
-              } 
+                } 
               `}
             >
               {levelIndex + 1}

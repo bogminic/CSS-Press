@@ -147,6 +147,33 @@
 
         }
 
+        &--menu {
+            position: absolute;
+            top: calc(50% - 185px);
+            right: 362px;
+            bottom: calc(50% - 230px);
+            width: 365px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+        }
+
+        &--menu,
+        &--levels,
+        &--buttons,
+        &--done {
+            position: absolute;
+            top: -17px;
+            left: -55px;
+            bottom: -15px;
+            width: 40px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+
+            @media screen and (min-width: 1540px) {
+                left: calc(714px - 50vw);
+            }
+        }
+
     }
 
     &__info {
@@ -200,6 +227,39 @@
             top: calc(50% + 216px);
             right: 752px;
         }
+
+        &--menu {
+            top: -25px;
+            left: 40px;
+
+            @media screen and (min-width: 1540px) {
+                left: calc(810px - 50vw);
+            }
+        }
+
+        &--levels {
+            top: 50%;
+            left: 320px;
+
+            @media screen and (min-width: 1540px) {
+                left: calc(1090px - 50vw);
+            }
+        }
+
+        &--buttons {
+            bottom: -35px;
+            left: 320px;
+
+            @media screen and (min-width: 1540px) {
+                left: calc(1090px - 50vw);
+            }
+        }
+
+        &--done {
+            top: calc(50% - 62px);
+            right: calc(50% - 165px);
+        }
+
 
     }
 
@@ -255,6 +315,28 @@
             top: -50px;
             right: 60px;
             transform: scaleX(-1) rotate(270deg);
+        }
+
+        &--menu {
+            top: calc(50% - 22px);
+            left: -50px;
+            transform: scaleX(-1);
+        }
+
+        &--levels {
+            top: calc(50% - 22px);
+            left: -50px;
+            transform: scaleX(-1);
+        }
+
+        &--buttons {
+            top: 50%;
+            left: -50px;
+            transform: scale(-1, -1);
+        }
+
+        &--done {
+            display: none;
         }
     }
 

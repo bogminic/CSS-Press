@@ -13,9 +13,14 @@ import { createPortal } from "react-dom";
 import { localStorageNames, tutorialStates } from "../../utils/constants";
 import GameTutorial from "../../components/tutorial/game-tutorial/GameTutorial";
 import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews";
+import { TutorialMachineStates } from "../../machines/tutorialMachine";
 
+type Props = {
+  state: any;
+  send: (event: string) => void;
+}
 
-function GamePage() {
+function GamePage({state, send}: Props) {
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -50,11 +55,11 @@ function GamePage() {
   }, [location, tutorialState]);
 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (location.pathname === '/chapter/1/level/2') {
-      setTutorialState(tutorialStates.finished);
+      send('NEXT');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isArticleSliding]);
 
   const showTutorialModal = () => {
@@ -141,7 +146,11 @@ function GamePage() {
             <button className="button button--secondary" onClick={closeTutorialModal}>Skip</button>
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
-      {tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState} />, document.body as HTMLBodyElement)}
+      {tutorialState === tutorialStates.running && !state.matches(TutorialMachineStates.finished) && createPortal(
+      <GameTutorial
+        state={state}
+        send={send}
+        setTutorialState={setTutorialState} />, document.body as HTMLBodyElement)}
     </main>
   );
 }

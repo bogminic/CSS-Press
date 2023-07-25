@@ -14,8 +14,12 @@ import NotfoundPage from "./pages/notfound-page/NotfoundPage";
 import "./App.scss";
 import Menu from "./components/menu/Menu";
 import Dashboard from "./pages/dashboard/Dashboard";
+import { useMachine } from "@xstate/react";
+import { tutorialMachine } from "./machines/tutorialMachine";
 
 function App() {
+  const [state, send] = useMachine(tutorialMachine);
+
   return (
     <HashRouter>
       <Header />
@@ -29,8 +33,8 @@ function App() {
             path="/chapter/:chapterId/level/:levelId"
             element={
               <>
-                <Menu />
-                <GamePage />
+                <Menu state={state} send={send} />
+                <GamePage state={state} send={send} />
               </>
             }
           />
@@ -38,7 +42,7 @@ function App() {
             path="/not-found"
             element={
               <>
-                <Menu />
+                <Menu state={state} send={send}/>
                 <NotfoundPage />
               </>
             }

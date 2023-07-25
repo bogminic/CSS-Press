@@ -5,11 +5,12 @@ type Props = {
     send: (event: string) => void;
     state: any;
     actualState: string;
-    hideNext?: boolean;
     hidePrevious?: boolean;
+    hideNext?: boolean;
+    showFinish?: boolean;
 }
 
-const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious }: Props) => {
+const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, showFinish }: Props) => {
     const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
@@ -19,8 +20,8 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious }: Pr
                 <p className="tutorial__text">
                     {state.meta[`(machine).${state.value}`].message}
                 </p>
-                <a className={btnsClass}>
-                    {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send('PREV')}>
+                {(!hidePrevious || !hideNext || showFinish) && <a className={btnsClass}>
+                   {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send('PREV')}>
                         <img className='tutorial__double-arrow tutorial__double-arrow--reverse' src={doubleArrow} alt="Previous" />
                         Prev
                     </button>}
@@ -28,7 +29,12 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious }: Pr
                         <img className='tutorial__double-arrow' src={doubleArrow} alt="Next" />
                         Next
                     </button>}
-                </a>
+
+                    {showFinish && <button className='tutorial__button' type='button' onClick={() => send('FINISHED')}>
+                        <img className='tutorial__double-arrow' src={doubleArrow} alt="Finish" />
+                        Finish
+                    </button>}
+                </a>}
             </article>
         </>
     )

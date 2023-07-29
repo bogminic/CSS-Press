@@ -36,8 +36,8 @@ const GameTutorial = ({ currentTutorialState, send }: Props) => {
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.click} />
                 ) : currentTutorialState.matches(TutorialMachineStates.write) ? (
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.write} />
-                ) : currentTutorialState.matches(TutorialMachineStates.finish) ? (
-                    <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.finish} hideNext />
+                ) : currentTutorialState.matches(TutorialMachineStates.complete) ? (
+                    <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.complete} hideNext />
                 ) : currentTutorialState.matches(TutorialMachineStates.menu) ? (
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.menu} hideNext hidePrevious />
                 ) : currentTutorialState.matches(TutorialMachineStates.levels) ? (

@@ -55,6 +55,14 @@ export default function Menu({ send, currentTutorialState }: Props) {
   }
 
   const handleGoToLevel = (chapterIndex: number, levelIndex: number) => {
+    // If the tutorial is not finished, don't navigate to another level
+    if (!currentTutorialState.matches(TutorialMachineStates.finished)) {
+      navigate(`/chapter/1/level/1`, {
+        replace: true,
+      });
+      return;
+    }
+
     navigate(`/chapter/${chapterIndex + 1}/level/${levelIndex + 1}`, {
       replace: true,
     });

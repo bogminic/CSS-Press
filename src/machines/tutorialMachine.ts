@@ -8,7 +8,7 @@ export enum TutorialMachineStates {
     correct = 'correct',
     done = 'done',
     error = 'error',
-    finish = 'finish',
+    complete = 'complete',
     finished = 'finished',
     instructions = 'instructions',
     levels = 'levels',
@@ -171,7 +171,7 @@ export const tutorialConfig = {
             entry: assign({ message: () => 'Click in the .misprint class input and write: font-size: 16px;' }),
             on: {
                 NEXT: {
-                    target: 'finish'
+                    target: 'complete'
                 },
                 PREV: {
                     target: 'code'
@@ -182,7 +182,7 @@ export const tutorialConfig = {
                 message: 'Click in the .misprint class input and write: font-size: 16px;'
             }
         },
-        [TutorialMachineStates.finish]: {
+        [TutorialMachineStates.complete]: {
             entry: assign({ message: () => 'Congratulations on completing the Level! To proceed to the next level, simply click on the "Next Level" button.' }),
             on: {
                 PREV: {

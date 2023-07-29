@@ -116,7 +116,7 @@
 
         }
 
-        &--finish {
+        &--complete {
             position: absolute;
             top: 0;
             right: 0;
@@ -223,7 +223,7 @@
             right: calc(50% + 220px);
         }
 
-        &--finish {
+        &--complete {
             top: calc(50% + 216px);
             right: 752px;
         }
@@ -311,7 +311,7 @@
             transform: rotate(90deg);
         }
 
-        &--finish {
+        &--complete {
             top: -50px;
             right: 60px;
             transform: scaleX(-1) rotate(270deg);

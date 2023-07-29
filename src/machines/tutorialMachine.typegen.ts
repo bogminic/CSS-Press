@@ -27,7 +27,7 @@
         eventsCausingServices: {
           
         };
-        matchesStates: "article" | "buttons" | "code" | "correct" | "done" | "error" | "finish" | "finished" | "instructions" | "levels" | "menu" | "misprint" | "property" | "starting" | "values" | "write";
+        matchesStates: "article" | "buttons" | "code" | "complete" | "correct" | "done" | "error" | "finished" | "instructions" | "levels" | "menu" | "misprint" | "property" | "starting" | "values" | "write";
         tags: never;
       }
   

@@ -116,6 +116,7 @@ function GamePage({currentTutorialState, send}: Props) {
         nextLevelId={nextLevelId}
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
+        currentTutorialState={currentTutorialState}
       />
       <Article
         articleContent={articleContent}

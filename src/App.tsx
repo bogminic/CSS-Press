@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Route,
   Routes,
@@ -16,9 +16,18 @@ import Menu from "./components/menu/Menu";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { useMachine } from "@xstate/react";
 import { tutorialMachine } from "./machines/tutorialMachine";
+import { localStorageNames } from "./utils/constants";
 
 function App() {
-  const [state, send] = useMachine(tutorialMachine);
+
+  const persistedState = JSON.parse(localStorage.getItem(localStorageNames.tutorialState) || '""') || tutorialMachine.initialState;
+  const [currentTutorialState, send] = useMachine(tutorialMachine, {
+    state: persistedState
+  });
+
+  useEffect(() => {
+      localStorage.setItem(localStorageNames.tutorialState, JSON.stringify(currentTutorialState));
+  }, [currentTutorialState]);
 
   return (
     <HashRouter>
@@ -33,8 +42,8 @@ function App() {
             path="/chapter/:chapterId/level/:levelId"
             element={
               <>
-                <Menu state={state} send={send} />
-                <GamePage state={state} send={send} />
+                <Menu currentTutorialState={currentTutorialState} send={send} />
+                <GamePage currentTutorialState={currentTutorialState} send={send} />
               </>
             }
           />
@@ -42,7 +51,7 @@ function App() {
             path="/not-found"
             element={
               <>
-                <Menu state={state} send={send}/>
+                <Menu currentTutorialState={currentTutorialState} send={send} />
                 <NotfoundPage />
               </>
             }

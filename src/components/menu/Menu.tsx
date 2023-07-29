@@ -7,36 +7,32 @@ import reset from "./reset.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
-import { getStorageValue, useLocalStorage, } from "../../hooks/useLocalStorage";
-import { localStorageNames, tutorialStates } from "../../utils/constants";
+import { getStorageValue } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from './../../machines/tutorialMachine';
 
 type Props = {
-  state: any;
+  currentTutorialState: any;
   send: (event: string) => void;
 }
 
-export default function Menu({ send, state }: Props) {
+export default function Menu({ send, currentTutorialState }: Props) {
   const { chapterId, levelId } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const [tutorialState, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
 
   useEffect(() => {
-    if (tutorialState !== tutorialStates.finished && isMenuOpen && state.matches(TutorialMachineStates.menu)) {
+    if (currentTutorialState.matches(TutorialMachineStates.menu) && isMenuOpen) {
       send("NEXT");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tutorialState, isMenuOpen]);
+  }, [currentTutorialState, isMenuOpen]);
 
 
   useEffect(() => {
-    if (state.matches(TutorialMachineStates.finished)) {
-      setTutorialState(tutorialStates.finished);
+    if (currentTutorialState.matches(TutorialMachineStates.finished)) {
       setMenuOpen(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
+  }, [currentTutorialState]);
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -48,8 +44,7 @@ export default function Menu({ send, state }: Props) {
 
   const playWalkthrough = () => {
     navigate(`/chapter/1/level/1`);
-    setTutorialState(tutorialStates.running)
-    send("RESET");
+    send("PLAY");
     closeMenu();
   }
 

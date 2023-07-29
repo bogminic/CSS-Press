@@ -18,9 +18,9 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Next" />
                 <p className="tutorial__text">
-                    {state.meta[`(machine).${state.value}`].message}
+                    {state.context.message}
                 </p>
-                {(!hidePrevious || !hideNext || showFinish) && <a className={btnsClass}>
+                {(!hidePrevious || !hideNext || showFinish) && <div className={btnsClass}>
                    {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send('PREV')}>
                         <img className='tutorial__double-arrow tutorial__double-arrow--reverse' src={doubleArrow} alt="Previous" />
                         Prev
@@ -34,7 +34,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
                         <img className='tutorial__double-arrow' src={doubleArrow} alt="Finish" />
                         Finish
                     </button>}
-                </a>}
+                </div>}
             </article>
         </>
     )

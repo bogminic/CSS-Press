@@ -167,6 +167,7 @@ function Code(props: CodeProps) {
             className={
               isWrongAnswer ? "code__input code__input--error" : "code__input"
             }
+            aria-labelledby="answer"
             type="text"
             style={{ height: calculatedCodeHeight + "px" }}
             value={answer}

@@ -2,7 +2,7 @@
 @import "./../game-page/GamePage.scss";
 
 .not-found {
-  @extend main;
+  @extend article;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Menu.scss";
 import iconSquare from "./4-square.svg";
@@ -7,14 +7,32 @@ import reset from "./reset.svg";
 import iconX from "./x.svg";
 
 import { chapters } from "../../const/chapters";
-import { getStorageValue, useLocalStorage, } from "../../hooks/useLocalStorage";
-import { localStorageNames, tutorialStates } from "../../utils/constants";
+import { getStorageValue } from "../../hooks/useLocalStorage";
+import { TutorialMachineStates } from './../../machines/tutorialMachine';
 
-export default function Menu() {
+type Props = {
+  currentTutorialState: any;
+  send: (event: string) => void;
+}
+
+export default function Menu({ send, currentTutorialState }: Props) {
   const { chapterId, levelId } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const [_, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, "");
+
+  useEffect(() => {
+    if (currentTutorialState.matches(TutorialMachineStates.menu) && isMenuOpen) {
+      send("NEXT");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentTutorialState, isMenuOpen]);
+
+
+  useEffect(() => {
+    if (currentTutorialState.matches(TutorialMachineStates.finished)) {
+      setMenuOpen(false);
+    }
+  }, [currentTutorialState]);
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -26,16 +44,25 @@ export default function Menu() {
 
   const playWalkthrough = () => {
     navigate(`/chapter/1/level/1`);
-    setTutorialState(tutorialStates.running)
+    send("PLAY");
     closeMenu();
   }
 
   const resetGame = () => {
     navigate(`/`);
+    send("RESET");
     localStorage.clear();
   }
 
   const handleGoToLevel = (chapterIndex: number, levelIndex: number) => {
+    // If the tutorial is not finished, don't navigate to another level
+    if (!currentTutorialState.matches(TutorialMachineStates.finished)) {
+      navigate(`/chapter/1/level/1`, {
+        replace: true,
+      });
+      return;
+    }
+
     navigate(`/chapter/${chapterIndex + 1}/level/${levelIndex + 1}`, {
       replace: true,
     });
@@ -53,15 +80,13 @@ export default function Menu() {
             onClick={() => handleGoToLevel(chapterIndex, levelIndex)}
           >
             <span
-              className={`menu__number ${
-                getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
+              className={`menu__number ${getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
                 "menu__number--light"
-              }
-              ${
-                chapterId === (chapterIndex + 1).toString() &&
+                }
+              ${chapterId === (chapterIndex + 1).toString() &&
                 levelId === (levelIndex + 1).toString() &&
                 "menu__number--orange"
-              } 
+                } 
               `}
             >
               {levelIndex + 1}

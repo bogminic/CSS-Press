@@ -37,7 +37,7 @@ const Article = memo(function Article(props: ArticleProps) {
       <section
         className={
           isArticleSliding
-            ? "article animate__animated animate__slideOutRight animate__fast"
+            ? "article animate__animated animate__fadeOut animate__fast"
             : "article"
         }
       >

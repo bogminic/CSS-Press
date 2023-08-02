@@ -23,7 +23,7 @@
     "style-it": "^2.1.4",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
-    "xstate": "4.37.2"
+    "xstate": "4.38.2"
   },
   "scripts": {
     "start": "react-scripts start",

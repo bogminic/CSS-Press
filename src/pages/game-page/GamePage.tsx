@@ -10,12 +10,16 @@ import { getGameInfo } from "../../utils/helpers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import Modal from "../../components/modal/Modal";
 import { createPortal } from "react-dom";
-import { localStorageNames, tutorialStates } from "../../utils/constants";
 import GameTutorial from "../../components/tutorial/game-tutorial/GameTutorial";
 import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews";
+import { TutorialMachineStates } from "../../machines/tutorialMachine";
 
+type Props = {
+  currentTutorialState: any;
+  send: (event: string) => void;
+}
 
-function GamePage() {
+function GamePage({currentTutorialState, send}: Props) {
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,14 +36,10 @@ function GamePage() {
 
   const [selector, setSelector] = useState("");
   const [isArticleSliding, setIsArticleSliding] = useState(false);
-  // To fix useLocalStorage not getting the value from localStorage on not first render
-  const initialTutorialState = JSON.parse(localStorage.getItem(localStorageNames.tutorialState) || '""');
-  const [tutorialState, setTutorialState] = useLocalStorage<string>(localStorageNames.tutorialState, initialTutorialState);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isCSSNewspaperDisplayed, setIsCSSNewspaperDisplayed] = useState(false);
 
   useEffect(() => {
-    if (!tutorialState && !isModalOpen) {
+    if (currentTutorialState.matches(TutorialMachineStates.starting) && !isModalOpen) {
       if (location.pathname === '/chapter/1/level/1') {
         showTutorialModal();
       } else {
@@ -47,18 +47,17 @@ function GamePage() {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location, tutorialState]);
+  }, [location, currentTutorialState, isModalOpen]);
 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (location.pathname === '/chapter/1/level/2') {
-      setTutorialState(tutorialStates.finished);
+      send('NEXT');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isArticleSliding]);
 
   const showTutorialModal = () => {
-    setIsCSSNewspaperDisplayed(true);
     window.setTimeout(() => {
       setIsModalOpen(true);
     }, 3100);
@@ -67,15 +66,13 @@ function GamePage() {
 
   const startTutorial = () => {
     setIsModalOpen(false);
-    setTutorialState(tutorialStates.running);
-    setIsCSSNewspaperDisplayed(false);
+    send('NEXT');
   }
 
   const closeTutorialModal = () => {
     setIsModalOpen(false);
-    setIsCSSNewspaperDisplayed(false);
     navigate(storedPathname.current);
-    setTutorialState(tutorialStates.finished);
+    send('FINISHED');
   }
 
   if (currentChapter === null || currentLevel === null) {
@@ -119,6 +116,7 @@ function GamePage() {
         nextLevelId={nextLevelId}
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
+        currentTutorialState={currentTutorialState}
       />
       <Article
         articleContent={articleContent}
@@ -129,7 +127,9 @@ function GamePage() {
         tipInfo={tipInfo}
         tipSelector={tipSelector}
       />
-      {isCSSNewspaperDisplayed && <CssPressNews isModalOpen={isModalOpen} />}
+
+      {/* Tutorial */}
+      {currentTutorialState.matches(TutorialMachineStates.starting) && <CssPressNews isModalOpen={isModalOpen} />}
       {createPortal(
         <Modal open={isModalOpen}>
           <h2 className="modal__title">Hi, Wanderer</h2>
@@ -141,7 +141,10 @@ function GamePage() {
             <button className="button button--secondary" onClick={closeTutorialModal}>Skip</button>
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
-      {tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState} />, document.body as HTMLBodyElement)}
+      {!currentTutorialState.matches(TutorialMachineStates.finished) && createPortal(
+      <GameTutorial
+        currentTutorialState={currentTutorialState}
+        send={send} />, document.body as HTMLBodyElement)}
     </section>
   );
 }

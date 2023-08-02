@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { buildSolutionsArray, getCodeLinesSide, isSolutionCorrect } from "../../utils/helpers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { TutorialMachineStates } from "../../machines/tutorialMachine";
 
 interface CodeProps {
   beforeCode: string;
@@ -20,6 +21,7 @@ interface CodeProps {
   nextLevelId: number | null;
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
+  currentTutorialState: any;
 }
 
 function Code(props: CodeProps) {
@@ -38,6 +40,7 @@ function Code(props: CodeProps) {
     nextLevelId,
     isArticleSliding,
     setIsArticleSliding,
+    currentTutorialState
   } = props;
 
   let navigate = useNavigate();
@@ -107,6 +110,12 @@ function Code(props: CodeProps) {
   };
 
   const checkAnswer = () => {
+  
+    // If the tutorial is not finished, don't check the answer
+    if (!currentTutorialState.matches(TutorialMachineStates.finished) && !currentTutorialState.matches(TutorialMachineStates.complete)) {
+      return;
+    }
+
     if (isSolutionCorrect(solutionsArray, answer) && nextChapterId && nextLevelId) {
       goToNextLevelAndSlideOutArticle();
     } else {

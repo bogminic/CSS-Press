@@ -10,6 +10,7 @@ export interface ILevel {
   solutions: string[][];
   tipInfo: string,
   tipSelector: string,
+  extraStyle?: string,
 }
 
 export interface IChapter {

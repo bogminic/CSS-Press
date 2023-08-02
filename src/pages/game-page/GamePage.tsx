@@ -91,7 +91,8 @@ function GamePage({currentTutorialState, send}: Props) {
     error,
     solutions,
     tipInfo,
-    tipSelector
+    tipSelector,
+    extraStyle
   } = currentLevel;
 
   return (
@@ -126,6 +127,7 @@ function GamePage({currentTutorialState, send}: Props) {
         isArticleSliding={isArticleSliding}
         tipInfo={tipInfo}
         tipSelector={tipSelector}
+        extraStyle={extraStyle}
       />
 
       {/* Tutorial */}

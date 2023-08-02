@@ -5,6 +5,7 @@ import parse, {
   DOMNode,
   HTMLReactParserOptions,
   Element,
+  attributesToProps,
 } from "html-react-parser";
 
 type Props = {
@@ -17,18 +18,21 @@ const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any)
 ({
   replace: (domNode: DOMNode) => {
     if (domNode instanceof Element && domNode.name === tipSelector && tipInfo && domNode.attribs.class !== 'misprint') {
-      const propertyNode = domNode.children[0];
-      if (propertyNode.type === "text" && domNode.children.length === 1) {
-        const item = propertyNode.data;
-        const CustomTag = `${tipSelector}` as keyof JSX.IntrinsicElements;
+      const CustomTag = `${tipSelector}` as keyof JSX.IntrinsicElements;
+      const props = attributesToProps(domNode.attribs);
+
+      // Tags with text inside
+      if (domNode.firstChild && domNode.children[0].type === "text" && domNode.children.length === 1) {
         const content = (
-          <CustomTag className="article__reference" onMouseOver={handleMouseOver}>
-            {item}
+          <CustomTag className="article__reference" {...props} onMouseOver={handleMouseOver}>
+            {domNode.children[0].data}
           </CustomTag>
         );
-
         return content
       }
+
+      return (<CustomTag className="article__reference" {...props} onMouseOver={handleMouseOver}></CustomTag>)
+
     }
   },
 } as HTMLReactParserOptions);

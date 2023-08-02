@@ -399,6 +399,36 @@ export const chapters: IChapter[] = [
       `
       },
     ]
+  },
+  {
+    chapterName: 'Box Model',
+    levels: [
+      {
+        levelName: 'border',
+        instructions: 'Observe these images - one is without a border, while the other has one. Make use of the <code>border</code> property to rectify the issue.',
+        beforeCode: '.misprint {',
+        afterCode: '}',
+        linesOfCode: 1,
+        startHighlightCode: 2,
+        error: 'border: none;',
+        solutions: [['border', '1px solid black', '1px solid #000', '1px solid #000000']],
+        tipSelector: 'img',
+        tipInfo: 'Border is 1px, solid and black',
+        extraStyle: 'img { border: 1px solid black }',
+        articleContent: `
+        <h2>Insert your article title here</h2>
+        <div>
+          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+          <img src="https://dummyimage.com/347x100/f1b681/000.jpg" alt="Image" />
+          <p>Integer non mollis lorem, ut dignissim augue et la es integer at semper erat mo en placerat purus ac diam elementum, nec feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec feugiat.</p>
+          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <img class="misprint" src="https://dummyimage.com/347x100/f1b681/000.jpg" alt="Image" />
+          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit elit.Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in ete el.</p>
+        </div>
+      `
+      },
+    ]
   }
 
 ]

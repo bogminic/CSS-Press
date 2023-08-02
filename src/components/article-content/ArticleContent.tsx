@@ -62,14 +62,14 @@ export const ArticleContent = ({ articleContent, tipInfo, tipSelector }: Props) 
 
   const content = createArticleContent(articleContent, tipInfo, tipSelector, handleMouseOver);
   return (
-    <article ref={parentRef} className="article__body">
+    <section ref={parentRef} className="article__body">
       <Style>
         {`.article__tooltip {top: ${top}px; left: ${left}px;} `}
       </Style>
       {content}
-      <span className="article__tooltip">
-        {tipInfo}
-      </span>
-    </article>
+      <details className="article__tooltip">
+        <summary>{tipInfo}</summary>
+      </details>
+    </section>
   );
 };

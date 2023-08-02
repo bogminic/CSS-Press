@@ -77,7 +77,7 @@ export default function Menu() {
       <button className="menu__open" onClick={openMenu}>
         <img src={iconSquare} alt="Open menu" />
       </button>
-      <div
+      <section
         className={isMenuOpen ? "menu__list menu__list--open" : "menu__list"}
       >
         <button className="menu__close" onClick={closeMenu}>
@@ -90,7 +90,7 @@ export default function Menu() {
             <button className="menu__action" type="button" onClick={resetGame}> <img className="menu__icon" src={reset} alt="Open Book" /> Reset Game</button>
           </li>
         </ul>
-      </div>
+      </section>
     </nav>
   );
 }

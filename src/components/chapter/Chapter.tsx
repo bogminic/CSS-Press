@@ -13,14 +13,16 @@ type Props = {
 
 export default function Chapter({ chapter, chapterNumber}: Props) {
   const levelJSX = chapter.levels.map((level, levelIndex) => (
-  <Link key={levelIndex} to={`chapter/${chapterNumber}/level/${levelIndex + 1}`}>
+  <li key={levelIndex}>
+    <Link key={levelIndex} to={`chapter/${chapterNumber}/level/${levelIndex + 1}`}>
      <Level name={level.levelName} content={level.articleContent} solved={getStorageValue(`is-level-solved-${chapterNumber}-${levelIndex + 1}`, "") === "true"} />
-  </Link>
+    </Link>
+  </li>
   ));
   return (
     <section className="chapter">
       <h2 className="chapter__title">{chapter.chapterName} | 30%</h2>
-      <div className="chapter__body">{levelJSX}</div>
+      <ul className="chapter__body">{levelJSX}</ul>
     </section>
   );
 }

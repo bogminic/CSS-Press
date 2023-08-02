@@ -98,7 +98,7 @@ function GamePage() {
   } = currentLevel;
 
   return (
-    <main className="game">
+    <section className="game">
       <Instructions
         chapterName={chapterName}
         levelName={levelName}
@@ -142,7 +142,7 @@ function GamePage() {
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
       {tutorialState === tutorialStates.running && createPortal(<GameTutorial setTutorialState={setTutorialState} />, document.body as HTMLBodyElement)}
-    </main>
+    </section>
   );
 }
 

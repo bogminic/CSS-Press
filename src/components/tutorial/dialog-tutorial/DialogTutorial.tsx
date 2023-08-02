@@ -13,7 +13,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious }: Pr
     const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
-            <div className={`tutorial__overlay tutorial__overlay--${actualState}`}></div>
+            <object className={`tutorial__overlay tutorial__overlay--${actualState}`}></object>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Next" />
                 <p className="tutorial__text">

@@ -34,7 +34,7 @@ const Article = memo(function Article(props: ArticleProps) {
       <Style>
         {` .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer} }`}
       </Style>
-      <div
+      <section
         className={
           isArticleSliding
             ? "article animate__animated animate__slideOutRight animate__fast"
@@ -50,7 +50,7 @@ const Article = memo(function Article(props: ArticleProps) {
           <div className="dummy__content"></div>
           <div className="dummy__img"></div>
         </div>
-      </div>
+      </section>
     </>
   );
 })

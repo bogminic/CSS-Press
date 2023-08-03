@@ -40,6 +40,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
     @media only screen and (max-width: 1536px) {
       grid-template-columns: 1fr 1fr;

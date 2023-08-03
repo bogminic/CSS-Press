@@ -95,7 +95,7 @@ function GamePage({currentTutorialState, send}: Props) {
   } = currentLevel;
 
   return (
-    <main className="game">
+    <section className="game">
       <Instructions
         chapterName={chapterName}
         levelName={levelName}
@@ -145,7 +145,7 @@ function GamePage({currentTutorialState, send}: Props) {
       <GameTutorial
         currentTutorialState={currentTutorialState}
         send={send} />, document.body as HTMLBodyElement)}
-    </main>
+    </section>
   );
 }
 

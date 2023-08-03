@@ -24,14 +24,14 @@ const options: HTMLReactParserOptions = {
         const propertyDefinition = tooltips[property.toLocaleLowerCase()];
         return (
           <>
-            <span className="tooltip">
+            <mark className="tooltip">
               {property}
               {propertyDefinition && (
-                <span className="tooltip__content">
-                  {parse(propertyDefinition)}
-                </span>
+                <details className="tooltip__content">
+                  <summary>{parse(propertyDefinition)}</summary>
+                </details>
               )}
-            </span>
+            </mark>
           </>
         );
       }
@@ -48,20 +48,20 @@ class Instructions extends Component<InstructionsProps> {
     const { chapterName, levelName, instructionsContent } = this.props;
     const content = createInstructionsContent(instructionsContent);
     return (
-      <article className="instructions">
+      <section className="instructions">
         <header className="instructions__header">
-          <div className="instructions__title">
-            <div className="instructions__chapter">{chapterName}</div>
-            <div className="instructions__separator">|</div>
-            <div className="instructions__level">{levelName}</div>
-          </div>
+          <h2 className="instructions__title">
+            {chapterName.toUpperCase()}
+            <span className="instructions__separator">|</span>
+            {levelName.toLowerCase()}
+          </h2>
           <div className="instructions__lines">
             <div className="instructions__lines--50"></div>
             <div className="instructions__lines--100"></div>
           </div>
         </header>
-        <section className="instructions__content">{content}</section>
-      </article>
+        <article className="instructions__content">{content}</article>
+      </section>
     );
   }
 }

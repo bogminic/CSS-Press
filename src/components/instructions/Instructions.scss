@@ -16,6 +16,9 @@
     align-items: center;
     width: 70%;
     padding-left: 10px;
+    font-family: $font-Playfair;
+    font-size: 20px;
+    font-weight: 900;
   }
 
   &__lines {
@@ -37,25 +40,9 @@
     }
   }
 
-  &__chapter {
-    text-transform: uppercase;
-    font-family: $font-Playfair;
-    font-size: 20px;
-    font-weight: 900;
-  }
-
   &__separator {
     padding: 0 10px;
-    font-family: $font-Playfair;
-    font-size: 20px;
-    font-weight: 400;
-  }
-
-  &__level {
-    text-transform: lowercase;
-    font-family: $font-Playfair;
-    font-size: 20px;
-    font-weight: 900;
+    margin: 0;
   }
 
   &__content {
@@ -64,6 +51,7 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
+    margin: 0;
   }
 }
 
@@ -116,6 +104,10 @@
       top: 0;
       left: 15px;
       background: $color-grey-400;
+    }
+
+    > summary::marker { 
+      content: ""; 
     }
   }
 

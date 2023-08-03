@@ -6,11 +6,11 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <div className="footer__copyright">Copyright © CSS Press {year}</div>
-      <div className="footer__social">
+      <small className="footer__copyright">Copyright © CSS Press {year}</small>
+      <figure className="footer__social">
         <TwitterLogo className="footer__social--twitter"/>
         <FacebookLogo className="footer__social--facebook"/>
-      </div>
+      </figure>
     </footer>
   );
 }

@@ -32,7 +32,7 @@ function App() {
   return (
     <HashRouter>
       <Header />
-      <div className="main-wrapper">
+      <main className="main-wrapper">
         <Routes>
           <Route
             path="/"
@@ -58,7 +58,7 @@ function App() {
           />
           <Route path="*" element={<Navigate replace to="/not-found" />} />
         </Routes>
-      </div>
+      </main>
       <Footer />
     </HashRouter>
   );

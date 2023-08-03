@@ -154,23 +154,23 @@ function Code(props: CodeProps) {
   };
 
   return (
-    <div
+    <section
       className={
         isCodeShaking
           ? "code animate__animated animate__shakeX animate__faster"
           : "code"
       }
     >
-      <div className="code__numbers">{codeLinesSide}</div>
-      <div
+      <ul className="code__numbers">{codeLinesSide}</ul>
+      <article
         className="code__focus"
         onMouseEnter={handleHoverEnter}
         onMouseLeave={handleHoverLeave}
       >
-        <div
+        <p
           className="code__before"
           dangerouslySetInnerHTML={{ __html: beforeCode }}
-        ></div>
+        ></p>
         {linesOfCode === 1 && (
           <input
             className={
@@ -197,11 +197,11 @@ function Code(props: CodeProps) {
             onKeyPress={handleKeyPressCheckAnswer}
           ></textarea>
         )}
-        <div
+        <p
           className="code__after"
           dangerouslySetInnerHTML={{ __html: afterCode }}
-        ></div>
-      </div>
+        ></p>
+      </article>
       {nextChapterId && (
         <button
           className={
@@ -214,7 +214,7 @@ function Code(props: CodeProps) {
           Next Level
         </button>
       )}
-    </div>
+    </section>
   );
 }
 

@@ -158,6 +158,12 @@ export function getGameInfo(
   return { currentChapter, currentLevel, nextChapterId, nextLevelId };
 }
 
+/**
+ * 
+ * @param chapter 
+ * @param chapterIndex 
+ * @returns 
+ */
 export function getChapterProgress(chapter: IChapter, chapterIndex: number) {
   const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex+1) + '-' + (levelIndex + 1), "") === "true").length;
   const noOfLevelsTotal = chapter.levels.length;

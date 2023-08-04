@@ -14,7 +14,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
     const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
-            <object className={`tutorial__overlay tutorial__overlay--${actualState}`} aria-label="pointed"></object>
+            <div className={`tutorial__overlay tutorial__overlay--${actualState}`}></div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Next" />
                 <p className="tutorial__text">

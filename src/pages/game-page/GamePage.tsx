@@ -91,7 +91,8 @@ function GamePage({currentTutorialState, send}: Props) {
     error,
     solutions,
     tipInfo,
-    tipSelector
+    tipSelector,
+    extraStyle
   } = currentLevel;
 
   return (
@@ -126,19 +127,20 @@ function GamePage({currentTutorialState, send}: Props) {
         isArticleSliding={isArticleSliding}
         tipInfo={tipInfo}
         tipSelector={tipSelector}
+        extraStyle={extraStyle}
       />
 
       {/* Tutorial */}
       {currentTutorialState.matches(TutorialMachineStates.starting) && <CssPressNews isModalOpen={isModalOpen} />}
       {createPortal(
-        <Modal open={isModalOpen}>
+        <Modal open={isModalOpen} className="modal modal--tutorial">
           <h2 className="modal__title">Hi, Wanderer</h2>
           <p>
             Welcome to CSS Press, where you will learn the basics of CSS while having fun along the way. Whould you like to play through the <strong>basics</strong> of the game?
           </p>
           <footer className="modal__footer">
-            <button className="button mr-20" onClick={startTutorial}>Play through</button>
-            <button className="button button--secondary" onClick={closeTutorialModal}>Skip</button>
+            <button className="button mr-20" type="button" onClick={startTutorial}>Play through</button>
+            <button className="button button--secondary" type="button" onClick={closeTutorialModal}>Skip</button>
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
       {!currentTutorialState.matches(TutorialMachineStates.finished) && createPortal(

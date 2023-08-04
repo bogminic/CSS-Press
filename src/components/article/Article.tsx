@@ -14,6 +14,7 @@ interface ArticleProps {
   isArticleSliding: boolean;
   tipInfo: string;
   tipSelector: string;
+  extraStyle?: string;
 }
 
 
@@ -26,13 +27,14 @@ const Article = memo(function Article(props: ArticleProps) {
     isArticleSliding,
     tipInfo,
     tipSelector,
+    extraStyle
   } = props;
   const highlighted =
-    selector === "misprint" ? "background-color: #ffca9b;" : "";
+    selector === "misprint" ? "background-color: #ffca9b; box-shadow: 0px 0px 3px red;" : "";
   return (
     <>
       <Style>
-        {` .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer} }`}
+        {`.article__body ${extraStyle} .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`}
       </Style>
       <section
         className={

@@ -6,19 +6,20 @@ type Props = {
   locked?: boolean;
   onClose?: () => void;
   children: React.ReactNode;
+  className?: string;
 };
 
 // Thanks to Andrew Bone for the modal code. See more at https://dev.to/link2twenty/react-using-native-dialogs-to-make-a-modal-popup-4b25
-const Modal = memo(function Modal({ open, locked, onClose, children, ...props }: Props) {
+const Modal = memo(function Modal({ open, className="", locked, onClose, children, ...props }: Props) {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   // Work out which classes should be applied to the dialog element
   const dialogClasses = useMemo(() => {
-    const _arr = ["modal", "modal--tutorial"];
+    const _arr = className.split(" ");
     if (!open) _arr.push("modal--closing");
 
     return _arr.join(" ");
-  }, [open]);
+  }, [open, className]);
 
   // Eventlistener: trigger onclose when cancel detected
   const onCancel: React.ReactEventHandler<HTMLDialogElement> = useCallback(

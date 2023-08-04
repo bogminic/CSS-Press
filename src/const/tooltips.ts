@@ -7,5 +7,6 @@ export const tooltips: { [key: string]: string } = {
     'line-height': '<p>Sets out the height of a line \n <code>normal</code> | <code>[number]</code> | <code>[length]</code> | <code>initial</code> | <code>inherit</code> \n line-height: normal;</p>',
     'text-align': '<p>Specifies the horizontal alignment of the text \n <code>left</code> | <code>right</code> | <code>center</code> | <code>justify</code> | <code>initial</code> | <code>inherit</code> \n text-align: center;</p>',
     'text-decoration': '<p>Sets the decoration-line added for the text \n <code>underline</code> | <code>overline</code> | <code>line-through</code> | <code>none</code> | <code>inherit</code> \n text-decoration: underline;</p>',
-    'text-transform': '<p>Controls the capitalization of the text \n <code>none</code> | <code>capitalize</code> | <code>uppercase</code> | <code>lowercase</code> | <code>initial</code> | <code>inherit</code> \n text-transform: lowercase;</p>'
-}
+    'text-transform': '<p>Controls the capitalization of the text \n <code>none</code> | <code>capitalize</code> | <code>uppercase</code> | <code>lowercase</code> | <code>initial</code> | <code>inherit</code> \n text-transform: lowercase;</p>',
+    'border': '<p>This shorthand allow you to specify the style, width, and color of an element\'s border in one sentence. \n <code>size style color</code> \n border: 2px dotted black;</p>'
+};

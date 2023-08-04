@@ -1,17 +1,23 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  .main-wrapper {
-    display: grid;
-    grid-template-columns: 40px 1fr;
-  }
-  
-  // Helpers classes
-  .mr-20 {
-    margin-right: 20px;
-  }
-  
-  .ml-20 {
-    margin-left: 20px;
-  }
+  box-sizing: border-box;
+}
+
+@mixin main {
+  height: calc(100vh - 90px);
+  background: $color-grey-300;
+}
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  @include main;
+}
+
+// Helpers classes
+.mr-20 {
+  margin-right: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}

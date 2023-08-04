@@ -1,8 +1,8 @@
 @import "~/styles/variables";
-@import "./../game-page/GamePage.scss";
+@import "~/styles/Utils";
 
 .not-found {
-  @extend main;
+  @include main;
   display: flex;
   justify-content: center;
   align-items: center;

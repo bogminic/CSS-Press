@@ -16,7 +16,7 @@ function createArticleContent(articleContent: string) {
 
 export default function Level({ name, content, solved }: Props) {
   return (
-    <button className="level">
+    <button className="level" type="button">
       <h3 className="level__title">{name}</h3>
       <div className="level__bkg">
         <div className={solved ? "level__wrapper" : "level__wrapper level__wrapper--unfinished"}>

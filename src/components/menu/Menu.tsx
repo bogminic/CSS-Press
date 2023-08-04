@@ -9,6 +9,7 @@ import iconX from "./x.svg";
 import { chapters } from "../../const/chapters";
 import { getStorageValue } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from './../../machines/tutorialMachine';
+import { getChapterProgress } from "../../utils/helpers";
 
 type Props = {
   currentTutorialState: any;
@@ -71,7 +72,7 @@ export default function Menu({ send, currentTutorialState }: Props) {
 
   const chapterItems = chapters.map((chapter, chapterIndex) => (
     <li key={chapterIndex + chapter.chapterName} className="menu__chapter">
-      {chapter.chapterName} | 30%
+      {chapter.chapterName} | {getChapterProgress(chapter, chapterIndex)}%
       <ul>
         {chapter.levels.map((level, levelIndex) => (
           <li

@@ -17,9 +17,11 @@
     font-size: 14px;
     font-weight: 700;
     color: $color-black;
+    margin: 0;
   }
 
   &__social {
+    margin: 0;
     &--twitter {
       height: 13px;
       width: 13px;

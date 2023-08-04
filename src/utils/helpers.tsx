@@ -20,7 +20,7 @@ export function getCodeLinesSide(
 
   for (let i = 1; i <= maxNoOfCodeLinesSide; i++) {
     codeLinesSide.push(
-      <div
+      <li
         key={i}
         className={
           i >= highlightedRows[0] && i < highlightedRows[1]
@@ -29,7 +29,7 @@ export function getCodeLinesSide(
         }
       >
         {i}
-      </div>
+      </li>
     );
   }
   return codeLinesSide;

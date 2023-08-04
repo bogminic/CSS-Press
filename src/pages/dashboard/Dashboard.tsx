@@ -9,10 +9,10 @@ export default function Dashboard() {
   ));
 
   return (
-    <main className="dashboard">
+    <div className="dashboard">
       <div className="dashboard__content">
-        <div className="dashboard__wrapper">{chaptersJSX}</div>
+        <article className="dashboard__wrapper">{chaptersJSX}</article>
       </div>
-    </main>
+    </div>
   );
 }

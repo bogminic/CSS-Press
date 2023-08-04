@@ -30,7 +30,7 @@
       text-transform: capitalize;
     }
 
-    >div {
+    >article {
       column-count: 2;
       column-gap: 10px;
 
@@ -94,6 +94,10 @@
       top: 0;
       left: 20px;
       background: $color-blue-300;
+    }
+
+    >summary::marker {
+      content: "";
     }
   }
 

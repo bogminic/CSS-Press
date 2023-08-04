@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { buildSolutionsArray, getCodeLinesSide, isSolutionCorrect } from "../../utils/helpers";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from "../../machines/tutorialMachine";
+import { createPortal } from "react-dom";
+import Modal from "../modal/Modal";
 
 interface CodeProps {
   beforeCode: string;
@@ -48,6 +50,7 @@ function Code(props: CodeProps) {
   const [isHeartBeating, setIsHeartBeating] = useState(false);
   const [isCodeShaking, setIsCodeShaking] = useState(false);
   const [isWrongAnswer, setIsWrongAnswer] = useState(false);
+  const [isGameComplete, setIsGameComplete] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
     `is-level-solved-${chapterId}-${levelId}`,
@@ -110,7 +113,7 @@ function Code(props: CodeProps) {
   };
 
   const checkAnswer = () => {
-  
+
     // If the tutorial is not finished, don't check the answer
     if (!currentTutorialState.matches(TutorialMachineStates.finished) && !currentTutorialState.matches(TutorialMachineStates.complete)) {
       return;
@@ -150,6 +153,25 @@ function Code(props: CodeProps) {
       if (noLinesInTextarea >= linesOfCode) {
         event.preventDefault();
       }
+    }
+  };
+
+  const goToDashboard = () => {
+    navigate(`/`);
+  }
+
+  const finish = () => {
+
+    // If the tutorial is not finished, don't check the answer
+    if (!currentTutorialState.matches(TutorialMachineStates.finished) && !currentTutorialState.matches(TutorialMachineStates.complete)) {
+      return;
+    }
+
+    if (!isSolutionCorrect(solutionsArray, answer)) {
+      setIsGameComplete(true);
+    } else {
+      shakeCodeBox();
+      setIsWrongAnswer(true);
     }
   };
 
@@ -202,8 +224,9 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></p>
       </article>
-      {nextChapterId && (
+      {nextChapterId ?
         <button
+          type="button"
           className={
             isHeartBeating
               ? "code__button button animate__animated animate__pulse animate__infinite"
@@ -213,7 +236,28 @@ function Code(props: CodeProps) {
         >
           Next Level
         </button>
-      )}
+        :
+        <button
+          type="button"
+          className={
+            isHeartBeating
+              ? "code__button button animate__animated animate__pulse animate__infinite"
+              : "code__button button"
+          }
+          onClick={finish}
+        >
+          Finish
+        </button>}
+
+        {createPortal(
+        <Modal open={isGameComplete} className="modal">
+          <h2 className="modal__title">Wanderer,</h2>
+          <p>Congratulations!<br/>You've completed the CSS Press game with skill and determination. You've conquered all the challenges and emerged as a true CSS master. Well done!</p>
+          <p>Feel free to replay the game to sharpen your skills even further. Keep up the fantastic work!</p>
+          <footer className="modal__footer">
+            <button className="button" onClick={goToDashboard}>Go to Dashboard</button>
+          </footer>
+        </Modal>, document.body as HTMLBodyElement)}
     </section>
   );
 }

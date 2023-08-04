@@ -13,6 +13,7 @@ import { createPortal } from "react-dom";
 import GameTutorial from "../../components/tutorial/game-tutorial/GameTutorial";
 import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews";
 import { TutorialMachineStates } from "../../machines/tutorialMachine";
+import { localStorageNames } from "../../utils/constants";
 
 type Props = {
   currentTutorialState: any;
@@ -32,7 +33,7 @@ function GamePage({currentTutorialState, send}: Props) {
     [chapterId, levelId]
   );
 
-  const [answer, setAnswer] = useLocalStorage<string>(`answer-${chapterId}-${levelId}`, "");
+  const [answer, setAnswer] = useLocalStorage<string>(localStorageNames.getLevelAnswer(chapterId || '', levelId || ''), "");
 
   const [selector, setSelector] = useState("");
   const [isArticleSliding, setIsArticleSliding] = useState(false);

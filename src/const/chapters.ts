@@ -405,7 +405,7 @@ export const chapters: IChapter[] = [
     levels: [
       {
         levelName: 'border',
-        instructions: 'Observe these images - one is without a border, while the other has one. Make use of the <code>border</code> property to rectify the issue.',
+        instructions: 'Take a look at these images - one has no border, while the other has one. Utilize the <code>border</code> property to rectify the issue.',
         beforeCode: '.misprint {',
         afterCode: '}',
         linesOfCode: 1,

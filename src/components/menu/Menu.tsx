@@ -99,13 +99,13 @@ export default function Menu({ send, currentTutorialState }: Props) {
   ));
   return (
     <nav className="menu">
-      <button className="menu__open" onClick={openMenu}>
+      <button className="menu__open" onClick={openMenu} type="button">
         <img src={iconSquare} alt="Open menu" />
       </button>
       <section
         className={isMenuOpen ? "menu__list menu__list--open" : "menu__list"}
       >
-        <button className="menu__close" onClick={closeMenu}>
+        <button className="menu__close" onClick={closeMenu} type="button">
           <img src={iconX} alt="Close menu" />
         </button>
         <ul className="menu__items">

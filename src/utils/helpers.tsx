@@ -159,7 +159,7 @@ export function getGameInfo(
 }
 
 /**
- * 
+ * Return the current progress for each chapter
  * @param chapter 
  * @param chapterIndex 
  * @returns 

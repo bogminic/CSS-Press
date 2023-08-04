@@ -1,7 +1,14 @@
 import React from 'react'
 import './NotfoundPage.scss';
+import { useNavigate } from 'react-router';
 
 export default function NotfoundPage() {
+  let navigate = useNavigate();
+
+  const goToDashboard = () => {
+    navigate(`/`);
+  }
+
   return (
     <section className='not-found'>
       <h1 className='not-found--title'>Oh no!</h1>
@@ -9,7 +16,7 @@ export default function NotfoundPage() {
         <br />
         so you'd better hurry back.
       </article>
-      <button className="button">Go to homepage</button>
+      <button className="button" type='button' onClick={goToDashboard}>Go to homepage</button>
     </section>
   )
 }

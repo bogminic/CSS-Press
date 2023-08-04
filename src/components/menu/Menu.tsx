@@ -9,7 +9,7 @@ import iconX from "./x.svg";
 import { chapters } from "../../const/chapters";
 import { getStorageValue } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from './../../machines/tutorialMachine';
-import { IChapter } from "../../models/Game";
+import { getChapterProgress } from "../../utils/helpers";
 
 type Props = {
   currentTutorialState: any;
@@ -69,12 +69,6 @@ export default function Menu({ send, currentTutorialState }: Props) {
     });
     closeMenu();
   };
-
-  const getChapterProgress = (chapter: IChapter, chapterIndex: number) => {
-    const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex+1) + '-' + (levelIndex + 1), "") === "true").length;
-    const noOfLevelsTotal = chapter.levels.length;
-    return Math.round(noOfLevelsSolved / noOfLevelsTotal * 100);
-  }
 
   const chapterItems = chapters.map((chapter, chapterIndex) => (
     <li key={chapterIndex + chapter.chapterName} className="menu__chapter">

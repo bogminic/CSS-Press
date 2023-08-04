@@ -5,6 +5,7 @@ import { IChapter } from "../../models/Game";
 import Level from "../level/Level";
 import { Link } from "react-router-dom";
 import { getStorageValue } from "../../hooks/useLocalStorage";
+import { getChapterProgress } from "../../utils/helpers";
 
 type Props = {
   chapter: IChapter;
@@ -21,7 +22,7 @@ export default function Chapter({ chapter, chapterNumber}: Props) {
   ));
   return (
     <section className="chapter">
-      <h2 className="chapter__title">{chapter.chapterName} | 30%</h2>
+      <h2 className="chapter__title">{chapter.chapterName} | {getChapterProgress(chapter, chapterNumber - 1)}%</h2>
       <ul className="chapter__body">{levelJSX}</ul>
     </section>
   );

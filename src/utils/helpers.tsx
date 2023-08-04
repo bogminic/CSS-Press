@@ -1,4 +1,5 @@
 import { chapters } from "../const/chapters";
+import { getStorageValue } from "../hooks/useLocalStorage";
 import { IChapter, ILevel } from "../models/Game";
 
 export function isNumeric(value: string | undefined): boolean {
@@ -155,4 +156,10 @@ export function getGameInfo(
   const nextChapterId = currentChapterIndex + 1;
 
   return { currentChapter, currentLevel, nextChapterId, nextLevelId };
+}
+
+export function getChapterProgress(chapter: IChapter, chapterIndex: number) {
+  const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex+1) + '-' + (levelIndex + 1), "") === "true").length;
+  const noOfLevelsTotal = chapter.levels.length;
+  return Math.round(noOfLevelsSolved / noOfLevelsTotal * 100);
 }

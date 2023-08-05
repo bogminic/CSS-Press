@@ -31,10 +31,13 @@ const Article = memo(function Article(props: ArticleProps) {
   } = props;
   const highlighted =
     selector === "misprint" ? "background-color: #ffca9b; box-shadow: 0px 0px 3px red;" : "";
+    const style = extraStyle 
+      ? `.article__body ${extraStyle} .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`
+      : `.article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`
   return (
     <>
       <Style>
-        {`.article__body ${extraStyle} .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`}
+        {style}
       </Style>
       <section
         className={

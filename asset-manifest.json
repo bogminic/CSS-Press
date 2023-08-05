@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CSS-Press/static/css/main.124591dc.css",
-    "main.js": "/CSS-Press/static/js/main.fafe1107.js",
+    "main.js": "/CSS-Press/static/js/main.6080fcb1.js",
     "static/js/787.c4325483.chunk.js": "/CSS-Press/static/js/787.c4325483.chunk.js",
     "static/media/papers.png": "/CSS-Press/static/media/papers.1102a63da6971487f815.png",
     "static/media/css-press-news.jpg": "/CSS-Press/static/media/css-press-news.6f66ce0641a543372483.jpg",
@@ -16,11 +16,11 @@
     "static/media/single-arrow.svg": "/CSS-Press/static/media/single-arrow.feffd1e686344be6a9650c91b43eed12.svg",
     "static/media/arrow.svg": "/CSS-Press/static/media/arrow.90e3b86287fc9b8fb16490f1c643ce43.svg",
     "main.124591dc.css.map": "/CSS-Press/static/css/main.124591dc.css.map",
-    "main.fafe1107.js.map": "/CSS-Press/static/js/main.fafe1107.js.map",
+    "main.6080fcb1.js.map": "/CSS-Press/static/js/main.6080fcb1.js.map",
     "787.c4325483.chunk.js.map": "/CSS-Press/static/js/787.c4325483.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.124591dc.css",
-    "static/js/main.fafe1107.js"
+    "static/js/main.6080fcb1.js"
   ]
 }

@@ -7,6 +7,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from "../../machines/tutorialMachine";
 import { createPortal } from "react-dom";
 import Modal from "../modal/Modal";
+import { localStorageNames } from "../../utils/constants";
 
 interface CodeProps {
   beforeCode: string;
@@ -53,7 +54,7 @@ function Code(props: CodeProps) {
   const [isGameComplete, setIsGameComplete] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
-    `is-level-solved-${chapterId}-${levelId}`,
+    localStorageNames.getIsLevelSolved(chapterId || '', levelId || ''),
     "false"
   )[1];
 

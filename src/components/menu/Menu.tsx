@@ -9,6 +9,7 @@ import iconX from "./x.svg";
 import { chapters } from "../../const/chapters";
 import { getStorageValue } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from './../../machines/tutorialMachine';
+import { localStorageNames } from "../../utils/constants";
 import { getChapterProgress } from "../../utils/helpers";
 
 type Props = {
@@ -81,7 +82,7 @@ export default function Menu({ send, currentTutorialState }: Props) {
             onClick={() => handleGoToLevel(chapterIndex, levelIndex)}
           >
             <span
-              className={`menu__number ${getStorageValue(`is-level-solved-${chapterIndex + 1}-${levelIndex + 1}`, "") === "true" &&
+              className={`menu__number ${getStorageValue(localStorageNames.getIsLevelSolved(chapterIndex + 1, levelIndex + 1), "") === "true" &&
                 "menu__number--light"
                 }
               ${chapterId === (chapterIndex + 1).toString() &&

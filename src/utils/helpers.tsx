@@ -68,13 +68,10 @@ export function isSolutionCorrect(solutions: string[], answer: string): boolean 
   }
 
   const solutionNoSpaces = solutions
-    .map(solution => {
-      solution
-       .replace(/ /g, "")
-       .split(";")
-       .filter((s) => s !== "");
-      return solution;
-    })
+    .map(solution => 
+       solution.replace(/ /g, "")
+    )   
+    
     
   const answerNoSpaces = answer
     .replace(/[\r\n ]/g, "")

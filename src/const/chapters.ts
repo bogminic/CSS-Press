@@ -58,7 +58,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-family: "Turret Road";',
-        solutions: [['font-family', '"CrimsonText"']],
+        solutions: [['font-family', '"Crimson Text"']],
         tipSelector: 'p',
         tipInfo: 'Font name is "Crimson Text"',
         articleContent: `
@@ -81,7 +81,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 3,
         startHighlightCode: 2,
         error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', '"PlayfairDisplay"']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', '"Playfair Display"']],
         tipSelector: 'q',
         tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
         articleContent: `
@@ -177,7 +177,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', '"CrimsonText"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', '"Crimson Text"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
         articleContent: `
@@ -361,7 +361,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family','"CrimsonText"'], ['text-align', 'justify'], ['text-transform', 'none']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family','"Crimson Text"'], ['text-align', 'justify'], ['text-transform', 'none']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
         articleContent: `
@@ -383,7 +383,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 9,
         startHighlightCode: 2,
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
-        solutions: [['font-family', '"PlayfairDisplay"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
+        solutions: [['font-family', '"Playfair Display"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
         tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
         articleContent: `

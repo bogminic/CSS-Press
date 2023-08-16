@@ -149,10 +149,11 @@ function Code(props: CodeProps) {
     event: React.KeyboardEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     if (event.key === "Enter") {
-      checkAnswer();
-      const noLinesInTextarea = answer.split(/\r|\r\n|\n/).length;
-      if (noLinesInTextarea >= linesOfCode) {
+      const noLinesInTextarea = answer.split(/\r|\r\n|\n/).filter((a) => a !== "").length;
+      if (noLinesInTextarea < linesOfCode) {
         event.preventDefault();
+      } else {
+        checkAnswer();
       }
     }
   };

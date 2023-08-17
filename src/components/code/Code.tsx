@@ -150,10 +150,14 @@ function Code(props: CodeProps) {
   ) => {
     if (event.key === "Enter") {
       const noLinesInTextarea = answer.split(/\r|\r\n|\n/).filter((a) => a !== "").length;
-      if (noLinesInTextarea < linesOfCode) {
+      if (noLinesInTextarea >= linesOfCode) {
+        if (nextChapterId) {
+          checkAnswer();
+        } else {
+          finish();
+        }
+        
         event.preventDefault();
-      } else {
-        checkAnswer();
       }
     }
   };
@@ -169,7 +173,7 @@ function Code(props: CodeProps) {
       return;
     }
 
-    if (!isSolutionCorrect(solutionsArray, answer)) {
+    if (isSolutionCorrect(solutionsArray, answer)) {
       setIsGameComplete(true);
     } else {
       shakeCodeBox();

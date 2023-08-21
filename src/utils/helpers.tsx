@@ -43,7 +43,7 @@ export function buildSolutionsArray(solutions: string[][]): string[] {
     const key = solution[0];
     solution.forEach((element, index) => {
       if (index >= 1) {
-        solutionElement = key+':'+ element;
+        solutionElement = key + ':' + element;
         solutionsArray.push(solutionElement);
       }
     })
@@ -70,12 +70,12 @@ export function isSolutionCorrect(solutions: string[], answer: string): boolean 
   const solutionNoSpaces = solutions
     .map(solution => {
       solution
-       .replace(/ /g, "")
-       .split(";")
-       .filter((s) => s !== "");
+        .replace(/ /g, "")
+        .split(";")
+        .filter((s) => s !== "");
       return solution;
     })
-    
+
   const answerNoSpaces = answer
     .replace(/[\r\n ]/g, "")
     .split(";")
@@ -85,77 +85,85 @@ export function isSolutionCorrect(solutions: string[], answer: string): boolean 
   const uniqueAnswerKeys = buildKeys(answerNoSpaces);
   const sameKeys = uniqueSolutionsKeys.size === uniqueAnswerKeys.size && Array.from(uniqueSolutionsKeys).every(value => uniqueAnswerKeys.has(value));
   const isAnswerIncludedIntoSolution = answerNoSpaces.every((answer) => solutionNoSpaces.includes(answer));
-  
+
   return isAnswerIncludedIntoSolution && sameKeys;
 }
 
 /**
- * Return game information (current Chapter/Level and next Chapter/Level ids)
- * @param chapterId 
- * @param levelId 
- * @returns 
+ * Return game information (current Chapter/Level and next Chapter/Level numbers)
+ * @param chapterNumber
+ * @param leveNumber
+ * @returns
  */
 export function getGameInfo(
-  chapterId: string | undefined,
-  levelId: string | undefined
+  chapterNumber: string | undefined,
+  leveNumber: string | undefined
 ): {
   currentChapter: IChapter | null;
   currentLevel: ILevel | null;
-  nextChapterId: number | null;
-  nextLevelId: number | null;
+  chapterNumber: number | null;
+  levelNumber: number | null;
+  nextChapterNumber: number | null;
+  nextLevelNumber: number | null;
 } {
   if (
-    !chapterId ||
-    chapterId === "0" ||
-    levelId === "0" ||
-    !levelId ||
-    !isNumeric(chapterId) ||
-    !isNumeric(levelId)
+    !chapterNumber ||
+    chapterNumber === "0" ||
+    !leveNumber ||
+    leveNumber === "0" ||
+    !isNumeric(chapterNumber) ||
+    !isNumeric(leveNumber)
   ) {
     return {
       currentChapter: null,
       currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
+      chapterNumber: null,
+      levelNumber: null,
+      nextChapterNumber: null,
+      nextLevelNumber: null,
     };
   }
-  const currentChapterIndex = parseInt(chapterId) - 1;
+  const currentChapterIndex = parseInt(chapterNumber) - 1;
   const currentChapter: IChapter = chapters[currentChapterIndex];
   if (!currentChapter) {
     return {
       currentChapter: null,
       currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
+      chapterNumber: null,
+      levelNumber: null,
+      nextChapterNumber: null,
+      nextLevelNumber: null,
     };
   }
-  const currentLevelIndex = parseInt(levelId) - 1;
+  const currentLevelIndex = parseInt(leveNumber) - 1;
   const currentLevel: ILevel = currentChapter.levels[currentLevelIndex];
   if (!currentLevel) {
     return {
       currentChapter: null,
       currentLevel: null,
-      nextChapterId: null,
-      nextLevelId: null,
+      chapterNumber: null,
+      levelNumber: null,
+      nextChapterNumber: null,
+      nextLevelNumber: null,
     };
   }
 
-  let nextLevelId = currentChapter.levels[currentLevelIndex + 1]
+  let nextLevelNumber = currentChapter.levels[currentLevelIndex + 1]
     ? currentLevelIndex + 2
     : null;
 
-  if (!nextLevelId) {
-    const nextChapterId = chapters[currentChapterIndex + 1]
+  if (!nextLevelNumber) {
+    const nextChapterNumber = chapters[currentChapterIndex + 1]
       ? currentChapterIndex + 2
       : null;
-    nextLevelId = nextChapterId ? 1 : null;
+    nextLevelNumber = nextChapterNumber ? 1 : null;
 
-    return { currentChapter, currentLevel, nextChapterId, nextLevelId };
+    return { currentChapter, currentLevel, chapterNumber: +chapterNumber, levelNumber: +leveNumber, nextChapterNumber, nextLevelNumber };
   }
 
-  const nextChapterId = currentChapterIndex + 1;
+  const nextChapterNumber = currentChapterIndex + 1;
 
-  return { currentChapter, currentLevel, nextChapterId, nextLevelId };
+  return { currentChapter, currentLevel, chapterNumber: +chapterNumber, levelNumber: +leveNumber, nextChapterNumber, nextLevelNumber };
 }
 
 /**
@@ -165,7 +173,7 @@ export function getGameInfo(
  * @returns 
  */
 export function getChapterProgress(chapter: IChapter, chapterIndex: number) {
-  const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex+1) + '-' + (levelIndex + 1), "") === "true").length;
+  const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex + 1) + '-' + (levelIndex + 1), "") === "true").length;
   const noOfLevelsTotal = chapter.levels.length;
   return Math.round(noOfLevelsSolved / noOfLevelsTotal * 100);
 }

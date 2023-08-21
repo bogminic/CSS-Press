@@ -18,10 +18,10 @@ interface CodeProps {
   setSelector: Dispatch<SetStateAction<string>>;
   answer: string;
   solutions: string[][];
-  chapterId: string | null;
-  levelId: string | null;
-  nextChapterId: number | null;
-  nextLevelId: number | null;
+  chapterNumber: number | null;
+  levelNumber: number | null;
+  nextChapterNumber: number | null;
+  nextLevelNumber: number | null;
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
   currentTutorialState: any;
@@ -37,10 +37,10 @@ function Code(props: CodeProps) {
     setAnswer,
     setSelector,
     solutions,
-    chapterId,
-    levelId,
-    nextChapterId,
-    nextLevelId,
+    chapterNumber: chapter,
+    levelNumber: level,
+    nextChapterNumber: nextChapter,
+    nextLevelNumber: nextLevel,
     isArticleSliding,
     setIsArticleSliding,
     currentTutorialState
@@ -54,7 +54,7 @@ function Code(props: CodeProps) {
   const [isGameComplete, setIsGameComplete] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
-    localStorageNames.getIsLevelSolved(chapterId || '', levelId || ''),
+    localStorageNames.getIsLevelSolved(chapter || '', level || ''),
     "false"
   )[1];
 
@@ -120,7 +120,7 @@ function Code(props: CodeProps) {
       return;
     }
 
-    if (isSolutionCorrect(solutionsArray, answer) && nextChapterId && nextLevelId) {
+    if (isSolutionCorrect(solutionsArray, answer) && nextChapter && nextLevel) {
       goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();
@@ -141,7 +141,7 @@ function Code(props: CodeProps) {
     slideTimeoutRef.current = window.setTimeout(() => {
       setIsHeartBeating(false);
       setIsArticleSliding(false);
-      navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`);
+      navigate(`/chapter/${nextChapter}/level/${nextLevel}`);
     }, 800);
   };
 
@@ -225,7 +225,7 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></p>
       </article>
-      {nextChapterId ?
+      {nextChapter ?
         <button
           type="button"
           className={

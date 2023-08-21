@@ -26,14 +26,14 @@ function GamePage({currentTutorialState, send}: Props) {
   const navigate = useNavigate();
   const storedPathname = useRef(location.pathname);
 
-  const { chapterId, levelId } = useParams();
+  const { chapterNumberParam, levelNumberParam } = useParams();
 
-  const { currentChapter, currentLevel, nextChapterId, nextLevelId } = useMemo(
-    () => getGameInfo(chapterId, levelId),
-    [chapterId, levelId]
+  const { currentChapter, currentLevel,chapterNumber, levelNumber, nextChapterNumber, nextLevelNumber } = useMemo(
+    () => getGameInfo(chapterNumberParam, levelNumberParam),
+    [chapterNumberParam, levelNumberParam]
   );
 
-  const [answer, setAnswer] = useLocalStorage<string>(localStorageNames.getLevelAnswer(chapterId || '', levelId || ''), "");
+  const [answer, setAnswer] = useLocalStorage<string>(localStorageNames.getLevelAnswer(chapterNumber || '', levelNumber || ''), "");
 
   const [selector, setSelector] = useState("");
   const [isArticleSliding, setIsArticleSliding] = useState(false);
@@ -112,10 +112,10 @@ function GamePage({currentTutorialState, send}: Props) {
         setAnswer={setAnswer}
         setSelector={setSelector}
         solutions={solutions}
-        chapterId={chapterId || null}
-        levelId={levelId || null}
-        nextChapterId={nextChapterId}
-        nextLevelId={nextLevelId}
+        chapterNumber={chapterNumber || null}
+        levelNumber={levelNumber || null}
+        nextChapterNumber={nextChapterNumber}
+        nextLevelNumber={nextLevelNumber}
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
         currentTutorialState={currentTutorialState}

@@ -18,7 +18,7 @@ type Props = {
 }
 
 export default function Menu({ send, currentTutorialState }: Props) {
-  const { chapterId, levelId } = useParams();
+  const { chapterNumberParam, levelNumberParam } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -85,8 +85,8 @@ export default function Menu({ send, currentTutorialState }: Props) {
               className={`menu__number ${getStorageValue(localStorageNames.getIsLevelSolved(chapterIndex + 1, levelIndex + 1), "") === "true" &&
                 "menu__number--light"
                 }
-              ${chapterId === (chapterIndex + 1).toString() &&
-                levelId === (levelIndex + 1).toString() &&
+              ${chapterNumberParam === (chapterIndex + 1).toString() &&
+                levelNumberParam === (levelIndex + 1).toString() &&
                 "menu__number--orange"
                 } 
               `}

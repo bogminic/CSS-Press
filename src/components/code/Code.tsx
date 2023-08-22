@@ -39,8 +39,8 @@ function Code(props: CodeProps) {
     solutions,
     chapterNumber: chapter,
     levelNumber: level,
-    nextChapterNumber: nextChapter,
-    nextLevelNumber: nextLevel,
+    nextChapterNumber,
+    nextLevelNumber,
     isArticleSliding,
     setIsArticleSliding,
     currentTutorialState
@@ -120,7 +120,7 @@ function Code(props: CodeProps) {
       return;
     }
 
-    if (isSolutionCorrect(solutionsArray, answer) && nextChapter && nextLevel) {
+    if (isSolutionCorrect(solutionsArray, answer) && nextChapterNumber && nextLevelNumber) {
       goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();
@@ -141,7 +141,7 @@ function Code(props: CodeProps) {
     slideTimeoutRef.current = window.setTimeout(() => {
       setIsHeartBeating(false);
       setIsArticleSliding(false);
-      navigate(`/chapter/${nextChapter}/level/${nextLevel}`);
+      navigate(`/chapter/${nextChapterNumber}/level/${nextLevelNumber}`);
     }, 800);
   };
 
@@ -225,7 +225,7 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></p>
       </article>
-      {nextChapter ?
+      {nextChapterNumber ?
         <button
           type="button"
           className={

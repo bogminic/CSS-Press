@@ -47,7 +47,7 @@ const Article = memo(function Article(props: ArticleProps) {
         }
       >
         <div className="dummy">
-          <div className="dummy__content"></div>
+          <div className="dummy__content dummy__content--rotated"></div>
           <div className="dummy__img"></div>
         </div>
         <ArticleContent articleContent={articleContent} tipInfo={tipInfo} tipSelector={tipSelector} />

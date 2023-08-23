@@ -1,4 +1,3 @@
-import { chapters } from "../const/chapters";
 import { getStorageValue } from "../hooks/useLocalStorage";
 import { IChapter, ILevel } from "../models/Game";
 
@@ -90,14 +89,15 @@ export function isSolutionCorrect(solutions: string[], answer: string): boolean 
 }
 
 /**
- * Return game information (current Chapter/Level and next Chapter/Level numbers)
- * @param chapterNumber
- * @param leveNumber
- * @returns
+ * Return game information (current Chapter/Level and next Chapter/Level numbers) based on the current chapter and level numbers and the chapters array
+ * @param chapterNumber - current chapter number
+ * @param leveNumber - current level number
+ * @returns {currentChapter, currentLevel, chapterNumber, levelNumber, nextChapterNumber, nextLevelNumber} - current chapter, current level, current chapter number, current level number, next chapter number, next level number
  */
 export function getGameInfo(
   chapterNumber: string | undefined,
-  leveNumber: string | undefined
+  leveNumber: string | undefined,
+  chapters: IChapter[]
 ): {
   currentChapter: IChapter | null;
   currentLevel: ILevel | null;
@@ -106,6 +106,7 @@ export function getGameInfo(
   nextChapterNumber: number | null;
   nextLevelNumber: number | null;
 } {
+  // If the chapter number or level number are not valid, return null
   if (
     !chapterNumber ||
     chapterNumber === "0" ||

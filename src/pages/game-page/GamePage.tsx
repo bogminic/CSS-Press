@@ -14,6 +14,7 @@ import GameTutorial from "../../components/tutorial/game-tutorial/GameTutorial";
 import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews";
 import { TutorialMachineStates } from "../../machines/tutorialMachine";
 import { localStorageNames } from "../../utils/constants";
+import { chapters } from "../../const/chapters";
 
 type Props = {
   currentTutorialState: any;
@@ -29,7 +30,7 @@ function GamePage({currentTutorialState, send}: Props) {
   const { chapterNumberParam, levelNumberParam } = useParams();
 
   const { currentChapter, currentLevel,chapterNumber, levelNumber, nextChapterNumber, nextLevelNumber } = useMemo(
-    () => getGameInfo(chapterNumberParam, levelNumberParam),
+    () => getGameInfo(chapterNumberParam, levelNumberParam, chapters),
     [chapterNumberParam, levelNumberParam]
   );
 

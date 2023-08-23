@@ -166,3 +166,30 @@ export function getChapterProgress(chapter: IChapter, chapterIndex: number) {
   const noOfLevelsTotal = chapter.levels.length;
   return Math.round(noOfLevelsSolved / noOfLevelsTotal * 100);
 }
+
+
+/**
+ * Add a multiplier to an image file name.
+ *
+ * @param {string} fileName - The original file name (including extension).
+ * @param {number} multiplier - The multiplier to add to the file name (e.g., 4 for "4x").
+ * @returns {string} The modified file name with the multiplier added.
+ */
+export function addMultiplierToImageFileName(fileName: string, multiplier: string) {
+  // Split the file name into its name and extension parts
+  const parts = fileName.split('.');
+
+  // Check if there is an extension
+  if (parts.length > 1) {
+    const name = parts.slice(0, -1).join('.'); // Get the name without extension
+    const extension = parts[parts.length - 1]; // Get the extension
+
+    // Add the multiplier to the name and reconstruct the file name
+    const newFileName = `${name}${multiplier}x.${extension}`;
+
+    return newFileName;
+  } else {
+    // If there is no extension, simply add the multiplier to the name
+    return `${fileName}${multiplier}x`;
+  }
+}

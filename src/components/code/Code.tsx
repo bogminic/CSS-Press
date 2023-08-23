@@ -37,8 +37,8 @@ function Code(props: CodeProps) {
     setAnswer,
     setSelector,
     solutions,
-    chapterNumber: chapter,
-    levelNumber: level,
+    chapterNumber,
+    levelNumber,
     nextChapterNumber,
     nextLevelNumber,
     isArticleSliding,
@@ -54,7 +54,7 @@ function Code(props: CodeProps) {
   const [isGameComplete, setIsGameComplete] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
-    localStorageNames.getIsLevelSolved(chapter || '', level || ''),
+    localStorageNames.getIsLevelSolved(chapterNumber || '', levelNumber || ''),
     "false"
   )[1];
 

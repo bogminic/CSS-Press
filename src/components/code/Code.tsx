@@ -149,9 +149,14 @@ function Code(props: CodeProps) {
     event: React.KeyboardEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     if (event.key === "Enter") {
-      checkAnswer();
-      const noLinesInTextarea = answer.split(/\r|\r\n|\n/).length;
+      const noLinesInTextarea = answer.split(/\r|\r\n|\n/).filter((a) => a !== "").length;
       if (noLinesInTextarea >= linesOfCode) {
+        if (nextChapterId) {
+          checkAnswer();
+        } else {
+          finish();
+        }
+        
         event.preventDefault();
       }
     }
@@ -168,7 +173,7 @@ function Code(props: CodeProps) {
       return;
     }
 
-    if (!isSolutionCorrect(solutionsArray, answer)) {
+    if (isSolutionCorrect(solutionsArray, answer)) {
       setIsGameComplete(true);
     } else {
       shakeCodeBox();

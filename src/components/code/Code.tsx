@@ -151,7 +151,7 @@ function Code(props: CodeProps) {
     if (event.key === "Enter") {
       const noLinesInTextarea = answer.split(/\r|\r\n|\n/).filter((a) => a !== "").length;
       if (noLinesInTextarea >= linesOfCode) {
-        if (nextChapterId) {
+        if (nextChapterNumber) {
           checkAnswer();
         } else {
           finish();

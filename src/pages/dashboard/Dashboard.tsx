@@ -11,6 +11,16 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard__content">
+        <h1 className="dashboard__title">Welcome to CSS Press</h1>
+        <article className="dashboard__description-wrapper">
+          <section className="dashboard__description">
+            <h2 className="description__title">Breaking news!</h2>
+            <article className="description__body">
+              <p className="description__text-content">CSS Press is an educational game designed to teach you the fundamentals of CSS properties, spanning from text properties to the box model. The adventure goes beyond mere learning, as you'll have the responsibility of repairing the aging CSS Press machine, laden with errors. Once functional, this unique device becomes your tool for crafting  a vital newspaper that contributes to the well-being of those living near the Carpathian mountains. Within its pages, this publication will offer insights into mythological creatures, their behaviours and protective strategies. By engaging in this captivating journey, you'll not only gain expertise in CSS properties, but also explore the intriguing realm of Carpathian mountain mythology. It's a chance to enhance your CSS skills while immersing yourself in a universe of learning and creativity.</p>
+             <img className="description__img-content" src="https://dummyimage.com/452x210/d7d2c5/000.jpg" alt="about" />
+            </article>
+          </section>
+        </article>
         <article className="dashboard__wrapper">{chaptersJSX}</article>
       </div>
     </div>

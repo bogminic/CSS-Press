@@ -24,6 +24,8 @@ interface CodeProps {
   nextLevelNumber: number | null;
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
+  isLevelResolved: boolean;
+  setIsLevelResolved: Dispatch<SetStateAction<boolean>>;
   currentTutorialState: any;
 }
 
@@ -43,6 +45,7 @@ function Code(props: CodeProps) {
     nextLevelNumber,
     isArticleSliding,
     setIsArticleSliding,
+    setIsLevelResolved,
     currentTutorialState
   } = props;
 
@@ -96,12 +99,14 @@ function Code(props: CodeProps) {
     if (isSolutionCorrect(solutionsArray, e.target.value)) {
       setIsHeartBeating(true);
       setIsLevelSolved("true");
+      setIsLevelResolved(true);
       return;
     }
 
     if (isHeartBeating === true) {
       setIsHeartBeating(false);
       setIsLevelSolved("false");
+      setIsLevelResolved(false);
     }
   };
 

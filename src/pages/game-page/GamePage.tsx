@@ -38,6 +38,7 @@ function GamePage({currentTutorialState, send}: Props) {
 
   const [selector, setSelector] = useState("");
   const [isArticleSliding, setIsArticleSliding] = useState(false);
+  const [isLevelResolved, setIsLevelResolved] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -119,6 +120,8 @@ function GamePage({currentTutorialState, send}: Props) {
         nextLevelNumber={nextLevelNumber}
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
+        isLevelResolved={isLevelResolved}
+        setIsLevelResolved={setIsLevelResolved}
         currentTutorialState={currentTutorialState}
       />
       <Article
@@ -127,6 +130,7 @@ function GamePage({currentTutorialState, send}: Props) {
         error={error}
         selector={selector}
         isArticleSliding={isArticleSliding}
+        isLevelResolved={isLevelResolved}
         tipInfo={tipInfo}
         tipSelector={tipSelector}
         extraStyle={extraStyle}

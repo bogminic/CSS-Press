@@ -12,6 +12,7 @@ interface ArticleProps {
   error: string;
   selector: string;
   isArticleSliding: boolean;
+  isLevelResolved: boolean;
   tipInfo: string;
   tipSelector: string;
   extraStyle?: string;
@@ -25,20 +26,23 @@ const Article = memo(function Article(props: ArticleProps) {
     error,
     selector,
     isArticleSliding,
+    isLevelResolved,
     tipInfo,
     tipSelector,
     extraStyle
   } = props;
+
   const highlighted =
     selector === "misprint" ? "background-color: #ffca9b; box-shadow: 0px 0px 3px red;" : "";
-    const style = extraStyle 
-      ? `.article__body ${extraStyle} .article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`
-      : `.article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}`
-  return (
+    const style = `.article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}` 
+    const additionalStyle = `.article__body ${extraStyle}`
+    const unrippedStyle = `.article__body .ripped-effect {position: static; background: none; box-shadow: none; padding: 0;
+    } .article__body .ripped-effect:after {content: none;} .ripped-effect:before {content: none;}`; 
+      return (
     <>
-      <Style>
-        {style}
-      </Style>
+      <Style>{style}</Style>
+      <Style>{extraStyle && additionalStyle}</Style>
+      <Style>{isLevelResolved && unrippedStyle}</Style>
       <section
         className={
           isArticleSliding

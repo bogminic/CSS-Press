@@ -24,6 +24,7 @@ interface CodeProps {
   nextLevelNumber: number | null;
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
+  setIsLevelResolved: Dispatch<SetStateAction<boolean>>;
   currentTutorialState: any;
 }
 
@@ -43,6 +44,7 @@ function Code(props: CodeProps) {
     nextLevelNumber,
     isArticleSliding,
     setIsArticleSliding,
+    setIsLevelResolved,
     currentTutorialState
   } = props;
 
@@ -57,6 +59,25 @@ function Code(props: CodeProps) {
     localStorageNames.getIsLevelSolved(chapterNumber || '', levelNumber || ''),
     "false"
   )[1];
+
+  useEffect(() => {
+    if (isWrongAnswer) {
+      setIsWrongAnswer(false);
+    }
+
+    if (isSolutionCorrect(solutionsArray, answer)) {
+      setIsHeartBeating(true);
+      setIsLevelSolved("true");
+      setIsLevelResolved(true);
+      return;
+    }
+
+    if (isHeartBeating === true) {
+      setIsHeartBeating(false);
+      setIsLevelSolved("false");
+      setIsLevelResolved(false);
+    }
+  }, [answer])
 
   const shakeTimeoutRef = useRef<number | null>(null);
   useEffect(() => {
@@ -88,21 +109,6 @@ function Code(props: CodeProps) {
       | React.ChangeEvent<HTMLInputElement>
   ) => {
     setAnswer(e.target.value);
-
-    if (isWrongAnswer) {
-      setIsWrongAnswer(false);
-    }
-
-    if (isSolutionCorrect(solutionsArray, e.target.value)) {
-      setIsHeartBeating(true);
-      setIsLevelSolved("true");
-      return;
-    }
-
-    if (isHeartBeating === true) {
-      setIsHeartBeating(false);
-      setIsLevelSolved("false");
-    }
   };
 
   const handleHoverEnter = () => {

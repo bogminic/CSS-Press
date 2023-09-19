@@ -120,7 +120,6 @@ function GamePage({currentTutorialState, send}: Props) {
         nextLevelNumber={nextLevelNumber}
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
-        isLevelResolved={isLevelResolved}
         setIsLevelResolved={setIsLevelResolved}
         currentTutorialState={currentTutorialState}
       />

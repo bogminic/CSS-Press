@@ -1,3 +1,4 @@
+import { Element } from "html-react-parser";
 import { chapters } from "../const/chapters";
 import { getStorageValue } from "../hooks/useLocalStorage";
 import { IChapter, ILevel } from "../models/Game";
@@ -192,4 +193,24 @@ export function addMultiplierToImageFileName(fileName: string, multiplier: strin
     // If there is no extension, simply add the multiplier to the name
     return `${fileName}${multiplier}x`;
   }
+}
+
+/**
+ * Update an image node and return dom node if it is a dummy image and the updated image node otherwise.
+ *
+ * @param {Element} domNode - The image node to process.
+ * @returns {Element} The processed image node.
+ */
+export function updateImage(domNode: Element ) {
+  if (domNode.attribs.src.includes('dummyimage')) {
+    return domNode
+  }
+
+  const fileName1x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '1');
+  const fileName2x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '2');
+  const fileName3x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '3');
+  return <img
+    src={process.env.PUBLIC_URL + domNode.attribs.src}
+    srcSet={`${fileName1x} 1x, ${fileName2x} 2x, ${fileName3x} 3x`}
+    alt={domNode.attribs.alt} title={domNode.attribs.alt} />
 }

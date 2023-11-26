@@ -7,7 +7,7 @@ import parse, {
   Element,
   attributesToProps,
 } from "html-react-parser";
-import { addMultiplierToImageFileName } from "../../utils/helpers";
+import { addMultiplierToImageFileName, updateImage } from "../../utils/helpers";
 
 type Props = {
   articleContent: string;
@@ -20,13 +20,7 @@ const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any)
   replace: (domNode: DOMNode) => {
 
     if (domNode instanceof Element && domNode.name === 'img') {
-      const fileName1x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '1');
-      const fileName2x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '2');
-      const fileName3x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '3');
-      return <img
-        src={process.env.PUBLIC_URL + domNode.attribs.src}
-        srcSet={`${fileName1x} 1x, ${fileName2x} 2x, ${fileName3x} 3x`}
-        alt={domNode.attribs.alt} title={domNode.attribs.alt} />
+      return updateImage(domNode);
     }
 
     if (domNode instanceof Element && domNode.name === tipSelector && tipInfo && domNode.attribs.class !== 'misprint') {

@@ -1,5 +1,6 @@
 import React from "react";
-import parse from "html-react-parser";
+import parse, { HTMLReactParserOptions, DOMNode, Element } from "html-react-parser";
+import { updateImage } from "../../utils/helpers";
 
 import "./Level.scss";
 
@@ -9,9 +10,16 @@ type Props = {
   solved: boolean
 };
 
+const options: HTMLReactParserOptions = {
+  replace(domNode: DOMNode) {
+    if (domNode instanceof Element && domNode.name === 'img') {
+      return updateImage(domNode);
+    }
+  },
+};
 
 function createArticleContent(articleContent: string) {
-  return parse(articleContent);
+  return parse(articleContent, options);
 }
 
 export default function Level({ name, content, solved }: Props) {

@@ -18,12 +18,13 @@ interface CodeProps {
   setSelector: Dispatch<SetStateAction<string>>;
   answer: string;
   solutions: string[][];
-  chapterId: string | null;
-  levelId: string | null;
-  nextChapterId: number | null;
-  nextLevelId: number | null;
+  chapterNumber: number | null;
+  levelNumber: number | null;
+  nextChapterNumber: number | null;
+  nextLevelNumber: number | null;
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
+  setIsLevelResolved: Dispatch<SetStateAction<boolean>>;
   currentTutorialState: any;
 }
 
@@ -37,12 +38,13 @@ function Code(props: CodeProps) {
     setAnswer,
     setSelector,
     solutions,
-    chapterId,
-    levelId,
-    nextChapterId,
-    nextLevelId,
+    chapterNumber,
+    levelNumber,
+    nextChapterNumber,
+    nextLevelNumber,
     isArticleSliding,
     setIsArticleSliding,
+    setIsLevelResolved,
     currentTutorialState
   } = props;
 
@@ -54,9 +56,28 @@ function Code(props: CodeProps) {
   const [isGameComplete, setIsGameComplete] = useState(false);
 
   const setIsLevelSolved = useLocalStorage<string>(
-    localStorageNames.getIsLevelSolved(chapterId || '', levelId || ''),
+    localStorageNames.getIsLevelSolved(chapterNumber || '', levelNumber || ''),
     "false"
   )[1];
+
+  useEffect(() => {
+    if (isWrongAnswer) {
+      setIsWrongAnswer(false);
+    }
+
+    if (isSolutionCorrect(solutionsArray, answer)) {
+      setIsHeartBeating(true);
+      setIsLevelSolved("true");
+      setIsLevelResolved(true);
+      return;
+    }
+
+    if (isHeartBeating === true) {
+      setIsHeartBeating(false);
+      setIsLevelSolved("false");
+      setIsLevelResolved(false);
+    }
+  }, [answer])
 
   const shakeTimeoutRef = useRef<number | null>(null);
   useEffect(() => {
@@ -88,21 +109,6 @@ function Code(props: CodeProps) {
       | React.ChangeEvent<HTMLInputElement>
   ) => {
     setAnswer(e.target.value);
-
-    if (isWrongAnswer) {
-      setIsWrongAnswer(false);
-    }
-
-    if (isSolutionCorrect(solutionsArray, e.target.value)) {
-      setIsHeartBeating(true);
-      setIsLevelSolved("true");
-      return;
-    }
-
-    if (isHeartBeating === true) {
-      setIsHeartBeating(false);
-      setIsLevelSolved("false");
-    }
   };
 
   const handleHoverEnter = () => {
@@ -120,7 +126,7 @@ function Code(props: CodeProps) {
       return;
     }
 
-    if (isSolutionCorrect(solutionsArray, answer) && nextChapterId && nextLevelId) {
+    if (isSolutionCorrect(solutionsArray, answer) && nextChapterNumber && nextLevelNumber) {
       goToNextLevelAndSlideOutArticle();
     } else {
       shakeCodeBox();
@@ -141,7 +147,7 @@ function Code(props: CodeProps) {
     slideTimeoutRef.current = window.setTimeout(() => {
       setIsHeartBeating(false);
       setIsArticleSliding(false);
-      navigate(`/chapter/${nextChapterId}/level/${nextLevelId}`);
+      navigate(`/chapter/${nextChapterNumber}/level/${nextLevelNumber}`);
     }, 800);
   };
 
@@ -151,7 +157,7 @@ function Code(props: CodeProps) {
     if (event.key === "Enter") {
       const noLinesInTextarea = answer.split(/\r|\r\n|\n/).filter((a) => a !== "").length;
       if (noLinesInTextarea >= linesOfCode) {
-        if (nextChapterId) {
+        if (nextChapterNumber) {
           checkAnswer();
         } else {
           finish();
@@ -230,7 +236,7 @@ function Code(props: CodeProps) {
           dangerouslySetInnerHTML={{ __html: afterCode }}
         ></p>
       </article>
-      {nextChapterId ?
+      {nextChapterNumber ?
         <button
           type="button"
           className={

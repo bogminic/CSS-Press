@@ -39,7 +39,7 @@ function App() {
             element={<Dashboard />}
           ></Route>
           <Route
-            path="/chapter/:chapterId/level/:levelId"
+            path="/chapter/:chapterNumberParam/level/:levelNumberParam"
             element={
               <>
                 <Menu currentTutorialState={currentTutorialState} send={send} />

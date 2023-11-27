@@ -7,7 +7,7 @@ import parse, {
   Element,
   attributesToProps,
 } from "html-react-parser";
-import { addMultiplierToImageFileName, updateImage } from "../../utils/helpers";
+import { updateImage } from "../../utils/helpers";
 
 type Props = {
   articleContent: string;
@@ -46,11 +46,11 @@ const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any)
         return content
       }
       return (<CustomTag className="article__reference" {...props} onMouseOver={handleMouseOver}></CustomTag>)
-    } 
+    }
 
     // For ripped effect, if the tag is not an image, we should add ripped-effect class on it
-    if (domNode instanceof Element && domNode.name !=='img' && domNode.attribs.class === 'misprint'
-    && domNode.firstChild && domNode.children[0].type === "text" && domNode.children.length === 1) {
+    if (domNode instanceof Element && domNode.name !== 'img' && domNode.attribs.class === 'misprint'
+      && domNode.firstChild && domNode.children[0].type === "text" && domNode.children.length === 1) {
       const props = attributesToProps(domNode.attribs);
       const classes = domNode.attribs.class + ' ripped-effect';
       const Tag = `${domNode.name}` as keyof JSX.IntrinsicElements;

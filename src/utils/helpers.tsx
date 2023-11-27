@@ -211,7 +211,7 @@ export function addMultiplierToImageFileName(fileName: string, multiplier: strin
 export function updateImage(domNode: Element ): JSX.Element {
   if (domNode.attribs.src.includes('dummyimage')) {
     const props = attributesToProps(domNode.attribs);
-    return <img {...props} />
+    return <img alt="" {...props} />
   }
 
   const fileName1x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '1');

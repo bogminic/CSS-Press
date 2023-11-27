@@ -77,6 +77,7 @@ function Code(props: CodeProps) {
       setIsLevelSolved("false");
       setIsLevelResolved(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [answer])
 
   const shakeTimeoutRef = useRef<number | null>(null);

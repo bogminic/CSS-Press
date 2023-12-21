@@ -33,8 +33,9 @@ const Article = memo(function Article(props: ArticleProps) {
   } = props;
 
   const highlighted =
-    selector === "misprint" ? "background-color: #ffca9b; box-shadow: 0px 0px 3px red;" : "";
-    const style = `.article__body .misprint { ${error}} .article__body .misprint {${highlighted} ${answer}}` 
+    selector === "misprint" ? "box-shadow: 0 0 5px 2px #ffca9b;" : "";
+    const highlightedBefore = selector === "misprint" ? "background-color: #ffca9b;" : "";
+    const style = `.article__body .misprint { ${error} ${answer}} .article__body .ripped-effect {${highlighted}} .article__body .ripped-effect:before {${highlightedBefore}}` 
     const additionalStyle = `.article__body ${extraStyle}`
     const unrippedStyle = `.article__body .ripped-effect {position: static; background: none; box-shadow: none; padding: 0;
     } .article__body .ripped-effect:after {content: none;} .ripped-effect:before {content: none;}`; 

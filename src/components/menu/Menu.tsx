@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Menu.scss";
 import iconSquare from "./4-square.svg";
@@ -14,7 +14,7 @@ import { getChapterProgress } from "../../utils/helpers";
 
 type Props = {
   currentTutorialState: any;
-  send: (event: string) => void;
+  send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
 }
 
 export default function Menu({ send, currentTutorialState }: Props) {
@@ -24,7 +24,7 @@ export default function Menu({ send, currentTutorialState }: Props) {
 
   useEffect(() => {
     if (currentTutorialState.matches(TutorialMachineStates.menu) && isMenuOpen) {
-      send("NEXT");
+      send({ type: 'NEXT' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTutorialState, isMenuOpen]);
@@ -46,13 +46,13 @@ export default function Menu({ send, currentTutorialState }: Props) {
 
   const playWalkthrough = () => {
     navigate(`/chapter/1/level/1`);
-    send("PLAY");
+    send({ type: 'PLAY' });
     closeMenu();
   }
 
   const resetGame = () => {
     navigate(`/`);
-    send("RESET");
+    send({ type: 'RESET' });
     localStorage.clear();
   }
 

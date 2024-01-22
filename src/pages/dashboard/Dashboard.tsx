@@ -1,4 +1,3 @@
-import React from "react";
 import "./Dashboard.scss";
 import { chapters } from "../../const/chapters";
 import Chapter from "../../components/chapter/Chapter";

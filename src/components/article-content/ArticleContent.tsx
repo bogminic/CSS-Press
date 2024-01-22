@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 // @ts-ignore
 import Style from "style-it";
 import parse, {

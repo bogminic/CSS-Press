@@ -1,6 +1,6 @@
 import './Footer.scss';
-import { ReactComponent as TwitterLogo} from './../../twitter.svg';
-import { ReactComponent as FacebookLogo} from './../../facebook.svg';
+import  TwitterLogo from './twitter.svg?react';
+import  FacebookLogo from './facebook.svg?react';
 
 function Footer() {
   const year = new Date().getFullYear();

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {
   Route,
   Routes,
@@ -20,9 +20,9 @@ import { localStorageNames } from "./utils/constants";
 
 function App() {
 
-  const persistedState = JSON.parse(localStorage.getItem(localStorageNames.tutorialState) || '""') || tutorialMachine.initialState;
+  const persistedState = JSON.parse(localStorage.getItem(localStorageNames.tutorialState) || '""');
   const [currentTutorialState, send] = useMachine(tutorialMachine, {
-    state: persistedState
+    snapshot: persistedState
   });
 
   useEffect(() => {

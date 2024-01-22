@@ -1,4 +1,3 @@
-import React from "react";
 import "./Chapter.scss";
 
 import { IChapter } from "../../models/Game";

@@ -10,7 +10,7 @@ type Props = {
 };
 
 // Thanks to Andrew Bone for the modal code. See more at https://dev.to/link2twenty/react-using-native-dialogs-to-make-a-modal-popup-4b25
-const Modal = memo(function Modal({ open, className="", locked, onClose, children, ...props }: Props) {
+const Modal = memo(function Modal({ open, className="", locked, onClose, children }: Props) {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   // Work out which classes should be applied to the dialog element

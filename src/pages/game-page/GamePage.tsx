@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Navigate, useLocation, useParams, useNavigate } from "react-router-dom";
 
 import Instructions from "../../components/instructions/Instructions";
@@ -18,7 +18,7 @@ import { chapters } from "../../const/chapters";
 
 type Props = {
   currentTutorialState: any;
-  send: (event: string) => void;
+  send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
 }
 
 function GamePage({currentTutorialState, send}: Props) {
@@ -55,7 +55,7 @@ function GamePage({currentTutorialState, send}: Props) {
 
   useEffect(() => {
     if (location.pathname === '/chapter/1/level/2') {
-      send('NEXT');
+      send({ type: 'NEXT' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isArticleSliding]);
@@ -69,13 +69,13 @@ function GamePage({currentTutorialState, send}: Props) {
 
   const startTutorial = () => {
     setIsModalOpen(false);
-    send('NEXT');
+    send({ type: 'NEXT' });
   }
 
   const closeTutorialModal = () => {
     setIsModalOpen(false);
     navigate(storedPathname.current);
-    send('FINISHED');
+    send({ type: 'FINISHED' });
   }
 
   if (currentChapter === null || currentLevel === null) {

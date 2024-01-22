@@ -1,4 +1,3 @@
-import React from 'react'
 import './NotfoundPage.scss';
 import { useNavigate } from 'react-router';
 

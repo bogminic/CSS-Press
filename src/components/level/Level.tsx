@@ -1,4 +1,3 @@
-import React from "react";
 import parse, { HTMLReactParserOptions, DOMNode, Element } from "html-react-parser";
 import { updateImage } from "../../utils/helpers";
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import "./CssPressNews.scss";
 import cssPressNews from "./css-press-news.jpg";
 

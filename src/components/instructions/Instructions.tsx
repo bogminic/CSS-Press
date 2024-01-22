@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import parse, { DOMNode, HTMLReactParserOptions, Element } from "html-react-parser";
 
 

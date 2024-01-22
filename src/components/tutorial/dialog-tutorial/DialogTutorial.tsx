@@ -1,8 +1,7 @@
-import React from 'react'
 import arrow from "./arrow.svg";
 import doubleArrow from "./double-arrow.svg";
 type Props = {
-    send: (event: string) => void;
+    send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
     state: any;
     actualState: string;
     hidePrevious?: boolean;
@@ -21,16 +20,16 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
                     {state.context.message}
                 </p>
                 {(!hidePrevious || !hideNext || showFinish) && <div className={btnsClass}>
-                   {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send('PREV')}>
+                   {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send({ type: 'PREV' })}>
                         <img className='tutorial__double-arrow tutorial__double-arrow--reverse' src={doubleArrow} alt="Previous" />
                         Prev
                     </button>}
-                    {!hideNext && <button className='tutorial__button' type='button' onClick={() => send('NEXT')}>
+                    {!hideNext && <button className='tutorial__button' type='button' onClick={() => send({ type: 'NEXT' })}>
                         <img className='tutorial__double-arrow' src={doubleArrow} alt="Next" />
                         Next
                     </button>}
 
-                    {showFinish && <button className='tutorial__button' type='button' onClick={() => send('FINISHED')}>
+                    {showFinish && <button className='tutorial__button' type='button' onClick={() => send({ type: 'FINISHED' })}>
                         <img className='tutorial__double-arrow' src={doubleArrow} alt="Finish" />
                         Finish
                     </button>}
@@ -41,3 +40,4 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
 }
 
 export default DialogTutorial
+

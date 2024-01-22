@@ -1,14 +1,11 @@
-import React from 'react'
-
 import './GameTutorial.scss';
 import DialogTutorial from '../dialog-tutorial/DialogTutorial';
 import singleArrow from "./single-arrow.svg";
 import { TutorialMachineStates } from '../../../machines/tutorialMachine';
-import { State } from 'xstate';
 
 type Props = {
-    currentTutorialState: State<TutorialMachineStates>;
-    send: (event: string) => void;
+    currentTutorialState: any;
+    send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
 }
 
 const GameTutorial = ({ currentTutorialState, send }: Props) => {
@@ -48,7 +45,7 @@ const GameTutorial = ({ currentTutorialState, send }: Props) => {
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.done} hideNext showFinish />
                 ) : null}
             </section>
-            <button className='tutorial__skip' type='button' onClick={() => send('FINISHED')}>
+            <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>
                 <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
                 Skip Walkthrough
             </button>

@@ -170,7 +170,7 @@ export function getGameInfo(
  * @returns 
  */
 export function getChapterProgress(chapter: IChapter, chapterIndex: number) {
-  const noOfLevelsSolved = chapter.levels.filter((level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex + 1) + '-' + (levelIndex + 1), "") === "true").length;
+  const noOfLevelsSolved = chapter.levels.filter((_level, levelIndex) => getStorageValue('is-level-solved-' + (chapterIndex + 1) + '-' + (levelIndex + 1), "") === "true").length;
   const noOfLevelsTotal = chapter.levels.length;
   return Math.round(noOfLevelsSolved / noOfLevelsTotal * 100);
 }
@@ -209,16 +209,18 @@ export function addMultiplierToImageFileName(fileName: string, multiplier: strin
  * @returns {Element} The processed image node.
  */
 export function updateImage(domNode: Element ): JSX.Element {
+  const imgPath = '';
+  
   if (domNode.attribs.src.includes('dummyimage')) {
     const props = attributesToProps(domNode.attribs);
     return <img alt="" {...props} />
   }
 
-  const fileName1x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '1');
-  const fileName2x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '2');
-  const fileName3x = process.env.PUBLIC_URL + addMultiplierToImageFileName(domNode.attribs.src, '3');
+  const fileName1x = imgPath + addMultiplierToImageFileName(domNode.attribs.src, '1');
+  const fileName2x = imgPath + addMultiplierToImageFileName(domNode.attribs.src, '2');
+  const fileName3x = imgPath + addMultiplierToImageFileName(domNode.attribs.src, '3');
   return <img
-    src={process.env.PUBLIC_URL + domNode.attribs.src}
+    src={imgPath + domNode.attribs.src}
     srcSet={`${fileName1x} 1x, ${fileName2x} 2x, ${fileName3x} 3x`}
     alt={domNode.attribs.alt} title={domNode.attribs.alt} />
 }

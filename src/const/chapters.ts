@@ -16,14 +16,12 @@ export const chapters: IChapter[] = [
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Unmasking Zmeii and their tales of abducted maidens</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Integer non mollis lorem, ut dignissim augue et la es integer at semper erat mo en placerat purus ac diam elementum, nec feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec feugiat.</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p class="misprint">Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit elit.Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in ete el.</p>
+          <img src="/img/zmeu.jpg" alt="Zmeu" />
+          <p>Deep within the Carpathian Mountains reside the elusive Zmeii, mythical creatures often mistaken for dragons or balauri. They possess a mix of human-like and supernatural traits that make them distinct from other legendary beings, even though they share some similarities with dragons. The term "zmeu" has Slavic roots and is associated with enchantment and curses.</p>
+          <p>Zmeii are known for their enormous physical strength and are often depicted wielding magical weapons like large clubs and enchanted whips. They live in grand castles made from precious materials and showcase impressive craftsmanship and advanced technology.</p>
+          <p class="misprint">Within their society, Zmeii have family structures that include mothers, siblings, and sometimes even children. In the wild, their stories often involve the abduction of human girls, leading to confrontations with resourceful heroes who rely on clever strategies and help from other mythical creatures to rescue the captives.</p>
         </article>
       `
       },
@@ -39,14 +37,15 @@ export const chapters: IChapter[] = [
         tipSelector: 'q',
         tipInfo: 'Font face is italic',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>The Majestic Appearance of Zmeii</h2>
         <article>
-          <img src="https://dummyimage.com/347x75/d7d2c5/000.jpg" alt="level" />
-          <p>Volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc.</p>
+        <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+          <p>One common portrayal describes Zmeii as colossal, serpent-like creatures, often with reptilian features. These beings are known for their immense physical strength, a fact emphasized in folklore. They are described as having imposing, larger-than-life forms, comparable to mountains, and possessing thick, scaly skin reminiscent of a snake's. As one folkloric account highlights:</p>
+          <q>Their aspect is intimidating, their presence akin to a looming mountain.</q>
+          <p>Another distinctive feature often attributed to Zmeii is their formidable wings. These wings are said to be vast, granting them the ability to soar through the skies with ease. They are sometimes compared to the wings of eagles or other mighty birds of prey. As the tales recount:</p>
+          <q class="misprint">Their wings span wide like the horizon itself, allowing them to command the heavens.</q>
+          <p>Despite their fearsome appearance, Zmeii are not mere brutes; they are complex beings with human-like characteristics. They are often depicted with humanoid faces, expressing a range of emotions. As one narrative elucidates:</p>
+          <q>Their faces reflect a strange blend of human-like expression, at times revealing sadness, anger, or even curiosity.</q>
         </article>
       `
       },
@@ -58,18 +57,18 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'font-family: "Turret Road";',
-        solutions: [['font-family', '"Crimson Text"']],
+        solutions: [['font-family', 'Crimson Text', '"Crimson Text"']],
         tipSelector: 'p',
         tipInfo: 'Font name is "Crimson Text"',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Ancient Beliefs</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam.</p>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus,volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p class="misprint">Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.  Morbi at massa eu dolor convallis feugiat.  Morbi at massa eu dolor convallis feugiat  Morbi at massa eu dolor convallis feugiat.  Morbi at massa eu dolor convallis feugiat condimentum ipsum hendrerit id.</p>
+          <p>Zmeii they have the amazing ability to hide either their moisture or soul in certain parts of their body, in other animals or objects, making them even harder to kill.</p>
+          <p>This is a matter that stems from an ancient primitive mentality, in which it was believed that humans also have their vital principle in a certain point of the body, such as the fat around the kidneys, for example. And if someone stole this fat, they could permanently harm the person.</p>
+          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+          <p class="misprint">The problem with dragons, however, was that they could avoid this weakness by moving their vulnerability. In “Povestea țărănească,” it is revealed that a dragon kept its power in a sow, which was more complicated because there was a rabbit in the sow, a quail in the rabbit, and three worms in the quail.</p>
+          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+          <p>This is the typology, if you will, of this magic of protecting vitality in general, carefully hidden in three animals, each one placed inside the other like a true matryoshka doll.</p>
         </article>
       `
       },
@@ -81,19 +80,21 @@ export const chapters: IChapter[] = [
         linesOfCode: 3,
         startHighlightCode: 2,
         error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', '"Playfair Display"']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', 'Playfair Display', '"Playfair Display"']],
         tipSelector: 'q',
         tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>To dumb to be true</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat.</p>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? </p>
+          <p>The Zmeii, in all aspects, appear to be formidable creatures, if not outright impossible to defeat. This is attributed not only to their imposing physicality but also to their magical weapons and various supernatural powers. However, despite their fierce appearance, there is an important aspect to know, as every hero in every tale discovers: they are quite gullible and easily fooled.</p>
+          <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
+          <p>Reading from a story, the Zmeu is described as dull as midnight:</p>
+          <q>Their adaptation, much like inferior animals, is one-sided and lacking in imagination.</q>
+          <p>The same story continues:</p>
+          <q class="misprint">When someone discovers their weaknesses, they cannot invent anything to counter aggression. That's why they are in a perpetual fear of encountering notorious heroes.</q>
+          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="Image" />
+
+          <p>The Zmeu is often disoriented, impulsive, and chaotic, large but clumsy, lacking agility, and above all, fearful. Some are so terrified that their hands and feet practically move on their own when they see a brave hero, as depicted in "Făt Frumos cu carâta de sticlă" They are easily beheaded because they charge into battle like boulders, without tact or minimal strategy; they are, in fact, highly credulous.</p>
         </article>
       `
       },
@@ -109,16 +110,14 @@ export const chapters: IChapter[] = [
         tipSelector: 'h3',
         tipInfo: 'Font boldness is bold',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Unraveling the Enchanted Whips of the Zmeii</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum.</p>
-          <h3>First article subtitle</h3>
-          <img src="https://dummyimage.com/347x75/d7d2c5/000.jpg" alt="level" />
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est.</p>
-          <h3 class="misprint">First article subtitle</h3>
-          <img src="https://dummyimage.com/347x75/d7d2c5/000.jpg" alt="level" />
-          <p>Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
+          <h3>Introduction to the Magical Arsenal</h3>
+          <p>In the rich tapestry of Carpathian folklore, the Zmeii, mythical beings of overwhelming power, are known for more than just their colossal clubs. They possess another formidable weapon, often concealed in the depths of their chambers - the enchanted whip.</p>
+          <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="Image" />
+          <p>These whips, imbued with magic, harbor countless powers. They can shrink grand palaces to fit in the palm of a hand, as seen in the tale of "Prâslea cel voinic si merele de aur", where striking the whip at the four corners of a palace transforms it into apples made of copper, silver, and gold.</p>
+          <h3 class="misprint">The Mysterious Powers of the Whip</h3>
+          <p>In the "Poveste tărănească" the Zmeu keeps other whips, with one reducing herds to the size of a walnut and another shrinking estates to the size of an apple. In "Cei trei frați și Zmeul" the whip opens any door, turns houses into golden apples, or assists the Zmeu in transforming into terrifying creatures with a somersault three times and a whip crack. However, its primary and frequently encountered power is the ability to turn anyone or anything into stone with a single strike, typically executed from behind the adversary, and conversely, to bring to life anyone who has been enchanted, by cracking it three times in front of them.</p>
         </article>
       `
       },
@@ -130,18 +129,18 @@ export const chapters: IChapter[] = [
         linesOfCode: 1,
         startHighlightCode: 2,
         error: 'color: red;',
-        solutions: [['color', 'black', '#000000', '#000',  'rgb(0,0,0)', 'rgba(0,0,0,1)']],
+        solutions: [['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
         tipInfo: 'Color is black',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Buzdugan: The Unstoppable Weapon</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
-          <p>Integer non mollis lorem, ut dignissim augue et la es integer at semper erat mo en placerat purus ac diam elementum, nec feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec feugiat neque faucibus.</p>
-          <p class="misprint">Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit elit.</p>
+          <p>The "buzdugan" is an iconic and imposing weapon featured prominently in Carpathian tales. This massive club serves as a symbol of immense physical strength and power. The term "buzdugan" itself conjures images of a weapon that can shatter the earth and subdue even the most formidable adversaries.</p>
+          <p>Zmeii are often depicted wielding buzdugans of immense proportions, with some weighing as much as 50 "feri," an archaic unit of measurement roughly equivalent to 10 liters. This extraordinary weight underscores the sheer might of these legendary creatures.</p>
+          <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
+          <p class="misprint">When a Zmeu wields a buzdugan, it becomes a force to be reckoned with. The impact of this colossal club can bring down trees, disrupt landscapes, and devastate opponents in battle. It is a testament to the Zmeu's dominance in physical combat and their role as formidable adversaries in Romanian folklore narratives.</p>
+          <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
+          <p>The buzdugan is not just a weapon; it is a symbol of the Zmeii's unparalleled strength, an emblem of their mythological prowess, and a key element in the captivating tales that continue to enchant audiences with their epic battles and timeless themes.</p>
         </article>
       `
       },
@@ -157,15 +156,15 @@ export const chapters: IChapter[] = [
         tipSelector: 'h3',
         tipInfo: 'Font boldness is bold and color is black',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Culinary Exploits Beyond Imagination</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <h3>First article subtitle</h3>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">First article subtitle</h3>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
+          <h3>A Herculean Appetite</h3>
+          <p>The Zmeu, endowed with unparalleled strength, demonstrates astonishing feats like uprooting trees, carrying horses effortlessly, and juggling sacks of gold. Their colossal size is exemplified in tales such as "Agheran Viteazul," where a hero prepares an extravagant feast, simultaneously cooking 999 wild oxen and numerous boars in four giant pots.</p>
+          <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
+          
+          <p>In their culinary pursuits, Zmeii savor a diverse array of dishes—from succulent roasts of pork, lamb, or goose to the simplicity of bread and cheese, often complemented by water or wine. However, the true delicacy for these mythical beings lies in the consumption of human flesh and blood.</p>
+          <h3 class="misprint">Anthropophagy Unveiled</h3>
+          <p>Discovering their anthropophagic tendencies, as revealed in "Urmă Galbenă și Pipăruș Pătru," where the elder Zmeu, Mamonul, casually partakes in a meal with a pipe in hand, occasionally indulging in sips of human blood from a sizable bottle. Despite the enticing aroma of Zmeu cuisine, it is intertwined, much like their wine, with the essence of human blood.</p>
         </article>
       `
       },
@@ -174,43 +173,20 @@ export const chapters: IChapter[] = [
         instructions: 'Ouch! Look at the paragraph that stands out! Use all the font properties you learned so far (<code>font-size</code>, <code>font-family</code>, <code>font-style</code>, <code>font-weight</code>, <code>color</code>) to make it appear as expected.',
         beforeCode: '.misprint {',
         afterCode: '}',
-        linesOfCode: 4,
+        linesOfCode: 5,
         startHighlightCode: 2,
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', '"Crimson Text"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>The Extravagant Realms of the Zmeu</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam.</p>
           <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <p class="misprint">Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu, sollicitudin a diam eget, maximus pretium lectu.</p>
-        </article>
-      `
-      },
-      {
-        levelName: 'line-height',
-        instructions: 'Isn\'t the quote on the right harder to read compared to the other one? That\'s due to the small spacing between the lines. Let\'s enhance its accessibility by adjusting the <code>line-height</code> property!',
-        beforeCode: '.misprint {',
-        afterCode: '}',
-        linesOfCode: 1,
-        startHighlightCode: 2,
-        error: 'line-height: 0.7em',
-        solutions: [['line-height', '20px', '1.25em', '1.25rem']],
-        tipSelector: 'q',
-        tipInfo: 'Distance between lines of text is 20px',
-        articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
-          <img src="https://dummyimage.com/347x75/d7d2c5/000.jpg" alt="level" />
-          <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
-          <p>Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem.</p>
-          <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc.</p>
+          <p>The Zmeu inhabits opulent castles that surpass the technological and architectural sophistication of our own. These structures, crafted from glass, bronze, silver, or even gold, boast intricate mechanisms, including heliotropic devices that enable them to pivot with the sun. Resembling vast noble estates, these palaces are surrounded by splendid gardens, fountains, orchards, and hunting forests, establishing a complete feudal domain.</p>
+          
+          <p class="misprint">Much like us, the Zmeu is a social being, living within family structures complete with mothers, siblings, and sometimes children, frequently daughters. In some rare instances, human and Zmeu kinship is not unheard of, as illustrated in the fairy tale "Spaima zmeilor," where an emperor, after nine years of epic battles with the bravest Zmeu, Pârjol, ultimately marries his sister.</p>
+          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
         </article>
       `
       },
@@ -226,27 +202,51 @@ export const chapters: IChapter[] = [
         tipSelector: 'p',
         tipInfo: 'Text is aligned to left',
         articleContent: `
-        <h2>Insert your article title here</h2>
+        <h2>Unveiling the Formidable Zmeoaice - Masters of Fury</h2>
         <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
           <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p class="misprint">Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit.</p>
+          <p>In the captivating realm of the Carpathian Mountains, Zmeoaice, the female counterparts of the mythical Zmeii, emerge as powerful and ferocious beings. Often depicted with a jaw reaching the sky and emitting flames like an oven, these formidable creatures possess unique abilities, typically associated with the feminine aspects of the mythos. To evade their wrath, valiant heroes resort to enchanted objects, such as tiles that transform into mountains of stone, thrown combs that morph into vast and dense forests, or rings from which walls of flint rise to the heavens. Defeating a mighty Zmeoaica is a close shave, with heroes barely escaping the edge of the blade.</p>
+
+          <p class="misprint">Known for their fiery temperament, especially the mother of the Zmeii, these female entities display a spirited and irritable nature, reminiscent of an elderly woman. With a fervent love for their offspring, particularly their sons, Zmeoaice wield colossal powers, flying through the air disguised as natural phenomena, scaling mountains, sipping on enemies, and turning them to stone. Their fierce behavior extends to stone piercing, tree-eating, and a literal explosion of anger when provoked.</p>
+          <img src="https://dummyimage.com/347x175/d7d2c5/000.jpg" alt="level" />
         </article>
       `
       },
       {
-        levelName: 'line-height, text-align',
-        instructions: 'Oh, oh! The second subtitle looks really broken! You can fix it by applying the last two CSS properties you just learned: <code>line-height</code> and <code>text-align</code>.',
+        levelName: 'line-height',
+        instructions: 'Isn\'t the quote on the right harder to read compared to the other one? That\'s due to the small spacing between the lines. Let\'s enhance its accessibility by adjusting the <code>line-height</code> property!',
+        beforeCode: '.misprint {',
+        afterCode: '}',
+        linesOfCode: 1,
+        startHighlightCode: 2,
+        error: 'line-height: 0.6em',
+        solutions: [['line-height', '20px', '1.25em', '1.25rem']],
+        tipSelector: 'q',
+        tipInfo: 'Distance between lines of text is 20px',
+        articleContent: `
+        <h2>Mother of Zmeii</h2>
+        <article>
+          <q>You scoundrel, rascal, and fool, with less wit than a goose</q>
+          <p>These stern words reverberate through the realms of Carpathian Mountains, spoken by the fearsome mother of the Zmeii. With a sharp corner capable of perforating stone and consuming trees, her wrath is a force to be reckoned with.</p>
+          <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="level" />
+          <p>The mother of the Zmeii is a complex and formidable character. Portrayed as a choleric, irascible figure with shades of a cantankerous old woman, the mother Zmeu is characterized by her deep love for her children, especially when arranging marriages and seeking vengeance for their untimely demise. Possessing colossal powers, she soars through the air, ascends mountains, devours foes, and petrifies them with a mere glance.</p>
+          <p>The second time the Zmeu is defeated by the brave hero, he cries in fear, saying:</p>
+          <q class="misprint">Because his mother would beat with a cudgel when she got angry</q> 
+          <p>to beat someone with a cudgel meaning to thrash them soundly.</p>
+        </article>
+      `
+      },
+      {
+        levelName: 'text-align, line-height',
+        instructions: 'Oh, oh! The second subtitle looks really broken! You can fix it by applying the last two CSS properties you just learned: <code>text-align</code> and <code>line-height</code>.',
         beforeCode: '.misprint {',
         afterCode: '}',
         linesOfCode: 2,
         startHighlightCode: 2,
-        error: 'line-height: 5.5em; text-align: center;',
-        solutions: [['line-height', '1.15em', '1.15rem', '18.4px'], ['text-align', 'left']],
+        error: 'text-align: center; line-height: 5.5em;',
+        solutions: [['text-align', 'left'], ['line-height', '1.15em', '1.15rem', '18.4px']],
         tipSelector: 'h3',
-        tipInfo: 'Distance between lines of text is 1.15em and text is aligned to left',
+        tipInfo: 'Text is aligned to left and distance between lines of text is 1.15em',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -361,7 +361,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 4,
         startHighlightCode: 2,
         error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
-        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family','"Crimson Text"'], ['text-align', 'justify'], ['text-transform', 'none']],
+        solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['text-align', 'justify'], ['text-transform', 'none']],
         tipSelector: 'p',
         tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
         articleContent: `
@@ -383,7 +383,7 @@ export const chapters: IChapter[] = [
         linesOfCode: 9,
         startHighlightCode: 2,
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
-        solutions: [['font-family', '"Playfair Display"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
+        solutions: [['font-family', 'Playfair Display', '"Playfair Display"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
         tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
         articleContent: `

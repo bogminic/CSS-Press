@@ -37,9 +37,9 @@
         &--misprint,
         &--error {
             position: absolute;
-            top: calc(50% - 35px);
+            top: calc(50% + 33px);
             right: 0;
-            bottom: calc(50% - 95px);
+            bottom: calc(50% - 190px);
             width: 365px;
             box-shadow: 0 0 0 100dvw $color-overlay;
             pointer-events: none;
@@ -67,7 +67,7 @@
 
         &--correct {
             position: absolute;
-            top: calc(50% - 185px);
+            top: calc(50% - 200px);
             right: 362px;
             bottom: calc(50% - 230px);
             width: 365px;

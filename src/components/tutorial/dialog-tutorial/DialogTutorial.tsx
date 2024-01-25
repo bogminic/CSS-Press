@@ -13,7 +13,9 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
     const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
-            <div className={`tutorial__overlay tutorial__overlay--${actualState}`}></div>
+            <div className={`tutorial__overlay tutorial__overlay--${actualState}`}>
+                {(actualState === 'write' || actualState === 'complete') && <span className={`tutorial__spot-${actualState}`}></span>}
+            </div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Next" />
                 <p className="tutorial__text">

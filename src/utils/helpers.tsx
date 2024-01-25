@@ -209,7 +209,7 @@ export function addMultiplierToImageFileName(fileName: string, multiplier: strin
  * @returns {Element} The processed image node.
  */
 export function updateImage(domNode: Element ): JSX.Element {
-  const imgPath = '';
+  const imgPath = import.meta.env.BASE_URL;
   
   if (domNode.attribs.src.includes('dummyimage')) {
     const props = attributesToProps(domNode.attribs);

@@ -17,7 +17,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
                 {(actualState === 'write' || actualState === 'complete') && <span className={`tutorial__spot-${actualState}`}></span>}
             </div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
-                <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Next" />
+                <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Bouncing arrow" />
                 <p className="tutorial__text">
                     {state.context.message}
                 </p>

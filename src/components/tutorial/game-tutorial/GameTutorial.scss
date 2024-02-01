@@ -1,5 +1,53 @@
 @import "./../../../styles/variables";
 
+@keyframes up-arrow {
+    0% {
+        transform: scaleX(-1) rotate(270deg) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(-1) rotate(270deg) translateX(-0.4em);
+        opacity: 0.5;
+    }
+}
+
+@keyframes down-arrow {
+    0% {
+        transform: rotate(90deg) translateX(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: rotate(90deg) translateX(0.4em);
+        opacity: 1;
+    }
+}
+
+@keyframes right-arrow {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-0.4em);
+        opacity: 0.5;
+    }
+}
+
+@keyframes left-arrow {
+    0% {
+        transform: scaleX(-1) translateX(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scaleX(-1) translateX(0.4em);
+        opacity: 1;
+    }
+}
+
 .tutorial {
     position: absolute;
     top: 0;
@@ -69,7 +117,7 @@
             position: absolute;
             top: calc(50% - 200px);
             right: 362px;
-            bottom: calc(50% - 230px);
+            bottom: calc(50% - 278px);
             width: 365px;
             box-shadow: 0 0 0 100dvw $color-overlay;
             pointer-events: none;
@@ -220,7 +268,7 @@
         }
 
         &--misprint {
-            top: calc(50% - 80px);
+            top: calc(50% - 86px);
             right: 50px;
         }
 
@@ -230,8 +278,8 @@
         }
 
         &--property {
-            top: 73px;
-            right: 390px;
+            top: 50px;
+            right: 387px;
         }
 
         &--error {
@@ -245,7 +293,7 @@
         }
 
         &--write {
-            top: calc(50% - 94px);
+            top: calc(50% - 99px);
             right: calc(50% + 220px);
         }
 
@@ -298,67 +346,68 @@
         &--values,
         &--correct {
             top: calc(50% - 14px);
-            right: -43px;
+            right: -47px;
+            animation: right-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--misprint {
-            top: calc(50% + 42px);
+            top: calc(50% + 41px);
             right: 50%;
-            transform: rotate(90deg);
+            animation: down-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--instructions {
             top: calc(50% - 22px);
-            left: -50px;
-            transform: scaleX(-1);
+            left: -47px;
+            animation: left-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--property {
             top: calc(50% - 22px);
-            left: -50px;
-            transform: scaleX(-1);
+            left: -47px;
+            animation: left-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--error {
             top: calc(50% + 56px);
             right: 50%;
-            transform: rotate(90deg);
+            animation: down-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--code {
             top: calc(50% + 70px);
             right: 50%;
-            transform: rotate(90deg);
+            animation: down-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--write {
-            top: calc(50% + 60px);
+            top: calc(50% + 57px);
             right: 50%;
-            transform: rotate(90deg);
+            animation: down-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--complete {
-            top: -50px;
+            top: -53px;
             right: 60px;
-            transform: scaleX(-1) rotate(270deg);
+            animation: up-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--menu {
             top: calc(50% - 22px);
-            left: -50px;
-            transform: scaleX(-1);
+            left: -46px;
+            animation: left-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--levels {
             top: calc(50% - 22px);
-            left: -50px;
-            transform: scaleX(-1);
+            left: -46px;
+            animation: left-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--buttons {
             top: 50%;
-            left: -50px;
-            transform: scale(-1, -1);
+            left: -46px;
+            animation: left-arrow 0.6s infinite alternate ease-in-out;
         }
 
         &--done {

@@ -18,7 +18,7 @@ export const chapters: IChapter[] = [
         articleContent: `
         <h2>Unmasking Zmeii and their tales of abducted maidens</h2>
         <article>
-          <img src="/img/zmeu.jpg" alt="Zmeu" />
+          <img src="img/creatures/zmeu.jpg" alt="Zmeu" />
           <p>Deep within the Carpathian Mountains reside the elusive Zmeii, mythical creatures often mistaken for dragons or balauri. They possess a mix of human-like and supernatural traits that make them distinct from other legendary beings, even though they share some similarities with dragons. The term "zmeu" has Slavic roots and is associated with enchantment and curses.</p>
           <p>Zmeii are known for their enormous physical strength and are often depicted wielding magical weapons like large clubs and enchanted whips. They live in grand castles made from precious materials and showcase impressive craftsmanship and advanced technology.</p>
           <p class="misprint">Within their society, Zmeii have family structures that include mothers, siblings, and sometimes even children. In the wild, their stories often involve the abduction of human girls, leading to confrontations with resourceful heroes who rely on clever strategies and help from other mythical creatures to rescue the captives.</p>

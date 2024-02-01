@@ -128,7 +128,7 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.correct]: {
-            entry: assign({ message: () => 'To discover the correct font size, hover over other paragraphs.' }),
+            entry: assign({ message: () => 'To discover the correct font size, hover over the text below the image.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.error
@@ -139,7 +139,7 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'To discover the correct font size, hover over other paragraphs.'
+                message: 'To discover the correct font size, hover over the text below the image.'
             }
         },
         [TutorialMachineStates.error]: {

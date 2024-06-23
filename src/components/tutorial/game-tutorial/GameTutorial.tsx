@@ -25,6 +25,8 @@ const GameTutorial = ({ currentTutorialState, send }: Props) => {
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.values} />
                 ) : currentTutorialState.matches(TutorialMachineStates.correct) ? (
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.correct} />
+                ) : currentTutorialState.matches(TutorialMachineStates.tool) ? (
+                    <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.tool} />
                 ) : currentTutorialState.matches(TutorialMachineStates.error) ? (
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.error} />
                 ) : currentTutorialState.matches(TutorialMachineStates.code) ? (

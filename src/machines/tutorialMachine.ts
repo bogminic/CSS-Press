@@ -6,6 +6,7 @@ export enum TutorialMachineStates {
     buttons = 'buttons',
     code = 'code',
     correct = 'correct',
+    tool = 'tool',
     done = 'done',
     error = 'error',
     complete = 'complete',
@@ -128,10 +129,10 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.correct]: {
-            entry: assign({ message: () => 'To discover the correct font size, hover over the text below the image.' }),
+            entry: assign({ message: () => 'To discover the correct font size, open de pressmen tools.' }),
             on: {
                 NEXT: {
-                    target: TutorialMachineStates.error
+                    target: TutorialMachineStates.tool
                 },
                 PREV: {
                     target: TutorialMachineStates.values
@@ -139,7 +140,22 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'To discover the correct font size, hover over the text below the image.'
+                message: 'To discover the correct font size, open de Pressmen Tool.'
+            }
+        },
+        [TutorialMachineStates.tool]: {
+            entry: assign({ message: () => 'As you can see in the Pressmen Tool, the correct paragraph value is 16px.' }),
+            on: {
+                NEXT: {
+                    target: TutorialMachineStates.error
+                },
+                PREV: {
+                    target: TutorialMachineStates.correct
+                },
+                ...sharedEvents
+            },
+            meta: {
+                message: 'As you can see in the Pressmen Tool, the correct paragraph value is 16px.'
             }
         },
         [TutorialMachineStates.error]: {
@@ -149,7 +165,7 @@ export const tutorialMachine = setup({
                     target: TutorialMachineStates.code
                 },
                 PREV: {
-                    target: TutorialMachineStates.correct
+                    target: TutorialMachineStates.tool
                 },
                 ...sharedEvents
             },

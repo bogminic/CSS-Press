@@ -1,0 +1,32 @@
+@import "./../../styles/variables";
+
+.pressmen-tools {
+    background: $color-grey-300;
+    border: 1px solid $color-black;
+    box-shadow: -5px -5px $color-grey-450;
+    transition: all 0.2s ease;
+    margin: 0 5px 5px 10px;
+
+    @media (max-height: 800px) {
+        max-height: 200px;
+    }
+
+    &__header {
+        padding: 10px;
+        border-bottom: 1px solid $color-black;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: $font-Playfair;
+    }
+
+    &__main {
+        background: $color-white;
+        border: 1px solid $color-black;
+        padding: 0 10px 0 10px;
+        margin: 16px;
+        height: calc(100% - 79px);
+        overflow-y: auto;
+    }
+}

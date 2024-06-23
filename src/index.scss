@@ -1,10 +1,12 @@
-@import "normalize.css"; /* bring in normalize.css styles */
+@import "normalize.css";
+/* bring in normalize.css styles */
 @import "./styles/variables";
 @import "animate.css";
 
 @import "./styles/Utils";
 @import "./styles/Button";
 @import "./styles/Scrollbar";
+@import "./styles/ReactToggle";
 
 body {
   margin: 0;
@@ -21,6 +23,8 @@ code {
 }
 
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  /* blue colors for links too */
+  text-decoration: inherit;
+  /* no underline */
 }

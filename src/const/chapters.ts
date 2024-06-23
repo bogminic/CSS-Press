@@ -14,16 +14,16 @@ export const chapters: IChapter[] = [
         error: 'font-size: 12px;',
         solutions: [['font-size', '16px', '1em', '1rem']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px',
+        tipInfo: '<p>Character dimension is <strong>16px</strong>.</p>',
         articleContent: `
-        <h2>Unmasking Zmeii and their tales of abducted maidens</h2>
-        <article>
-          <img src="img/creatures/zmeu.jpg" alt="Zmeu" />
-          <p>Deep within the Carpathian Mountains reside the elusive Zmeii, mythical creatures often mistaken for dragons or balauri. They possess a mix of human-like and supernatural traits that make them distinct from other legendary beings, even though they share some similarities with dragons. The term "zmeu" has Slavic roots and is associated with enchantment and curses.</p>
-          <p>Zmeii are known for their enormous physical strength and are often depicted wielding magical weapons like large clubs and enchanted whips. They live in grand castles made from precious materials and showcase impressive craftsmanship and advanced technology.</p>
-          <p class="misprint">Within their society, Zmeii have family structures that include mothers, siblings, and sometimes even children. In the wild, their stories often involve the abduction of human girls, leading to confrontations with resourceful heroes who rely on clever strategies and help from other mythical creatures to rescue the captives.</p>
-        </article>
-      `
+          <h2>Unmasking Zmeii and their tales of abducted maidens</h2>
+          <article>
+            <img src="img/creatures/zmeu.jpg" alt="Zmeu" />
+            <p>Deep within the Carpathian Mountains reside the elusive Zmeii, mythical creatures often mistaken for dragons or balauri. They possess a mix of human-like and supernatural traits that make them distinct from other legendary beings, even though they share some similarities with dragons. The term "zmeu" has Slavic roots and is associated with enchantment and curses.</p>
+            <p>Zmeii are known for their enormous physical strength and are often depicted wielding magical weapons like large clubs and enchanted whips. They live in grand castles made from precious materials and showcase impressive craftsmanship and advanced technology.</p>
+            <p class="misprint">Within their society, Zmeii have family structures that include mothers, siblings, and sometimes even children. In the wild, their stories often involve the abduction of human girls, leading to confrontations with resourceful heroes who rely on clever strategies and help from other mythical creatures to rescue the captives.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-style',
@@ -35,19 +35,19 @@ export const chapters: IChapter[] = [
         error: 'font-style: normal;',
         solutions: [['font-style', 'italic']],
         tipSelector: 'q',
-        tipInfo: 'Font face is italic',
+        tipInfo: '<p>Font face is <strong>italic</strong>.</p>',
         articleContent: `
-        <h2>The Majestic Appearance of Zmeii</h2>
-        <article>
-        <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
-          <p>One common portrayal describes Zmeii as colossal, serpent-like creatures, often with reptilian features. These beings are known for their immense physical strength, a fact emphasized in folklore. They are described as having imposing, larger-than-life forms, comparable to mountains, and possessing thick, scaly skin reminiscent of a snake's. As one folkloric account highlights:</p>
-          <q>Their aspect is intimidating, their presence akin to a looming mountain.</q>
-          <p>Another distinctive feature often attributed to Zmeii is their formidable wings. These wings are said to be vast, granting them the ability to soar through the skies with ease. They are sometimes compared to the wings of eagles or other mighty birds of prey. As the tales recount:</p>
-          <q class="misprint">Their wings span wide like the horizon itself, allowing them to command the heavens.</q>
-          <p>Despite their fearsome appearance, Zmeii are not mere brutes; they are complex beings with human-like characteristics. They are often depicted with humanoid faces, expressing a range of emotions. As one narrative elucidates:</p>
-          <q>Their faces reflect a strange blend of human-like expression, at times revealing sadness, anger, or even curiosity.</q>
-        </article>
-      `
+          <h2>The Majestic Appearance of Zmeii</h2>
+          <article>
+          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+            <p>One common portrayal describes Zmeii as colossal, serpent-like creatures, often with reptilian features. These beings are known for their immense physical strength, a fact emphasized in folklore. They are described as having imposing, larger-than-life forms, comparable to mountains, and possessing thick, scaly skin reminiscent of a snake's. As one folkloric account highlights:</p>
+            <q>Their aspect is intimidating, their presence akin to a looming mountain.</q>
+            <p>Another distinctive feature often attributed to Zmeii is their formidable wings. These wings are said to be vast, granting them the ability to soar through the skies with ease. They are sometimes compared to the wings of eagles or other mighty birds of prey. As the tales recount:</p>
+            <q class="misprint">Their wings span wide like the horizon itself, allowing them to command the heavens.</q>
+            <p>Despite their fearsome appearance, Zmeii are not mere brutes; they are complex beings with human-like characteristics. They are often depicted with humanoid faces, expressing a range of emotions. As one narrative elucidates:</p>
+            <q>Their faces reflect a strange blend of human-like expression, at times revealing sadness, anger, or even curiosity.</q>
+          </article>
+        `
       },
       {
         levelName: 'font-family',
@@ -59,18 +59,18 @@ export const chapters: IChapter[] = [
         error: 'font-family: "Turret Road";',
         solutions: [['font-family', 'Crimson Text', '"Crimson Text"']],
         tipSelector: 'p',
-        tipInfo: 'Font name is "Crimson Text"',
+        tipInfo: '<p>Font name is <strong>"Crimson Text"</strong>.</p>',
         articleContent: `
-        <h2>Ancient Beliefs</h2>
-        <article>
-          <p>Zmeii they have the amazing ability to hide either their moisture or soul in certain parts of their body, in other animals or objects, making them even harder to kill.</p>
-          <p>This is a matter that stems from an ancient primitive mentality, in which it was believed that humans also have their vital principle in a certain point of the body, such as the fat around the kidneys, for example. And if someone stole this fat, they could permanently harm the person.</p>
-          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
-          <p class="misprint">The problem with dragons, however, was that they could avoid this weakness by moving their vulnerability. In “Povestea țărănească,” it is revealed that a dragon kept its power in a sow, which was more complicated because there was a rabbit in the sow, a quail in the rabbit, and three worms in the quail.</p>
-          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
-          <p>This is the typology, if you will, of this magic of protecting vitality in general, carefully hidden in three animals, each one placed inside the other like a true matryoshka doll.</p>
-        </article>
-      `
+          <h2>Ancient Beliefs</h2>
+          <article>
+            <p>Zmeii they have the amazing ability to hide either their moisture or soul in certain parts of their body, in other animals or objects, making them even harder to kill.</p>
+            <p>This is a matter that stems from an ancient primitive mentality, in which it was believed that humans also have their vital principle in a certain point of the body, such as the fat around the kidneys, for example. And if someone stole this fat, they could permanently harm the person.</p>
+            <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+            <p class="misprint">The problem with dragons, however, was that they could avoid this weakness by moving their vulnerability. In “Povestea țărănească,” it is revealed that a dragon kept its power in a sow, which was more complicated because there was a rabbit in the sow, a quail in the rabbit, and three worms in the quail.</p>
+            <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="Image" />
+            <p>This is the typology, if you will, of this magic of protecting vitality in general, carefully hidden in three animals, each one placed inside the other like a true matryoshka doll.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-size, font-style, font-family,',
@@ -82,21 +82,25 @@ export const chapters: IChapter[] = [
         error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', 'Playfair Display', '"Playfair Display"']],
         tipSelector: 'q',
-        tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
+        tipInfo: `
+          <p>Character dimension is <strong>16px</strong>.</p>
+          <p>Font face is <strong>italic</strong>.</p>
+          <p>Font name is <strong>"Playfair Display"</strong>.</p>
+        `,
         articleContent: `
-        <h2>To dumb to be true</h2>
-        <article>
-          <p>The Zmeii, in all aspects, appear to be formidable creatures, if not outright impossible to defeat. This is attributed not only to their imposing physicality but also to their magical weapons and various supernatural powers. However, despite their fierce appearance, there is an important aspect to know, as every hero in every tale discovers: they are quite gullible and easily fooled.</p>
-          <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
-          <p>Reading from a story, the Zmeu is described as dull as midnight:</p>
-          <q>Their adaptation, much like inferior animals, is one-sided and lacking in imagination.</q>
-          <p>The same story continues:</p>
-          <q class="misprint">When someone discovers their weaknesses, they cannot invent anything to counter aggression. That's why they are in a perpetual fear of encountering notorious heroes.</q>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="Image" />
+          <h2>To dumb to be true</h2>
+          <article>
+            <p>The Zmeii, in all aspects, appear to be formidable creatures, if not outright impossible to defeat. This is attributed not only to their imposing physicality but also to their magical weapons and various supernatural powers. However, despite their fierce appearance, there is an important aspect to know, as every hero in every tale discovers: they are quite gullible and easily fooled.</p>
+            <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
+            <p>Reading from a story, the Zmeu is described as dull as midnight:</p>
+            <q>Their adaptation, much like inferior animals, is one-sided and lacking in imagination.</q>
+            <p>The same story continues:</p>
+            <q class="misprint">When someone discovers their weaknesses, they cannot invent anything to counter aggression. That's why they are in a perpetual fear of encountering notorious heroes.</q>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="Image" />
 
-          <p>The Zmeu is often disoriented, impulsive, and chaotic, large but clumsy, lacking agility, and above all, fearful. Some are so terrified that their hands and feet practically move on their own when they see a brave hero, as depicted in "Făt Frumos cu carâta de sticlă" They are easily beheaded because they charge into battle like boulders, without tact or minimal strategy; they are, in fact, highly credulous.</p>
-        </article>
-      `
+            <p>The Zmeu is often disoriented, impulsive, and chaotic, large but clumsy, lacking agility, and above all, fearful. Some are so terrified that their hands and feet practically move on their own when they see a brave hero, as depicted in "Făt Frumos cu carâta de sticlă" They are easily beheaded because they charge into battle like boulders, without tact or minimal strategy; they are, in fact, highly credulous.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-weight',
@@ -108,18 +112,18 @@ export const chapters: IChapter[] = [
         error: 'font-weight: 100;',
         solutions: [['font-weight', 'bold']],
         tipSelector: 'h3',
-        tipInfo: 'Font boldness is bold',
+        tipInfo: '<p>Font boldness is <strong>bold</strong>.</p>',
         articleContent: `
-        <h2>Unraveling the Enchanted Whips of the Zmeii</h2>
-        <article>
-          <h3>Introduction to the Magical Arsenal</h3>
-          <p>In the rich tapestry of Carpathian folklore, the Zmeii, mythical beings of overwhelming power, are known for more than just their colossal clubs. They possess another formidable weapon, often concealed in the depths of their chambers - the enchanted whip.</p>
-          <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="Image" />
-          <p>These whips, imbued with magic, harbor countless powers. They can shrink grand palaces to fit in the palm of a hand, as seen in the tale of "Prâslea cel voinic si merele de aur", where striking the whip at the four corners of a palace transforms it into apples made of copper, silver, and gold.</p>
-          <h3 class="misprint">The Mysterious Powers of the Whip</h3>
-          <p>In the "Poveste tărănească" the Zmeu keeps other whips, with one reducing herds to the size of a walnut and another shrinking estates to the size of an apple. In "Cei trei frați și Zmeul" the whip opens any door, turns houses into golden apples, or assists the Zmeu in transforming into terrifying creatures with a somersault three times and a whip crack. However, its primary and frequently encountered power is the ability to turn anyone or anything into stone with a single strike, typically executed from behind the adversary, and conversely, to bring to life anyone who has been enchanted, by cracking it three times in front of them.</p>
-        </article>
-      `
+          <h2>Unraveling the Enchanted Whips of the Zmeii</h2>
+          <article>
+            <h3>Introduction to the Magical Arsenal</h3>
+            <p>In the rich tapestry of Carpathian folklore, the Zmeii, mythical beings of overwhelming power, are known for more than just their colossal clubs. They possess another formidable weapon, often concealed in the depths of their chambers - the enchanted whip.</p>
+            <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="Image" />
+            <p>These whips, imbued with magic, harbor countless powers. They can shrink grand palaces to fit in the palm of a hand, as seen in the tale of "Prâslea cel voinic si merele de aur", where striking the whip at the four corners of a palace transforms it into apples made of copper, silver, and gold.</p>
+            <h3 class="misprint">The Mysterious Powers of the Whip</h3>
+            <p>In the "Poveste tărănească" the Zmeu keeps other whips, with one reducing herds to the size of a walnut and another shrinking estates to the size of an apple. In "Cei trei frați și Zmeul" the whip opens any door, turns houses into golden apples, or assists the Zmeu in transforming into terrifying creatures with a somersault three times and a whip crack. However, its primary and frequently encountered power is the ability to turn anyone or anything into stone with a single strike, typically executed from behind the adversary, and conversely, to bring to life anyone who has been enchanted, by cracking it three times in front of them.</p>
+          </article>
+        `
       },
       {
         levelName: 'color',
@@ -131,18 +135,18 @@ export const chapters: IChapter[] = [
         error: 'color: red;',
         solutions: [['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
-        tipInfo: 'Color is black',
+        tipInfo: '<p>Text color is <strong>black</strong>.</p>',
         articleContent: `
-        <h2>Buzdugan: The Unstoppable Weapon</h2>
-        <article>
-          <p>The "buzdugan" is an iconic and imposing weapon featured prominently in Carpathian tales. This massive club serves as a symbol of immense physical strength and power. The term "buzdugan" itself conjures images of a weapon that can shatter the earth and subdue even the most formidable adversaries.</p>
-          <p>Zmeii are often depicted wielding buzdugans of immense proportions, with some weighing as much as 50 "feri," an archaic unit of measurement roughly equivalent to 10 liters. This extraordinary weight underscores the sheer might of these legendary creatures.</p>
-          <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
-          <p class="misprint">When a Zmeu wields a buzdugan, it becomes a force to be reckoned with. The impact of this colossal club can bring down trees, disrupt landscapes, and devastate opponents in battle. It is a testament to the Zmeu's dominance in physical combat and their role as formidable adversaries in Romanian folklore narratives.</p>
-          <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
-          <p>The buzdugan is not just a weapon; it is a symbol of the Zmeii's unparalleled strength, an emblem of their mythological prowess, and a key element in the captivating tales that continue to enchant audiences with their epic battles and timeless themes.</p>
-        </article>
-      `
+          <h2>Buzdugan: The Unstoppable Weapon</h2>
+          <article>
+            <p>The "buzdugan" is an iconic and imposing weapon featured prominently in Carpathian tales. This massive club serves as a symbol of immense physical strength and power. The term "buzdugan" itself conjures images of a weapon that can shatter the earth and subdue even the most formidable adversaries.</p>
+            <p>Zmeii are often depicted wielding buzdugans of immense proportions, with some weighing as much as 50 "feri," an archaic unit of measurement roughly equivalent to 10 liters. This extraordinary weight underscores the sheer might of these legendary creatures.</p>
+            <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
+            <p class="misprint">When a Zmeu wields a buzdugan, it becomes a force to be reckoned with. The impact of this colossal club can bring down trees, disrupt landscapes, and devastate opponents in battle. It is a testament to the Zmeu's dominance in physical combat and their role as formidable adversaries in Romanian folklore narratives.</p>
+            <img src="https://dummyimage.com/347x173/d7d2c5/000.jpg" alt="Image" />
+            <p>The buzdugan is not just a weapon; it is a symbol of the Zmeii's unparalleled strength, an emblem of their mythological prowess, and a key element in the captivating tales that continue to enchant audiences with their epic battles and timeless themes.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-weight, color',
@@ -154,19 +158,22 @@ export const chapters: IChapter[] = [
         error: 'font-weight: 100; color: red;',
         solutions: [['font-weight', 'bold'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'h3',
-        tipInfo: 'Font boldness is bold and color is black',
+        tipInfo: `
+          <p>Font boldness is <strong>bold</strong>.</p>
+          <p>Text color is <strong>black</strong>.</p>
+        `,
         articleContent: `
-        <h2>Culinary Exploits Beyond Imagination</h2>
-        <article>
-          <h3>A Herculean Appetite</h3>
-          <p>The Zmeu, endowed with unparalleled strength, demonstrates astonishing feats like uprooting trees, carrying horses effortlessly, and juggling sacks of gold. Their colossal size is exemplified in tales such as "Agheran Viteazul," where a hero prepares an extravagant feast, simultaneously cooking 999 wild oxen and numerous boars in four giant pots.</p>
-          <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
-          
-          <p>In their culinary pursuits, Zmeii savor a diverse array of dishes—from succulent roasts of pork, lamb, or goose to the simplicity of bread and cheese, often complemented by water or wine. However, the true delicacy for these mythical beings lies in the consumption of human flesh and blood.</p>
-          <h3 class="misprint">Anthropophagy Unveiled</h3>
-          <p>Discovering their anthropophagic tendencies, as revealed in "Urmă Galbenă și Pipăruș Pătru," where the elder Zmeu, Mamonul, casually partakes in a meal with a pipe in hand, occasionally indulging in sips of human blood from a sizable bottle. Despite the enticing aroma of Zmeu cuisine, it is intertwined, much like their wine, with the essence of human blood.</p>
-        </article>
-      `
+          <h2>Culinary Exploits Beyond Imagination</h2>
+          <article>
+            <h3>A Herculean Appetite</h3>
+            <p>The Zmeu, endowed with unparalleled strength, demonstrates astonishing feats like uprooting trees, carrying horses effortlessly, and juggling sacks of gold. Their colossal size is exemplified in tales such as "Agheran Viteazul," where a hero prepares an extravagant feast, simultaneously cooking 999 wild oxen and numerous boars in four giant pots.</p>
+            <img src="https://dummyimage.com/347x140/d7d2c5/000.jpg" alt="Image" />
+            
+            <p>In their culinary pursuits, Zmeii savor a diverse array of dishes—from succulent roasts of pork, lamb, or goose to the simplicity of bread and cheese, often complemented by water or wine. However, the true delicacy for these mythical beings lies in the consumption of human flesh and blood.</p>
+            <h3 class="misprint">Anthropophagy Unveiled</h3>
+            <p>Discovering their anthropophagic tendencies, as revealed in "Urmă Galbenă și Pipăruș Pătru," where the elder Zmeu, Mamonul, casually partakes in a meal with a pipe in hand, occasionally indulging in sips of human blood from a sizable bottle. Despite the enticing aroma of Zmeu cuisine, it is intertwined, much like their wine, with the essence of human blood.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-size, font-style, font-family, font-weight, color',
@@ -178,17 +185,23 @@ export const chapters: IChapter[] = [
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
+        tipInfo: `
+          <p>The character dimension is <strong>16px.</strong></p>
+          <p>The font face is <strong>normal,</strong> which means it's not italic or oblique.</p>
+          <p>The font name is <strong>"Crimson Text".</strong></p>
+          <p>The font boldness is <strong>normal,</strong> indicating it's not bold.</p>
+          <p>The text color is <strong>black.</strong></p>
+        `,
         articleContent: `
-        <h2>The Extravagant Realms of the Zmeu</h2>
-        <article>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>The Zmeu inhabits opulent castles that surpass the technological and architectural sophistication of our own. These structures, crafted from glass, bronze, silver, or even gold, boast intricate mechanisms, including heliotropic devices that enable them to pivot with the sun. Resembling vast noble estates, these palaces are surrounded by splendid gardens, fountains, orchards, and hunting forests, establishing a complete feudal domain.</p>
-          
-          <p class="misprint">Much like us, the Zmeu is a social being, living within family structures complete with mothers, siblings, and sometimes children, frequently daughters. In some rare instances, human and Zmeu kinship is not unheard of, as illustrated in the fairy tale "Spaima zmeilor," where an emperor, after nine years of epic battles with the bravest Zmeu, Pârjol, ultimately marries his sister.</p>
-          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
-        </article>
-      `
+          <h2>The Extravagant Realms of the Zmeu</h2>
+          <article>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <p>The Zmeu inhabits opulent castles that surpass the technological and architectural sophistication of our own. These structures, crafted from glass, bronze, silver, or even gold, boast intricate mechanisms, including heliotropic devices that enable them to pivot with the sun. Resembling vast noble estates, these palaces are surrounded by splendid gardens, fountains, orchards, and hunting forests, establishing a complete feudal domain.</p>
+            
+            <p class="misprint">Much like us, the Zmeu is a social being, living within family structures complete with mothers, siblings, and sometimes children, frequently daughters. In some rare instances, human and Zmeu kinship is not unheard of, as illustrated in the fairy tale "Spaima zmeilor," where an emperor, after nine years of epic battles with the bravest Zmeu, Pârjol, ultimately marries his sister.</p>
+            <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
+          </article>
+        `
       },
       {
         levelName: 'text-align',
@@ -200,17 +213,17 @@ export const chapters: IChapter[] = [
         error: 'text-align: right;',
         solutions: [['text-align', 'left']],
         tipSelector: 'p',
-        tipInfo: 'Text is aligned to left',
+        tipInfo: '<p>Text is aligned to the <strong>left</strong>.</p>',
         articleContent: `
-        <h2>Unveiling the Formidable Zmeoaice - Masters of Fury</h2>
-        <article>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>In the captivating realm of the Carpathian Mountains, Zmeoaice, the female counterparts of the mythical Zmeii, emerge as powerful and ferocious beings. Often depicted with a jaw reaching the sky and emitting flames like an oven, these formidable creatures possess unique abilities, typically associated with the feminine aspects of the mythos. To evade their wrath, valiant heroes resort to enchanted objects, such as tiles that transform into mountains of stone, thrown combs that morph into vast and dense forests, or rings from which walls of flint rise to the heavens. Defeating a mighty Zmeoaica is a close shave, with heroes barely escaping the edge of the blade.</p>
+          <h2>Unveiling the Formidable Zmeoaice - Masters of Fury</h2>
+          <article>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <p>In the captivating realm of the Carpathian Mountains, Zmeoaice, the female counterparts of the mythical Zmeii, emerge as powerful and ferocious beings. Often depicted with a jaw reaching the sky and emitting flames like an oven, these formidable creatures possess unique abilities, typically associated with the feminine aspects of the mythos. To evade their wrath, valiant heroes resort to enchanted objects, such as tiles that transform into mountains of stone, thrown combs that morph into vast and dense forests, or rings from which walls of flint rise to the heavens. Defeating a mighty Zmeoaica is a close shave, with heroes barely escaping the edge of the blade.</p>
 
-          <p class="misprint">Known for their fiery temperament, especially the mother of the Zmeii, these female entities display a spirited and irritable nature, reminiscent of an elderly woman. With a fervent love for their offspring, particularly their sons, Zmeoaice wield colossal powers, flying through the air disguised as natural phenomena, scaling mountains, sipping on enemies, and turning them to stone. Their fierce behavior extends to stone piercing, tree-eating, and a literal explosion of anger when provoked.</p>
-          <img src="https://dummyimage.com/347x175/d7d2c5/000.jpg" alt="level" />
-        </article>
-      `
+            <p class="misprint">Known for their fiery temperament, especially the mother of the Zmeii, these female entities display a spirited and irritable nature, reminiscent of an elderly woman. With a fervent love for their offspring, particularly their sons, Zmeoaice wield colossal powers, flying through the air disguised as natural phenomena, scaling mountains, sipping on enemies, and turning them to stone. Their fierce behavior extends to stone piercing, tree-eating, and a literal explosion of anger when provoked.</p>
+            <img src="https://dummyimage.com/347x175/d7d2c5/000.jpg" alt="level" />
+          </article>
+        `
       },
       {
         levelName: 'line-height',
@@ -222,19 +235,19 @@ export const chapters: IChapter[] = [
         error: 'line-height: 0.6em',
         solutions: [['line-height', '20px', '1.25em', '1.25rem']],
         tipSelector: 'q',
-        tipInfo: 'Distance between lines of text is 20px',
+        tipInfo: '<p>The distance between its lines is <strong>20px</strong>.<p>',
         articleContent: `
-        <h2>Mother of Zmeii</h2>
-        <article>
-          <q>You scoundrel, rascal, and fool, with less wit than a goose</q>
-          <p>These stern words reverberate through the realms of Carpathian Mountains, spoken by the fearsome mother of the Zmeii. With a sharp corner capable of perforating stone and consuming trees, her wrath is a force to be reckoned with.</p>
-          <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="level" />
-          <p>The mother of the Zmeii is a complex and formidable character. Portrayed as a choleric, irascible figure with shades of a cantankerous old woman, the mother Zmeu is characterized by her deep love for her children, especially when arranging marriages and seeking vengeance for their untimely demise. Possessing colossal powers, she soars through the air, ascends mountains, devours foes, and petrifies them with a mere glance.</p>
-          <p>The second time the Zmeu is defeated by the brave hero, he cries in fear, saying:</p>
-          <q class="misprint">Because his mother would beat with a cudgel when she got angry</q> 
-          <p>to beat someone with a cudgel meaning to thrash them soundly.</p>
-        </article>
-      `
+          <h2>Mother of Zmeii</h2>
+          <article>
+            <q>You scoundrel, rascal, and fool, with less wit than a goose</q>
+            <p>These stern words reverberate through the realms of Carpathian Mountains, spoken by the fearsome mother of the Zmeii. With a sharp corner capable of perforating stone and consuming trees, her wrath is a force to be reckoned with.</p>
+            <img src="https://dummyimage.com/347x190/d7d2c5/000.jpg" alt="level" />
+            <p>The mother of the Zmeii is a complex and formidable character. Portrayed as a choleric, irascible figure with shades of a cantankerous old woman, the mother Zmeu is characterized by her deep love for her children, especially when arranging marriages and seeking vengeance for their untimely demise. Possessing colossal powers, she soars through the air, ascends mountains, devours foes, and petrifies them with a mere glance.</p>
+            <p>The second time the Zmeu is defeated by the brave hero, he cries in fear, saying:</p>
+            <q class="misprint">Because his mother would beat with a cudgel when she got angry</q> 
+            <p>to beat someone with a cudgel meaning to thrash them soundly.</p>
+          </article>
+        `
       },
       {
         levelName: 'text-align, line-height',
@@ -246,18 +259,20 @@ export const chapters: IChapter[] = [
         error: 'text-align: center; line-height: 5.5em;',
         solutions: [['text-align', 'left'], ['line-height', '1.15em', '1.15rem', '18.4px']],
         tipSelector: 'h3',
-        tipInfo: 'Text is aligned to left and distance between lines of text is 1.15em',
+        tipInfo: `
+          <p>Subtitle is aligned to the <strong>left</strong>, ensuring it starts from the left margin.</p>
+          <p>The distance between its lines is <strong>1.15em</strong>.</p>`,
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <h3>First article subtitle</h3>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">First article subtitle</h3>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <h3>First article subtitle</h3>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
+            <h3 class="misprint">First article subtitle</h3>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+          </article>
+        `
       },
       {
         levelName: 'text-decoration',
@@ -269,19 +284,19 @@ export const chapters: IChapter[] = [
         error: 'text-decoration: underline;',
         solutions: [['text-decoration', 'none']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is not underlined',
+        tipInfo: '<p>Subtitle is <strong>not underlined</strong>.</p>',
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <h3>First article subtitle</h3>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <h3 class="misprint">First article subtitle</h3>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <h3>First article subtitle</h3>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum.</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <h3 class="misprint">First article subtitle</h3>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
+          </article>
+        `
       },
       {
         levelName: 'text-transform',
@@ -293,19 +308,19 @@ export const chapters: IChapter[] = [
         error: 'text-transform: uppercase;',
         solutions: [['text-transform', 'capitalize']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is capitalized',
+        tipInfo: '<p>Subtitle is <strong>capitalized</strong>.</p>',
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <h3>Loremipsum</h3>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">Morelorem</h3>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in.</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <h3>Loremipsum</h3>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
+            <h3 class="misprint">Morelorem</h3>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
+          </article>
+        `
       },
       {
         levelName: 'text-decoration, text-transform',
@@ -317,18 +332,21 @@ export const chapters: IChapter[] = [
         error: 'text-decoration: line-through; text-transform: uppercase;',
         solutions: [['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is not uppercased and overlined',
+        tipInfo: `
+          <p>Subtitle is <strong>not uppercased</strong>, maintaining its original case.</p>
+          <p>It is <strong>overlined,</strong> adding emphasis to the text.</p>
+        `,
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <h3>Loremipsum</h3>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <h3 class="misprint">Morelorem</h3>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ulamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <h3>Loremipsum</h3>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
+            <h3 class="misprint">Morelorem</h3>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+          </article>
+        `
       },
       {
         levelName: 'line-height, text-align, text-decoration, text-transform',
@@ -340,18 +358,23 @@ export const chapters: IChapter[] = [
         error: 'line-height: 3em; text-align: right; text-decoration: underline; text-transform: uppercase;',
         solutions: [['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
-        tipInfo: 'Quote is aligned to left, the distance between its lines is 20px and it is not uppercased or underlined',
+        tipInfo: `
+          <p>Quote is aligned to the <strong>left</strong>, ensuring it starts from the left margin.</p>
+          <p>The distance between its lines is <strong>20px</strong>.</p>
+          <p>It is <strong>not uppercased</strong> to maintain its original case.</p>
+          <p>It is <strong>not underlined,</strong> preserving a clean appearance.</p>
+        `,
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
-          <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus.</p>
-          <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
-          <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
+            <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus.</p>
+            <img src="https://dummyimage.com/347x150/d7d2c5/000.jpg" alt="level" />
+            <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </article>
+        `
       },
       {
         levelName: 'font-size, font-family, text-align, text-transform',
@@ -363,17 +386,21 @@ export const chapters: IChapter[] = [
         error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['text-align', 'justify'], ['text-transform', 'none']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
+        tipInfo: `<p>The character dimension is <strong>16px</strong>.</p>
+                  <p>The font name is <strong>"Crimson Text"</strong>.</p>
+                  <p>The alignment is <strong>justified,</strong> ensuring a clean layout.</p>
+                  <p>The text is <strong>not uppercased,</strong> maintaining its original case.</p>
+                  `,
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <p>Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
-          <p class="misprint">Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <p>Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <p>Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis lorem volutpat eget eros in amet consectetur sollicitudin a diam. Fusce lobortis ante eget finibus bibendum. Donec mauris purus, etc. Aliquam est est, sollicitudin a diam eget dacia est.</p>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu.</p>
+            <p class="misprint">Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt?</p>
+          </article>
+        `
       },
       {
         levelName: 'line-height, ..., text-transform',
@@ -385,18 +412,28 @@ export const chapters: IChapter[] = [
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
         solutions: [['font-family', 'Playfair Display', '"Playfair Display"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
-        tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
+        tipInfo: `
+          <p>The character dimension is <strong>16px</strong>.</p>
+          <p>The font face is <strong>italic</strong>.</p>
+          <p>The font is <strong>"Playfair Display"</strong>.</p>
+          <p>The boldness is set to <strong>300</strong> (which corresponds to a lighter weight).</p>
+          <p>The text color is <strong>black</strong>.</p>
+          <p>The distance between lines is <strong>20px</strong>.</p>
+          <p>The text is aligned to the <strong>left</strong>.</p>
+          <p>It is <strong>not underlined</strong>.</p>
+          <p>It is <strong>not lowercased</strong>.</p>
+        `,
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
-          <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet.</p>
-          <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis, etc.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper. Alala bala portocala Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie.</p>
+            <q>Integer non mollis lorem, ut dignissim augue. Integer at semper erat. In placerat purus ac diam elementum, nec feugiat neque faucibus.</q>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet.</p>
+            <q class="misprint">Eligendi asa voluptates minus sollicitudin a diam eget. Aliquam est est.</q>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi asa voluptates minus sollicitudin a diam eget. Sed pretium metus ac odio pellentesque non mollis, etc.</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+          </article>
+        `
       },
     ]
   },
@@ -413,20 +450,20 @@ export const chapters: IChapter[] = [
         error: 'border: none;',
         solutions: [['border', '1px solid black', '1px solid #000', '1px solid #000000', '1px solid rgb(0,0,0)', '1px solid rgba(0,0,0,1)']],
         tipSelector: 'img',
-        tipInfo: 'Border is 1px, solid and black',
+        tipInfo: '<p>Border is <strong>1px</strong>, <strong>solid</strong> and color is <strong>black</strong>.</p>',
         extraStyle: 'img { border: 1px solid black }',
         articleContent: `
-        <h2>Insert your article title here</h2>
-        <article>
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
-          <p>Integer non mollis lorem, ut dignissim augue et la es integer at semper erat mo en placerat purus ac diam elementum, nec feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec feugiat.</p>
-          <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <img class="misprint" src="https://dummyimage.com/341x100/d7d2c5/000.jpg" alt="Image" />
-          <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
-          <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit elit.Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in ete el.</p>
-        </article>
-      `
+          <h2>Insert your article title here</h2>
+          <article>
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <img src="https://dummyimage.com/347x100/d7d2c5/000.jpg" alt="level" />
+            <p>Integer non mollis lorem, ut dignissim augue et la es integer at semper erat mo en placerat purus ac diam elementum, nec feugiat neque faucibus esta nod. Ppurus ac diam elementum, nec feugiat.</p>
+            <p>Fusce tincidunt risus eget magna pretium placerat. Maecenas et tempus mauris. Aliquam est est, sollicitudin a diam eget, maximus pretium lectu. Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit nostrum assumenda maxime aperiam quos voluptas voluptates minus, labore nesciunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <img class="misprint" src="https://dummyimage.com/341x100/d7d2c5/000.jpg" alt="Image" />
+            <p>Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in, vestibulum ullamcorper ipsum. Sed pretium metus ac odio pellentesque, sed convallis ante molestie. Praesent sagittis venenatis diam, eu condimentum ipsum hendrerit id. Morbi at massa eu dolor convallis feugiat.</p>
+            <p>Dolor sit amet consectetur adipisicing elit. Nihil id corrupti neque praesentium blanditiis suscipit elit.Fusce lobortis ante eget finibus bibendum. Donec mauris purus, volutpat eget eros in ete el.</p>
+          </article>
+        `
       },
     ]
   }

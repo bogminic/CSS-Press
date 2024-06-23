@@ -85,12 +85,17 @@
         &--misprint,
         &--error {
             position: absolute;
-            top: calc(50% + 38px);
+            top: 322px;
             right: 4px;
-            bottom: calc(50% - 186px);
+            height: 147px;
             width: 363px;
             box-shadow: 0 0 0 100dvw $color-overlay;
             pointer-events: none;
+
+            @media (min-height: 1300px) {
+                top: calc(50% + 38px);
+                bottom: calc(50% - 186px);
+            }
         }
 
         &--instructions {
@@ -115,12 +120,36 @@
 
         &--correct {
             position: absolute;
-            top: calc(50% - 200px);
-            right: 362px;
-            bottom: calc(50% - 278px);
-            width: 365px;
+            top: 5px;
+            right: 6px;
+            height: 36px;
+            width: 65px;
             box-shadow: 0 0 0 100dvw $color-overlay;
             pointer-events: none;
+
+            @media (min-height: 1300px) {
+                top: calc(50% - 278px);
+                bottom: calc(50% + 242px);
+            }
+        }
+
+        &--tool {
+            position: absolute;
+            top: 516px;
+            right: 0;
+            bottom: 0;
+            width: $newspaper-width + 1px;
+            box-shadow: 0 0 0 100dvw $color-overlay;
+            pointer-events: none;
+
+            @media (max-height: 790px) {
+                top: auto;
+                height: 150px;
+            }
+
+            @media (min-height: 1300px) {
+                top: calc(50% + 235px);
+            }
         }
 
         &--code {
@@ -252,7 +281,7 @@
 
     &__info {
         position: absolute;
-        width: 300px;
+        width: 310px;
         background: $color-grey-300;
         z-index: 100;
         padding: 10px 10px 5px 10px;
@@ -261,15 +290,18 @@
         box-shadow: -6px -6px $color-orange-400;
 
         &--article,
-        &--values,
-        &--correct {
+        &--values {
             top: calc(50% - 51px);
             right: calc($newspaper-width + 50px);
         }
 
         &--misprint {
-            top: calc(50% - 86px);
+            top: 197px;
             right: 50px;
+
+            @media (min-height: 1300px) {
+                top: calc(50% - 86px);
+            }
         }
 
         &--instructions {
@@ -282,9 +314,29 @@
             right: 387px;
         }
 
+        &--correct {
+            top: calc(50% - 308px);
+            right: 120px;
+        }
+
         &--error {
-            top: calc(50% - 115px);
+            top: 167px;
             right: 50px;
+
+            @media (min-height: 1300px) {
+                top: calc(50% - 115px);
+            }
+        }
+
+        &--tool {
+            bottom: 20px;
+
+            @media (min-height: 1300px) {
+                bottom: auto;
+                top: calc(50% + 322px);
+            }
+
+            right: calc($newspaper-width + 50px);
         }
 
         &--code {
@@ -344,6 +396,7 @@
 
         &--article,
         &--values,
+        &--tool,
         &--correct {
             top: calc(50% - 14px);
             right: -47px;

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 // @ts-ignore
 import Style from "style-it";
 import parse, {
@@ -13,9 +13,10 @@ type Props = {
   articleContent: string;
   tipInfo: string;
   tipSelector: string;
+  isPressmentoolsOpen: boolean;
 };
 
-const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any) => void) =>
+const options = (tipInfo: string, tipSelector: string) =>
 ({
   replace: (domNode: DOMNode) => {
 
@@ -39,13 +40,13 @@ const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any)
       // Tags with text inside
       if (domNode.firstChild && domNode.children[0].type === "text" && domNode.children.length === 1) {
         const content = (
-          <CustomTag className="article__reference" {...props} onMouseOver={handleMouseOver}>
+          <CustomTag className="article__reference" {...props}>
             {domNode.children[0].data}
           </CustomTag>
         );
         return content
       }
-      return (<CustomTag className="article__reference" {...props} onMouseOver={handleMouseOver}></CustomTag>)
+      return (<CustomTag className="article__reference" {...props}></CustomTag>)
     }
 
     // For ripped effect, if the tag is not an image, we should add ripped-effect class on it
@@ -62,40 +63,20 @@ const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any)
 function createArticleContent(
   articleContent: string,
   tipInfo: string,
-  tipSelector: string,
-  handleMouseOver: (e: any) => void,
+  tipSelector: string
 ) {
-  return parse(articleContent, options(tipInfo, tipSelector, handleMouseOver));
+  return parse(articleContent, options(tipInfo, tipSelector));
 }
 
-export const ArticleContent = ({ articleContent, tipInfo, tipSelector }: Props) => {
+export const ArticleContent = ({ articleContent, tipInfo, tipSelector, isPressmentoolsOpen }: Props) => {
 
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
   const parentRef = useRef<HTMLInputElement>(null);
 
-  const handleMouseOver = (e: MouseEvent) => {
-    const parentRect = parentRef?.current?.getBoundingClientRect();
-    const node = e?.target as HTMLElement;
-    const childRect = node.getBoundingClientRect();
-
-    const topTooltip = Math.round(childRect.top - (parentRect?.top || 0)) + childRect.height + 5;
-    const leftTooltip = Math.round(childRect.left - (parentRect?.left || 0));
-
-    setTop(topTooltip);
-    setLeft(leftTooltip);
-  };
-
-  const content = createArticleContent(articleContent, tipInfo, tipSelector, handleMouseOver);
+  const content = createArticleContent(articleContent, tipInfo, tipSelector);
   return (
     <section ref={parentRef} className="article__body">
-      <Style>
-        {`.article__tooltip {top: ${top}px; left: ${left}px;} `}
-      </Style>
+      {isPressmentoolsOpen && <Style>{'.article__reference { background: #ffca9b }'}</Style>}
       {content}
-      <details className="article__tooltip">
-        <summary>{tipInfo}</summary>
-      </details>
     </section>
   );
 };

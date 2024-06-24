@@ -15,14 +15,16 @@ import CssPressNews from "../../components/tutorial/css-press-news/CssPressNews"
 import { TutorialMachineStates } from "../../machines/tutorialMachine";
 import { localStorageNames } from "../../utils/constants";
 import { chapters } from "../../const/chapters";
+import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 
 type Props = {
-  currentTutorialState: any;
-  send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
 }
 
-function GamePage({currentTutorialState, send}: Props) {
+function GamePage({}: Props) {
 
+  const { send } = TutorialMachineContext.useActorRef();
+  const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
+  
   const location = useLocation();
   const navigate = useNavigate();
   const storedPathname = useRef(location.pathname);
@@ -121,7 +123,6 @@ function GamePage({currentTutorialState, send}: Props) {
         setIsArticleSliding={setIsArticleSliding}
         isArticleSliding={isArticleSliding}
         setIsLevelResolved={setIsLevelResolved}
-        currentTutorialState={currentTutorialState}
       />
       <Article
         articleContent={articleContent}
@@ -149,9 +150,7 @@ function GamePage({currentTutorialState, send}: Props) {
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
       {!currentTutorialState.matches(TutorialMachineStates.finished) && createPortal(
-      <GameTutorial
-        currentTutorialState={currentTutorialState}
-        send={send} />, document.body as HTMLBodyElement)}
+      <GameTutorial />, document.body as HTMLBodyElement)}
     </section>
   );
 }

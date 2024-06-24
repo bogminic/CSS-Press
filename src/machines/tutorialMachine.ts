@@ -14,7 +14,6 @@ export enum TutorialMachineStates {
     instructions = 'instructions',
     levels = 'levels',
     menu = 'menu',
-    click = 'click',
     misprint = 'misprint',
     property = 'property',
     values = 'values',

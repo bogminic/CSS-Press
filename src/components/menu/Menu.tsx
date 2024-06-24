@@ -11,13 +11,14 @@ import { getStorageValue } from "../../hooks/useLocalStorage";
 import { TutorialMachineStates } from './../../machines/tutorialMachine';
 import { localStorageNames } from "../../utils/constants";
 import { getChapterProgress } from "../../utils/helpers";
+import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 
 type Props = {
-  currentTutorialState: any;
-  send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
 }
 
-export default function Menu({ send, currentTutorialState }: Props) {
+export default function Menu({ }: Props) {
+  const { send } = TutorialMachineContext.useActorRef();
+  const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
   const { chapterNumberParam, levelNumberParam } = useParams();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -26,7 +27,6 @@ export default function Menu({ send, currentTutorialState }: Props) {
     if (currentTutorialState.matches(TutorialMachineStates.menu) && isMenuOpen) {
       send({ type: 'NEXT' });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTutorialState, isMenuOpen]);
 
 

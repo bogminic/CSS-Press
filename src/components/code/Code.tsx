@@ -8,6 +8,7 @@ import { TutorialMachineStates } from "../../machines/tutorialMachine";
 import { createPortal } from "react-dom";
 import Modal from "../modal/Modal";
 import { localStorageNames } from "../../utils/constants";
+import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 
 interface CodeProps {
   beforeCode: string;
@@ -45,10 +46,12 @@ function Code(props: CodeProps) {
     isArticleSliding,
     setIsArticleSliding,
     setIsLevelResolved,
-    currentTutorialState
   } = props;
 
   let navigate = useNavigate();
+
+  const { send } = TutorialMachineContext.useActorRef();
+  const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
 
   const [isHeartBeating, setIsHeartBeating] = useState(false);
   const [isCodeShaking, setIsCodeShaking] = useState(false);
@@ -69,6 +72,13 @@ function Code(props: CodeProps) {
       setIsHeartBeating(true);
       setIsLevelSolved("true");
       setIsLevelResolved(true);
+
+      // If solution for the first level is correct, go to the next tutorial step
+      if (chapterNumber === 1
+        && levelNumber === 1 
+        && currentTutorialState.matches(TutorialMachineStates.write)) {
+        send({ type: 'NEXT' });
+      }
       return;
     }
 
@@ -163,7 +173,7 @@ function Code(props: CodeProps) {
         } else {
           finish();
         }
-        
+
         event.preventDefault();
       }
     }
@@ -262,10 +272,10 @@ function Code(props: CodeProps) {
           Finish
         </button>}
 
-        {createPortal(
+      {createPortal(
         <Modal open={isGameComplete} className="modal">
           <h2 className="modal__title">Wanderer,</h2>
-          <p>Congratulations!<br/>You've completed the CSS Press game with skill and determination. You've conquered all the challenges and emerged as a true CSS master. Well done!</p>
+          <p>Congratulations!<br />You've completed the CSS Press game with skill and determination. You've conquered all the challenges and emerged as a true CSS master. Well done!</p>
           <p>Feel free to replay the game to sharpen your skills even further. Keep up the fantastic work!</p>
           <footer className="modal__footer">
             <button className="button" onClick={goToDashboard}>Go to Dashboard</button>

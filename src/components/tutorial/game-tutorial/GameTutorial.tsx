@@ -51,7 +51,7 @@ const GameTutorial = ({ }: Props) => {
                 ) : currentTutorialState.matches(TutorialMachineStates.buttons) ? (
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.buttons} />
                 ) : currentTutorialState.matches(TutorialMachineStates.done) ? (
-                    <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.done} hideNext showFinish />
+                    <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.done} hidePrevious hideNext showFinish />
                 ) : null}
             </section>
             <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>

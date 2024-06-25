@@ -26,7 +26,6 @@ interface CodeProps {
   isArticleSliding: boolean;
   setIsArticleSliding: Dispatch<SetStateAction<boolean>>;
   setIsLevelResolved: Dispatch<SetStateAction<boolean>>;
-  currentTutorialState: any;
 }
 
 function Code(props: CodeProps) {

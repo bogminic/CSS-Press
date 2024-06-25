@@ -7,6 +7,8 @@ import { ArticleContent } from "../article-content/ArticleContent";
 import { useEffect, useState } from "react";
 import Toggle from 'react-toggle'
 import { PressmenTools } from "../pressmentools/PressmenTools";
+import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
+import { TutorialMachineStates } from "../../machines/tutorialMachine";
 
 interface ArticleProps {
   articleContent: string;
@@ -42,10 +44,18 @@ const Article = function Article(props: ArticleProps) {
 
   const [isPressmentoolsOpen, setIsPressmentoolsOpen] = useState(false);
 
+  const { send } = TutorialMachineContext.useActorRef();
+  const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
+
   useEffect(() => {
     setIsPressmentoolsOpen(false);
   },[articleContent])
 
+  useEffect(() => {
+    if (isPressmentoolsOpen && currentTutorialState.matches(TutorialMachineStates.correct)) {
+      send({ type: 'NEXT' });
+    }
+  },[isPressmentoolsOpen])
   return (
     <>
       <Style>{style}</Style>

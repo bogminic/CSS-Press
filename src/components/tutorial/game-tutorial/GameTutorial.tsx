@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import './GameTutorial.scss';
-import { localStorageNames } from '../../../utils/constants';
 import DialogTutorial from '../dialog-tutorial/DialogTutorial';
 import singleArrow from "./single-arrow.svg";
 import { TutorialMachineStates } from '../../../machines/tutorialMachine';
@@ -12,12 +10,6 @@ type Props = {
 const GameTutorial = ({ }: Props) => {
     const { send } = TutorialMachineContext.useActorRef();
     const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
-
-    // Save tutorial state to local storage
-    useEffect(() => {
-        localStorage.setItem(localStorageNames.tutorialState, JSON.stringify(currentTutorialState));
-    }, [currentTutorialState]);
-
 
     return (
         <aside className="tutorial">

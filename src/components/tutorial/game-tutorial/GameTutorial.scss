@@ -511,14 +511,14 @@
         bottom: 8px;
         right: 8px;
         font: normal normal 900 14px/21px $font-Playfair;
-        background: $color-grey-300;
-        border: 1px solid $color-black;
-        box-shadow: -3px -3px $color-orange-400;
+        background: none;
         cursor: pointer;
         pointer-events: all;
+        color: $color-grey-400;
+        border: none;
 
         &:hover {
-            filter: brightness(80%);
+            filter: $filter-orange-from-white;
         }
     }
 }

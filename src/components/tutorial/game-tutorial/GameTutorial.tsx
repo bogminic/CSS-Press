@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import './GameTutorial.scss';
-import { localStorageNames } from '../../../utils/constants';
 import DialogTutorial from '../dialog-tutorial/DialogTutorial';
 import singleArrow from "./single-arrow.svg";
 import { TutorialMachineStates } from '../../../machines/tutorialMachine';
@@ -12,12 +10,6 @@ type Props = {
 const GameTutorial = ({ }: Props) => {
     const { send } = TutorialMachineContext.useActorRef();
     const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
-
-    // Save tutorial state to local storage
-    useEffect(() => {
-        localStorage.setItem(localStorageNames.tutorialState, JSON.stringify(currentTutorialState));
-    }, [currentTutorialState]);
-
 
     return (
         <aside className="tutorial">
@@ -54,10 +46,10 @@ const GameTutorial = ({ }: Props) => {
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.done} hidePrevious hideNext showFinish />
                 ) : null}
             </section>
-            <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>
+            {!currentTutorialState.matches(TutorialMachineStates.starting) && <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>
                 <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
                 Skip Walkthrough
-            </button>
+            </button>}
         </aside>
     )
 }

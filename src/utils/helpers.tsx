@@ -20,15 +20,18 @@ export function getCodeLinesSide(
   ];
 
   for (let i = 1; i <= maxNoOfCodeLinesSide; i++) {
+    let className = "";
+    if (i >= highlightedRows[0] && i < highlightedRows[1]) {
+      className = "code__numbers--highlight";
+      if (i === highlightedRows[0]) {
+        className += " code__numbers--first";
+      }
+      if (i === highlightedRows[1] - 1) {
+        className += " code__numbers--last";
+      }
+    }
     codeLinesSide.push(
-      <li
-        key={i}
-        className={
-          i >= highlightedRows[0] && i < highlightedRows[1]
-            ? "code__numbers--highlight"
-            : ""
-        }
-      >
+      <li key={i} className={className}>
         {i}
       </li>
     );

@@ -20,18 +20,18 @@ import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 type Props = {
 }
 
-function GamePage({}: Props) {
+function GamePage({ }: Props) {
 
   const { send } = TutorialMachineContext.useActorRef();
   const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
-  
+
   const location = useLocation();
   const navigate = useNavigate();
   const storedPathname = useRef(location.pathname);
 
   const { chapterNumberParam, levelNumberParam } = useParams();
 
-  const { currentChapter, currentLevel,chapterNumber, levelNumber, nextChapterNumber, nextLevelNumber } = useMemo(
+  const { currentChapter, currentLevel, chapterNumber, levelNumber, nextChapterNumber, nextLevelNumber } = useMemo(
     () => getGameInfo(chapterNumberParam, levelNumberParam, chapters),
     [chapterNumberParam, levelNumberParam]
   );
@@ -42,6 +42,11 @@ function GamePage({}: Props) {
   const [isArticleSliding, setIsArticleSliding] = useState(false);
   const [isLevelResolved, setIsLevelResolved] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Save tutorial state to local storage
+  useEffect(() => {
+    localStorage.setItem(localStorageNames.tutorialState, JSON.stringify(currentTutorialState));
+  }, [currentTutorialState]);
 
   useEffect(() => {
     if (currentTutorialState.matches(TutorialMachineStates.starting) && !isModalOpen) {
@@ -66,7 +71,7 @@ function GamePage({}: Props) {
     window.setTimeout(() => {
       setIsModalOpen(true);
     }, 3100);
-   
+
   }
 
   const startTutorial = () => {
@@ -150,7 +155,7 @@ function GamePage({}: Props) {
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
       {!currentTutorialState.matches(TutorialMachineStates.finished) && createPortal(
-      <GameTutorial />, document.body as HTMLBodyElement)}
+        <GameTutorial />, document.body as HTMLBodyElement)}
     </section>
   );
 }

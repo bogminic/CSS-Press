@@ -155,7 +155,7 @@
             &::after {
                 content: '';
                 position: absolute;
-                top: calc(50% + 80px);
+                top: calc(50% + 88px);
                 right: 727px;
                 bottom: 0;
                 left: 0;
@@ -233,9 +233,9 @@
             background: $color-overlay;
             display: block;
             position: absolute;
-            bottom: calc(50% - 80px);
-            height: 26px;
-            width: 32px;
+            bottom: calc(50% - 88px);
+            height: 33px;
+            width: 23px;
             right: 727px;
         }
 

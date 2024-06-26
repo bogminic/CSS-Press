@@ -44,10 +44,10 @@ const GameTutorial = ({ }: Props) => {
                     <DialogTutorial state={currentTutorialState} send={send} actualState={TutorialMachineStates.done} hidePrevious hideNext showFinish />
                 ) : null}
             </section>
-            <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>
+            {!currentTutorialState.matches(TutorialMachineStates.starting) && <button className='tutorial__skip' type='button' onClick={() => send({ type: 'FINISHED' })}>
                 <img className='tutorial__double-arrow' src={singleArrow} alt="Skip Walkthrough" />
                 Skip Walkthrough
-            </button>
+            </button>}
         </aside>
     )
 }

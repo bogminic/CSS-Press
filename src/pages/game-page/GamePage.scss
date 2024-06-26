@@ -10,4 +10,12 @@
     grid-row-gap: 15px;
     justify-content: center;
     @include main;
+
+    @media only screen and (max-height: 864px) {
+        grid-template-rows: calc(45% - 15px) calc(55% - 15px);
+    }
+
+    @media only screen and (max-height: 768px) {
+        grid-template-rows: calc(40% - 15px) calc(60% - 15px);
+    }
 }

@@ -55,13 +55,13 @@ export function buildSolutionsArray(solutions: string[][]): string[] {
 }
 
 export function buildKeys(elements: string[]): Set<string> {
-  let allKeys: string[] = [];
+  const allKeys: string[] = [];
   elements.forEach((elem) => {
     const key = elem.split(":")[0];
     allKeys.push(key);
   })
 
-  let allUniqueKeys = new Set(allKeys);
+  const allUniqueKeys = new Set(allKeys);
   return allUniqueKeys;
 }
 

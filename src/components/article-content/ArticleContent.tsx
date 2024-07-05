@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-// @ts-ignore
+import { MouseEventHandler, useRef, useState } from "react";
+// @ts-expect-error we don't have types for style-it
 import Style from "style-it";
 import parse, {
   DOMNode,
@@ -15,7 +15,7 @@ type Props = {
   tipSelector: string;
 };
 
-const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any) => void) =>
+const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: MouseEventHandler) => void) =>
 ({
   replace: (domNode: DOMNode) => {
 
@@ -63,7 +63,7 @@ function createArticleContent(
   articleContent: string,
   tipInfo: string,
   tipSelector: string,
-  handleMouseOver: (e: any) => void,
+  handleMouseOver: (e: MouseEventHandler) => void,
 ) {
   return parse(articleContent, options(tipInfo, tipSelector, handleMouseOver));
 }

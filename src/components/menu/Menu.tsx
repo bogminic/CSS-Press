@@ -13,10 +13,7 @@ import { localStorageNames } from "../../utils/constants";
 import { getChapterProgress } from "../../utils/helpers";
 import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 
-type Props = {
-}
-
-export default function Menu({ }: Props) {
+export default function Menu() {
   const { send } = TutorialMachineContext.useActorRef();
   const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
   const { chapterNumberParam, levelNumberParam } = useParams();
@@ -27,6 +24,7 @@ export default function Menu({ }: Props) {
     if (currentTutorialState.matches(TutorialMachineStates.menu) && isMenuOpen) {
       send({ type: 'NEXT' });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTutorialState, isMenuOpen]);
 
 

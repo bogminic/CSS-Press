@@ -47,7 +47,7 @@ function Code(props: CodeProps) {
     setIsLevelResolved,
   } = props;
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { send } = TutorialMachineContext.useActorRef();
   const currentTutorialState = TutorialMachineContext.useSelector((state) => state);

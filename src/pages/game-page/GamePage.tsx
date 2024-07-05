@@ -17,10 +17,7 @@ import { localStorageNames } from "../../utils/constants";
 import { chapters } from "../../const/chapters";
 import { TutorialMachineContext } from "../../machines/TutorialMachineContext";
 
-type Props = {
-}
-
-function GamePage({ }: Props) {
+function GamePage() {
 
   const { send } = TutorialMachineContext.useActorRef();
   const currentTutorialState = TutorialMachineContext.useSelector((state) => state);

@@ -4,10 +4,7 @@ import singleArrow from "./single-arrow.svg";
 import { TutorialMachineStates } from '../../../machines/tutorialMachine';
 import { TutorialMachineContext } from '../../../machines/TutorialMachineContext';
 
-type Props = {
-}
-
-const GameTutorial = ({ }: Props) => {
+const GameTutorial = () => {
     const { send } = TutorialMachineContext.useActorRef();
     const currentTutorialState = TutorialMachineContext.useSelector((state) => state);
 

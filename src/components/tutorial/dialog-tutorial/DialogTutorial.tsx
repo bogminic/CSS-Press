@@ -1,8 +1,22 @@
+import { MachineSnapshot, MetaObject, NonReducibleUnknown } from "xstate";
 import arrow from "./arrow.svg";
 import doubleArrow from "./double-arrow.svg";
+import { TutorialMachineStates } from "../../../machines/tutorialMachine";
 type Props = {
     send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
-    state: any;
+    state: MachineSnapshot<{
+            message: string;
+        }, {
+            type: "NEXT";
+        } | {
+            type: "PREV";
+        } | {
+            type: "RESET";
+        } | {
+            type: "FINISHED";
+        } | {
+            type: "PLAY";
+        }, Record<string, never>, TutorialMachineStates, string, NonReducibleUnknown, MetaObject>;
     actualState: string;
     hidePrevious?: boolean;
     hideNext?: boolean;
@@ -14,7 +28,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
     return (
         <>
             <div className={`tutorial__overlay tutorial__overlay--${actualState}`}>
-                {(actualState === 'write' || actualState === 'complete') && <span className={`tutorial__spot-${actualState}`}></span>}
+                {(actualState === TutorialMachineStates.write || actualState === TutorialMachineStates.complete) && <span className={`tutorial__spot-${actualState}`}></span>}
             </div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Bouncing arrow" />
@@ -22,7 +36,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
                     {state.context.message}
                 </p>
                 {(!hidePrevious || !hideNext || showFinish) && <div className={btnsClass}>
-                   {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send({ type: 'PREV' })}>
+                    {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send({ type: 'PREV' })}>
                         <img className='tutorial__double-arrow tutorial__double-arrow--reverse' src={doubleArrow} alt="Previous" />
                         Prev
                     </button>}

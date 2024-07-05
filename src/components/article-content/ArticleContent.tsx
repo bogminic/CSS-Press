@@ -1,5 +1,5 @@
 import { useRef } from "react";
-// @ts-ignore
+// @ts-expect-error we don't have types for style-it
 import Style from "style-it";
 import parse, {
   DOMNode,

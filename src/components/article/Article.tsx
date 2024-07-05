@@ -1,7 +1,7 @@
 
 
 import "./Article.scss";
-// @ts-ignore
+// @ts-expect-error we don't have types for style-it
 import Style from "style-it";
 import { ArticleContent } from "../article-content/ArticleContent";
 import { useEffect, useState } from "react";
@@ -55,6 +55,7 @@ const Article = function Article(props: ArticleProps) {
     if (isPressmentoolsOpen && currentTutorialState.matches(TutorialMachineStates.correct)) {
       send({ type: 'NEXT' });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[isPressmentoolsOpen])
   return (
     <>

@@ -2,7 +2,7 @@ import './NotfoundPage.scss';
 import { useNavigate } from 'react-router';
 
 export default function NotfoundPage() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const goToDashboard = () => {
     navigate(`/`);

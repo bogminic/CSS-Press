@@ -32,8 +32,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
             </div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Bouncing arrow" />
-                <p className="tutorial__text">
-                    {state.context.message}
+                <p className="tutorial__text" dangerouslySetInnerHTML={{__html: state.getMeta()[`${state.machine.id}.${actualState}`]?.message}}>
                 </p>
                 {(!hidePrevious || !hideNext || showFinish) && <div className={btnsClass}>
                     {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send({ type: 'PREV' })}>

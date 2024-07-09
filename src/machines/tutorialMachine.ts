@@ -35,16 +35,13 @@ const sharedEvents = {
 
 export const tutorialMachine = setup({
     types: {
-        context: {} as { message: string },
-        events: {} as | { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }
+        events: {} as | { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' },
+        meta: {} as { message: string }
 
     }
 }).createMachine({
     initial: TutorialMachineStates.starting,
     id: 'tutorialMachine',
-    context: {
-        message: ''
-    },
     states: {
         [TutorialMachineStates.starting]: {
             on: {
@@ -55,7 +52,6 @@ export const tutorialMachine = setup({
             },
         },
         [TutorialMachineStates.article]: {
-            entry: assign({ message: () => 'Uh-oh! There\'s something wrong with this newspaper.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.misprint
@@ -63,11 +59,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'Uh-oh! There\'s something wrong with this newspaper.',
+                message: 'Uh-oh! There\'s something <strong>wrong</strong> with this newspaper.',
             }
         },
         [TutorialMachineStates.misprint]: {
-            entry: assign({ message: () => 'This paragraph doesn\'t look right.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.instructions
@@ -82,7 +77,6 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.instructions]: {
-            entry: assign({ message: () => 'These instructions will assist you in resolving the issues with the newspaper.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.property
@@ -93,11 +87,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'These instructions will assist you in resolving the issues with the newspaper.'
+                message: 'These <strong>instructions</strong> will assist you in resolving the issues with the newspaper.'
             },
         },
         [TutorialMachineStates.property]: {
-            entry: assign({ message: () => 'For additional information, simply hover over the "font-size" property.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.values
@@ -108,11 +101,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'For additional information, simply hover over the "font-size" property.'
+                message: 'For additional information, simply hover over the "<strong>font-size</strong>" property.'
             }
         },
         [TutorialMachineStates.values]: {
-            entry: assign({ message: () => 'All you need to do is determine the correct values to rectify the newspaper style.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.correct
@@ -123,11 +115,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'All you need to do is determine the correct values to rectify the newspaper style.'
+                message: 'All you need to do is determine the <strong>correct values</strong> to rectify the newspaper style.'
             }
         },
         [TutorialMachineStates.correct]: {
-            entry: assign({ message: () => 'To discover the correct font size, hover over the text below the image.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.error
@@ -138,11 +129,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'To discover the correct font size, hover over the text below the image.'
+                message: 'To discover the <strong>correct</strong> font size, hover over the text below the image.'
             }
         },
         [TutorialMachineStates.error]: {
-            entry: assign({ message: () => 'You need to make this paragraph look the same as the rest of the newspaper.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.code
@@ -157,7 +147,6 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.code]: {
-            entry: assign({ message: () => 'You can use this terminal below to write CSS properties and modify the newspaper\'s design.' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.write
@@ -168,11 +157,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'You can use this terminal below to write CSS properties and modify the newspaper\'s design.'
+                message: 'You can use this terminal below to <strong>write</strong> CSS properties and modify the newspaper\'s design.'
             }
         },
         [TutorialMachineStates.write]: {
-            entry: assign({ message: () => 'Click in the .misprint class input and write: font-size: 16px;' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.complete
@@ -183,11 +171,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'Click in the .misprint class input and write: font-size: 16px;'
+                message: 'Click in the .misprint class input and write: <strong>font-size: 16px;</strong>'
             }
         },
         [TutorialMachineStates.complete]: {
-            entry: assign({ message: () => 'Congratulations on completing the Level! To proceed to the next level, simply click on the "Next Level" button.' }),
             on: {
                 PREV: {
                     target: TutorialMachineStates.write
@@ -198,11 +185,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'Congratulations on completing the Level! To proceed to the next level, simply click on the "Next Level" button.'
+                message: 'Congratulations on completing the Level! To proceed to the next level, simply click on the "<strong>Next Level</strong>" button.'
             }
         },
         [TutorialMachineStates.menu]: {
-            entry: assign({ message: () => 'You can use the menu to swith between levels. Click to open it!' }),
             on: {
                 NEXT: {
                     target: TutorialMachineStates.levels
@@ -210,11 +196,10 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             },
             meta: {
-                message: 'You can use the menu to swith between levels. Click to open it!'
+                message: 'You can use the menu to swith between levels. <strong>Click</strong> to open it!'
             }
         },
         [TutorialMachineStates.levels]: {
-            entry: assign({ message: () => 'Here you can view the available levels and monitor your progress as well.' }),
             on: {
                 PREV: {
                     target: TutorialMachineStates.menu
@@ -229,7 +214,6 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.buttons]: {
-            entry: assign({ message: () => 'The menu features two buttons, one for resetting the game and another for accessing the game tutorials.' }),
             on: {
                 PREV: {
                     target: TutorialMachineStates.levels
@@ -244,7 +228,6 @@ export const tutorialMachine = setup({
             }
         },
         [TutorialMachineStates.done]: {
-            entry: assign({ message: () => 'Congratulations! You have successfully completed the tutorial. Now you\'re ready to embark on your own exciting gaming adventure. Enjoy the game!' }),
             on: {
                 PREV: {
                     target: TutorialMachineStates.buttons

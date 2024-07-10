@@ -8,6 +8,7 @@
   &__wrapper {
     width: 1470px;
     margin: 0 auto;
+
     @media only screen and (max-width: 1536px) {
       width: 980px;
     }
@@ -24,6 +25,7 @@
   &__description-wrapper {
     width: 1470px;
     margin: 0 auto;
+
     @media only screen and (max-width: 1536px) {
       width: 980px;
     }
@@ -60,6 +62,7 @@
     align-items: center;
     padding-left: 16px;
     position: relative;
+    text-transform: capitalize;
 
     &:before {
       content: '';
@@ -90,6 +93,7 @@
     height: 60px;
     display: flex;
     align-items: center;
+    text-transform: capitalize;
   }
 
   &__text {
@@ -109,4 +113,3 @@
     padding: 0;
   }
 }
-

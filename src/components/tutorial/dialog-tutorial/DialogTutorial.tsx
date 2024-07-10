@@ -1,29 +1,18 @@
-import { MachineSnapshot, MetaObject, NonReducibleUnknown } from "xstate";
 import arrow from "./arrow.svg";
 import doubleArrow from "./double-arrow.svg";
 import { TutorialMachineStates } from "../../../machines/tutorialMachine";
+import { TutorialMachineContext } from "../../../machines/TutorialMachineContext";
 type Props = {
-    send: (event: { type: 'NEXT' } | { type: 'PREV' } | { type: 'RESET' } | { type: 'FINISHED' } | { type: 'PLAY' }) => void;
-    state: MachineSnapshot<{
-            message: string;
-        }, {
-            type: "NEXT";
-        } | {
-            type: "PREV";
-        } | {
-            type: "RESET";
-        } | {
-            type: "FINISHED";
-        } | {
-            type: "PLAY";
-        }, Record<string, never>, TutorialMachineStates, string, NonReducibleUnknown, MetaObject>;
     actualState: string;
     hidePrevious?: boolean;
     hideNext?: boolean;
     showFinish?: boolean;
 }
 
-const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, showFinish }: Props) => {
+const DialogTutorial = ({ actualState, hideNext, hidePrevious, showFinish }: Props) => {
+    const { send } = TutorialMachineContext.useActorRef();
+    const state = TutorialMachineContext.useSelector((state) => state);
+    
     const btnsClass = `tutorial__btns${hidePrevious ? ' tutorial__btns--next' : ''}`
     return (
         <>
@@ -32,7 +21,7 @@ const DialogTutorial = ({ send, state, actualState, hideNext, hidePrevious, show
             </div>
             <article className={`tutorial__info tutorial__info--${actualState}`}>
                 <img className={`tutorial__arrow tutorial__arrow--${actualState}`} src={arrow} alt="Bouncing arrow" />
-                <p className="tutorial__text" dangerouslySetInnerHTML={{__html: state.getMeta()[`${state.machine.id}.${actualState}`]?.message}}>
+                <p className="tutorial__text" dangerouslySetInnerHTML={{__html: state.getMeta()[`${state.machine.id}.${actualState}`]?.message || ''}}>
                 </p>
                 {(!hidePrevious || !hideNext || showFinish) && <div className={btnsClass}>
                     {!hidePrevious && <button className='tutorial__button' type='button' onClick={() => send({ type: 'PREV' })}>

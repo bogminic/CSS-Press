@@ -71,8 +71,8 @@ function createArticleContent(
 export const ArticleContent = ({ articleContent, tipInfo, tipSelector, isPressmentoolsOpen }: Props) => {
 
   const parentRef = useRef<HTMLInputElement>(null);
-
   const content = createArticleContent(articleContent, tipInfo, tipSelector);
+
   return (
     <section ref={parentRef} className="article__body">
       {isPressmentoolsOpen && <Style>{'.article__reference { background: #ffca9b }'}</Style>}

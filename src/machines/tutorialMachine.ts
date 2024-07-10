@@ -258,6 +258,5 @@ export const tutorialMachine = setup({
                 ...sharedEvents
             }
         }
-
     }
 });

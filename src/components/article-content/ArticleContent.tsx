@@ -1,4 +1,4 @@
-import { MouseEventHandler, useRef, useState } from "react";
+import { useRef, useState } from "react";
 // @ts-expect-error we don't have types for style-it
 import Style from "style-it";
 import parse, {
@@ -14,8 +14,8 @@ type Props = {
   tipInfo: string;
   tipSelector: string;
 };
-
-const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: MouseEventHandler) => void) =>
+// eslint-disable-next-line
+const options = (tipInfo: string, tipSelector: string, handleMouseOver: (e: any) => void) =>
 ({
   replace: (domNode: DOMNode) => {
 
@@ -63,7 +63,8 @@ function createArticleContent(
   articleContent: string,
   tipInfo: string,
   tipSelector: string,
-  handleMouseOver: (e: MouseEventHandler) => void,
+  // eslint-disable-next-line
+  handleMouseOver: (e: any) => void,
 ) {
   return parse(articleContent, options(tipInfo, tipSelector, handleMouseOver));
 }
@@ -73,8 +74,8 @@ export const ArticleContent = ({ articleContent, tipInfo, tipSelector }: Props) 
   const [top, setTop] = useState(0);
   const [left, setLeft] = useState(0);
   const parentRef = useRef<HTMLInputElement>(null);
-
-  const handleMouseOver = (e: MouseEvent) => {
+  // eslint-disable-next-line
+  const handleMouseOver = (e: any) => {
     const parentRect = parentRef?.current?.getBoundingClientRect();
     const node = e?.target as HTMLElement;
     const childRect = node.getBoundingClientRect();

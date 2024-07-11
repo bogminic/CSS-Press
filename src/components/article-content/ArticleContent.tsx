@@ -95,7 +95,7 @@ export const ArticleContent = ({ articleContent, tipInfo, tipSelector }: Props) 
       </Style>
       {content}
       <details className="article__tooltip">
-        <summary>{tipInfo}</summary>
+        <summary dangerouslySetInnerHTML={{__html: tipInfo}}></summary>
       </details>
     </section>
   );

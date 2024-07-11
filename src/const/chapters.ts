@@ -14,7 +14,7 @@ export const chapters: IChapter[] = [
         error: 'font-size: 12px;',
         solutions: [['font-size', '16px', '1em', '1rem']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px',
+        tipInfo: 'The paragraph\'s characters are <strong>16px</strong> in size',
         articleContent: `
         <h2>Unmasking Zmeii and their tales of abducted maidens</h2>
         <article>
@@ -35,7 +35,7 @@ export const chapters: IChapter[] = [
         error: 'font-style: normal;',
         solutions: [['font-style', 'italic']],
         tipSelector: 'q',
-        tipInfo: 'Font face is italic',
+        tipInfo: 'This quote\'s style is <strong>italic</strong>',
         articleContent: `
         <h2>The Majestic Appearance of Zmeii</h2>
         <article>
@@ -59,7 +59,7 @@ export const chapters: IChapter[] = [
         error: 'font-family: "Turret Road";',
         solutions: [['font-family', 'Crimson Text', '"Crimson Text"']],
         tipSelector: 'p',
-        tipInfo: 'Font name is "Crimson Text"',
+        tipInfo: 'This paragraph it is part of <strong>"Crimson Text"</strong> family',
         articleContent: `
         <h2>Ancient Beliefs</h2>
         <article>
@@ -82,7 +82,7 @@ export const chapters: IChapter[] = [
         error: 'font-size: 10px; font-style: normal; font-family: Source Code Pro;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-family', 'Playfair Display', '"Playfair Display"']],
         tipSelector: 'q',
-        tipInfo: 'Characters dimension is 16px, font face is italic and font name is "Playfair Display"',
+        tipInfo: 'This quote\'s characters are <strong>16px</strong> in size, styled in <strong>italic</strong>, and belong to the <strong>"Playfair Display"</strong> family.',
         articleContent: `
         <h2>To dumb to be true</h2>
         <article>
@@ -108,7 +108,7 @@ export const chapters: IChapter[] = [
         error: 'font-weight: 100;',
         solutions: [['font-weight', 'bold']],
         tipSelector: 'h3',
-        tipInfo: 'Font boldness is bold',
+        tipInfo: 'This subtitle is <strong>bold</strong>',
         articleContent: `
         <h2>Unraveling the Enchanted Whips of the Zmeii</h2>
         <article>
@@ -131,7 +131,7 @@ export const chapters: IChapter[] = [
         error: 'color: red;',
         solutions: [['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
-        tipInfo: 'Color is black',
+        tipInfo: 'This paragraph\'s color is <strong>black</strong>',
         articleContent: `
         <h2>Buzdugan: The Unstoppable Weapon</h2>
         <article>
@@ -154,7 +154,7 @@ export const chapters: IChapter[] = [
         error: 'font-weight: 100; color: red;',
         solutions: [['font-weight', 'bold'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'h3',
-        tipInfo: 'Font boldness is bold and color is black',
+        tipInfo: 'This subtitle is <strong>bold</strong> and its color is <strong>black</strong>',
         articleContent: `
         <h2>Culinary Exploits Beyond Imagination</h2>
         <article>
@@ -178,7 +178,7 @@ export const chapters: IChapter[] = [
         error: 'font-size: 20px; font-family: "Turret Road"; font-style: italic; font-weight: 800; color: blue;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['font-style', 'normal'], ['font-weight', 'normal'], ['color', 'black', '#000000', '#000', 'rgb(0,0,0)', 'rgba(0,0,0,1)']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", font face is normal, font boldness is normal and color is black',
+        tipInfo: 'This paragraph\'s characters are <strong>16px</strong> in size, styled in <strong>normal</strong>, belong to the <strong>"Crimson Text"</strong> family, are <strong>normal</strong> in weight, and are colored <strong>black</strong>',
         articleContent: `
         <h2>The Extravagant Realms of the Zmeu</h2>
         <article>
@@ -192,7 +192,7 @@ export const chapters: IChapter[] = [
       },
       {
         levelName: 'text-align',
-        instructions: 'What is the purpose of that text aligned to the right? None at all! Let\'s correct it by utilizing the <code>text-align</code> property!',
+        instructions: 'What is the purpose of that paragraph aligned to the right? None at all! Let\'s correct it by utilizing the <code>text-align</code> property!',
         beforeCode: '.misprint {',
         afterCode: '}',
         linesOfCode: 1,
@@ -200,7 +200,7 @@ export const chapters: IChapter[] = [
         error: 'text-align: right;',
         solutions: [['text-align', 'left']],
         tipSelector: 'p',
-        tipInfo: 'Text is aligned to left',
+        tipInfo: 'This paragraph is aligned to the <strong>left</strong>',
         articleContent: `
         <h2>Unveiling the Formidable Zmeoaice - Masters of Fury</h2>
         <article>
@@ -222,7 +222,7 @@ export const chapters: IChapter[] = [
         error: 'line-height: 0.6em',
         solutions: [['line-height', '20px', '1.25em', '1.25rem']],
         tipSelector: 'q',
-        tipInfo: 'Distance between lines of text is 20px',
+        tipInfo: 'This quote\'s line height is <strong>20px</strong>',
         articleContent: `
         <h2>Mother of Zmeii</h2>
         <article>
@@ -246,7 +246,7 @@ export const chapters: IChapter[] = [
         error: 'text-align: center; line-height: 5.5em;',
         solutions: [['text-align', 'left'], ['line-height', '1.15em', '1.15rem', '18.4px']],
         tipSelector: 'h3',
-        tipInfo: 'Text is aligned to left and distance between lines of text is 1.15em',
+        tipInfo: 'This subtitle is aligned to the <strong>left</strong> and has a line height of <strong>1.15em</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -261,7 +261,7 @@ export const chapters: IChapter[] = [
       },
       {
         levelName: 'text-decoration',
-        instructions: '<code>Text-decoration</code> property will help you to underline the second subheading of this article.',
+        instructions: 'The <code>Text-decoration</code> property will help you remove the underline of the second subtitle in this article.',
         beforeCode: '.misprint {',
         afterCode: '}',
         linesOfCode: 1,
@@ -269,7 +269,7 @@ export const chapters: IChapter[] = [
         error: 'text-decoration: underline;',
         solutions: [['text-decoration', 'none']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is not underlined',
+        tipInfo: 'This Subtitle is <strong>not underlined</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -293,7 +293,7 @@ export const chapters: IChapter[] = [
         error: 'text-transform: uppercase;',
         solutions: [['text-transform', 'capitalize']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is capitalized',
+        tipInfo: 'This subtitle is <strong>capitalized</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -317,7 +317,7 @@ export const chapters: IChapter[] = [
         error: 'text-decoration: line-through; text-transform: uppercase;',
         solutions: [['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'h3',
-        tipInfo: 'Subtitle is not uppercased and overlined',
+        tipInfo: 'This subtitle is <strong>not overlined</strong> and is <strong>not uppercased</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -340,7 +340,7 @@ export const chapters: IChapter[] = [
         error: 'line-height: 3em; text-align: right; text-decoration: underline; text-transform: uppercase;',
         solutions: [['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
-        tipInfo: 'Quote is aligned to left, the distance between its lines is 20px and it is not uppercased or underlined',
+        tipInfo: 'This quote\'s line height is <strong>20px</strong>, it is aligned to the <strong>left</strong>, it is <strong>not underlined</strong>, and it is <strong>not uppercased</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -363,7 +363,7 @@ export const chapters: IChapter[] = [
         error: 'font-size: 25px; font-family: "Turret Road"; text-align: center; text-transform: uppercase;',
         solutions: [['font-size', '16px', '1em', '1rem'], ['font-family', 'Crimson Text', '"Crimson Text"'], ['text-align', 'justify'], ['text-transform', 'none']],
         tipSelector: 'p',
-        tipInfo: 'Characters dimension is 16px, font name is "Crimson Text", alignment is justified and text is not uppercased',
+        tipInfo: 'This paragraph\'s characters are <strong>16px</strong> in size, belong to the <strong>"Crimson Text"</strong> family, aligned to the <strong>justify</strong>, and not <strong>uppercased</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -385,7 +385,7 @@ export const chapters: IChapter[] = [
         error: 'font-family: Turret Road, cursive; font-size: 26px; font-style: normal; font-weight: 900; color: red; line-height: 3em; text-align: center; text-decoration: underline; text-transform: lowercase;',
         solutions: [['font-family', 'Playfair Display', '"Playfair Display"'], ['font-size', '16px', '1em', '1rem'], ['font-style', 'italic'], ['font-weight', '300'], ['color', 'black', '#000', '#000000', 'rgb(0,0,0)', 'rgba(0,0,0,1)'], ['line-height', '20px', '1.25em', '1.25rem'], ['text-align', 'left'], ['text-decoration', 'none'], ['text-transform', 'none']],
         tipSelector: 'q',
-        tipInfo: 'Font name is Playfair Display, characters dimension is 16px, font face is italic, boldness is 300, color is black, the distance between lines is 20px, text is aligned to left, not underlined and not lowercased',
+        tipInfo: 'This quote\'s characters are <strong>16px</strong> in size, belong to the <strong>"Playfair Display"</strong> family, styled in <strong>italic</strong>, have a <strong>300</strong> weight, are colored <strong>black</strong>, have a line height of <strong>20px</strong>, are aligned to the <strong>left</strong>, are <strong>not underlined</strong>, and are <strong>not lowercased</strong>',
         articleContent: `
         <h2>Insert your article title here</h2>
         <article>
@@ -413,7 +413,7 @@ export const chapters: IChapter[] = [
         error: 'border: none;',
         solutions: [['border', '1px solid black', '1px solid #000', '1px solid #000000', '1px solid rgb(0,0,0)', '1px solid rgba(0,0,0,1)']],
         tipSelector: 'img',
-        tipInfo: 'Border is 1px, solid and black',
+        tipInfo: 'This image has a <strong>1px solid black</strong> border',
         extraStyle: 'img { border: 1px solid black }',
         articleContent: `
         <h2>Insert your article title here</h2>

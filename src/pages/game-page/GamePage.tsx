@@ -148,7 +148,7 @@ function GamePage() {
           </p>
           <footer className="modal__footer">
             <button className="button mr-20" type="button" onClick={startTutorial}>Play through</button>
-            <button className="button button--secondary" type="button" onClick={closeTutorialModal}>Skip</button>
+            <button className="button button--secondary" type="button" id="skip-tutorial" onClick={closeTutorialModal}>Skip</button>
           </footer>
         </Modal>, document.body as HTMLBodyElement)}
       {!currentTutorialState.matches(TutorialMachineStates.finished) && createPortal(

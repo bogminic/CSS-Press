@@ -217,6 +217,7 @@ function Code(props: CodeProps) {
         ></p>
         {linesOfCode === 1 && (
           <input
+            id="code"
             className={
               isWrongAnswer ? "code__input code__input--error" : "code__input"
             }
@@ -229,6 +230,7 @@ function Code(props: CodeProps) {
         )}
         {linesOfCode > 1 && (
           <textarea
+            id="code"
             className={
               isWrongAnswer
                 ? "code__textarea code__textarea--error"
@@ -248,6 +250,7 @@ function Code(props: CodeProps) {
       </article>
       {nextChapterNumber ?
         <button
+          id="next"
           type="button"
           className={
             isHeartBeating
